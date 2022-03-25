@@ -1,4 +1,3 @@
-// Load variables from `.env` as soon as possible
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "development"}`,
 });
@@ -8,10 +7,34 @@ const clientConfig = require("./client-config");
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
+  siteMetaData: {
+    title: `MRS House`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@harleysalas`,
+    siteUrl: `https://m-r-s.ru/`,
+  },
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /\.svg$/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets`,
+      },
+    },
     {
       resolve: "gatsby-source-sanity",
       options: {
