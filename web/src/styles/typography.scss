@@ -1,0 +1,19 @@
+@import "./variables.scss";
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: Poppins, serif, sans-serif;
+  font-size: 62.5%;
+  color: $color-black;
+  background-color: $color-white;
+}
+
+body {
+  font-family: Cera Pro;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 3.24rem;
+  letter-spacing: -0.05rem;
+  word-spacing: 0.42rem;
+}

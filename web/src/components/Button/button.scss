@@ -1,0 +1,80 @@
+@import "../../styles/variables.scss";
+
+.button {
+  border: none;
+  background: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.24s $ease;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &__wrapper {
+  }
+
+  &--default {
+    border-radius: 0.24rem;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-0.11rem);
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+  }
+
+  &--outline {
+  }
+
+  &--rounded {
+  }
+
+  &--rounded-outline {
+  }
+
+  &--sm {
+    font-size: 1.7rem;
+  }
+
+  &--md {
+    padding: 1.24rem 4.24rem;
+    font-size: 2rem;
+    letter-spacing: 0.11rem;
+  }
+
+  &--lg {
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-grey;
+
+    &:hover {
+      background-color: $color-primary-dark;
+      color: $color-grey;
+    }
+
+    &:active {
+      background-color: $color-primary;
+    }
+  }
+
+  &--black {
+    background-color: $color-black;
+    color: $color-white;
+
+    &:hover {
+      color: rgba($color-white, 0.95);
+      background-color: $color-black-light;
+    }
+    &:active {
+      color: rgba($color-white, 1);
+      background-color: $color-black;
+    }
+  }
+
+  &--grey {
+  }
+}

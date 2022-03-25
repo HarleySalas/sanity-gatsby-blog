@@ -1,0 +1,172 @@
+@import "../../../../styles/variables.scss";
+
+.desktop-nav {
+  height: 100%;
+
+  &__ul {
+    list-style: none;
+    display: flex;
+    position: relative;
+    height: 100%;
+  }
+
+  &__li {
+    color: $color-white;
+    margin-right: 2.72rem;
+    height: 100%;
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+    position: relative;
+    display: block;
+  }
+
+  &__link {
+    text-decoration: none;
+    transition: all 0.24s $ease 0s;
+    display: block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+
+    &--active {
+      color: $color-primary !important;
+    }
+
+    &:visited {
+      color: rgba($color-white, 1);
+    }
+
+    &:hover {
+      color: rgba($color-white, 0.72);
+    }
+    &:hover + .desktop-nav__sub-ul {
+      display: block;
+      animation: growDownCenter 300ms $ease forwards;
+      transform-origin: top center;
+    }
+  }
+
+  &__sub-ul {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, 0);
+    list-style: none;
+    background-color: $color-black;
+    text-align: center;
+    border-radius: 0.42rem;
+    border-radius: 0 0 0.42rem 0.42rem;
+    overflow: hidden;
+    perspective: 100rem;
+    display: none;
+
+    &:hover {
+      display: block;
+      animation: growDownCenter 300ms $ease forwards;
+      transform-origin: top center;
+    }
+  }
+
+  &__sub-li {
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      height: 1px;
+      background-color: rgba($color-white, 0.07);
+    }
+
+    &:nth-last-child(1)::after {
+      display: none;
+    }
+  }
+
+  &__sub-link {
+    color: $color-white;
+    text-decoration: none;
+    padding: 1rem 5rem;
+    width: 100%;
+    display: block;
+    line-height: 2.42rem;
+    transition: all 0.24s $ease 0;
+
+    &:hover {
+      background-color: rgba($color-white, 0.04);
+    }
+    &--active {
+      background-color: rgba($color-white, 0.04);
+    }
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__phone {
+      margin-right: 2.72rem;
+      text-decoration: none;
+      color: rgba($color-white, 0.72);
+      transition: all 0.24s $ease 0s;
+      display: block;
+      position: relative;
+
+      &:visited {
+        color: inherit;
+      }
+
+      &:hover {
+        color: rgba($color-white, 1);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 0.1rem;
+        background-color: $color-primary;
+        bottom: 0;
+        left: 0;
+        transition: all 0.11s $ease 0s;
+      }
+
+      &:hover {
+        color: rgba($color-white, 1);
+        &::after {
+          width: 100%;
+          transition: all 0.24s $ease 0s;
+        }
+      }
+    }
+
+    &__link {
+      display: block;
+      cursor: pointer;
+      &:hover .desktop-nav__contact__btn {
+        background-color: rgba($color-primary, 0.2);
+      }
+
+      &--active {
+        .desktop-nav__contact__btn {
+          background-color: rgba($color-primary, 0.2);
+        }
+      }
+    }
+
+    &__btn {
+      cursor: pointer;
+      background-color: rgba($color-primary, 0.16);
+      color: $color-primary;
+      border: none;
+      padding: 0.42rem 1.42rem;
+      border-radius: 0.24rem;
+      transition: all 0.14s $ease 0s;
+    }
+  }
+}
