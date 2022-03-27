@@ -1,6 +1,11 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdSettings } from "react-icons/md";
-import { MdPerson, MdDescription, MdLocalOffer } from "react-icons/md";
+import {
+  MdPerson,
+  MdDescription,
+  MdLocalOffer,
+  MdGroups,
+} from "react-icons/md";
 import IframePreview from "../previews/IframePreview";
 
 // Web preview configuration
@@ -52,6 +57,16 @@ export default () =>
             .schemaType("siteSettings")
             .documentId("siteSettings")
         ),
+      S.listItem()
+        .title("Company Info")
+        .icon(MdGroups)
+        .child(
+          S.document()
+            .title("Company Info")
+            .id("companyInfo")
+            .schemaType("companyInfo")
+            .documentId("companyInfo")
+        ),
       S.divider(),
       S.listItem()
         .title("Blog posts")
@@ -73,8 +88,12 @@ export default () =>
       // defined the structure above.
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !["category", "author", "post", "siteSettings"].includes(
-            listItem.getId()
-          )
+          ![
+            "category",
+            "author",
+            "post",
+            "siteSettings",
+            "companyInfo",
+          ].includes(listItem.getId())
       ),
     ]);

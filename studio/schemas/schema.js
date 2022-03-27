@@ -9,6 +9,7 @@ import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
 import siteSettings from "./documents/siteSettings";
+import companyInfo from "./documents/companyInfo";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -16,6 +17,7 @@ import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
 import authorReference from "./objects/authorReference";
+import address from "./objects/address";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,7 +38,10 @@ export default createSchema({
     bioPortableText,
     excerptPortableText,
 
+    companyInfo,
+
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
+    address,
   ]),
 });
