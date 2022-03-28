@@ -1,4 +1,39 @@
+@import "./variables.scss";
+
 .container {
-  width: calc(100vw - 30rem);
+  position: relative;
+  width: 100%;
   margin: 0 auto;
+  // padding: 0 2rem;
+
+  @include respond(phone) {
+    padding: 0 2.42rem;
+  }
+
+  @include respond(tab-port) {
+    padding: 0 5rem;
+  }
+
+  @include respond(tab-land) {
+    padding: 0 10rem;
+  }
+
+  @include respond(desktop-small) {
+    padding: 0 11rem;
+  }
+
+  @include respond(desktop-mid) {
+    // padding: 0;
+    // width: 120rem;
+    padding: 0 15rem;
+  }
+
+  @include respond(desktop) {
+    padding: 0 20rem;
+  }
+
+  @include respond(desktop-large) {
+    padding: 0;
+    width: 200rem;
+  }
 }

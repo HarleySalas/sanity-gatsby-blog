@@ -4,7 +4,7 @@
   position: fixed;
   height: 8rem;
   width: 100%;
-  padding: 0rem 5rem;
+  // padding: 0rem 5rem;
   display: flex;
   z-index: 10000;
   transition: all 0.42s $ease;
@@ -30,12 +30,20 @@
   }
 
   &__container {
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // position: relative;
+    // height: 100%;
+  }
+
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    height: 100%;
-    position: relative;
   }
 
   &__home {
@@ -44,12 +52,13 @@
   }
 
   &__logo {
-    height: 2.72rem;
+    height: 3.72rem;
   }
 
   &__line {
     position: absolute;
     width: 100%;
+    left: 0;
     height: 1px;
     background-color: rgba($color-white, 0.24);
     bottom: 0;

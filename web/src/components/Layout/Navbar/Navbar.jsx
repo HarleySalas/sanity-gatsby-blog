@@ -19,13 +19,15 @@ const Navbar = () => {
         }`}
       ></div>
       <div className="container navbar__container">
-        <Link to="/" className="navbar__home">
-          <Logo className="navbar__logo" />
-        </Link>
-        <DesktopNav />
-        <div
-          className={`navbar__line ${isScrollTop && "navbar__line--top"}`}
-        ></div>
+        <div className="navbar__wrapper">
+          <Link to="/" className="navbar__home">
+            <Logo className="navbar__logo" />
+          </Link>
+          <DesktopNav />
+          <div
+            className={`navbar__line ${isScrollTop && "navbar__line--top"}`}
+          ></div>
+        </div>
       </div>
     </header>
   );

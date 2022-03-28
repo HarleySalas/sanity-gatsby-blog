@@ -34,12 +34,12 @@ const HomeHero = () => {
         <div className="home-hero__background__overlay">
           <div className="container home-hero__container">
             <h1 className="home-hero__title">
-              Каркасные дома по технологиями
+              Каркасные дома по технологиям
               <br />
               из Канады и Финляндии
             </h1>
             <span className="home-hero__subtitle">От 990000 ₽</span>
-            <Button linkTo="/projects">Посмотреть проекты</Button>
+            <Button linkTo="/projects">Наши проекты</Button>
           </div>
         </div>
       </BackgroundImage>
