@@ -1,15 +1,13 @@
 export default {
-  name: "companyInfo",
-  title: "Company Info",
+  name: "companyDetails",
   type: "document",
-  liveEdit: false,
-  //Below removes the option to "create" or "delete", for singleton instances like this.
-  __experimental_actions: ["update", /* 'create', 'delete', */ "publish"],
+  title: "Company Details",
+  __experimental_actions: ["update", /* 'create',/* 'delete', */ "publish"],
   fields: [
     {
       name: "companyName",
-      title: "Official Company Name",
       type: "string",
+      title: "Official Company Name",
     },
     {
       name: "workHours",

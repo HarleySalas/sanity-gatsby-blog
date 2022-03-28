@@ -17,3 +17,19 @@ body {
   letter-spacing: -0.05rem;
   word-spacing: 0.42rem;
 }
+
+p {
+  color: $color-grey-text;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  margin: 0 0 2.4rem;
+  text-align: justify;
+  text-justify: inter-word;
+  // letter-spacing: 0.1rem;
+  // margin-bottom: 3rem;
+  text-indent: 2rem;
+
+  &:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+}

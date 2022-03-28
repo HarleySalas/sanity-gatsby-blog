@@ -68,10 +68,15 @@
 
     &__ul {
       list-style: inside;
+      color: $color-grey-light;
     }
 
     &__li {
       margin-bottom: 2rem;
+    }
+
+    &__p {
+      color: $color-grey-light;
     }
   }
 

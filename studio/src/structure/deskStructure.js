@@ -58,16 +58,42 @@ export default () =>
             .documentId("siteSettings")
         ),
       S.listItem()
-        .title("Company Info")
+        .title("Company Details")
         .icon(MdGroups)
         .child(
-          S.document()
-            .title("Company Info")
-            .id("companyInfo")
-            .schemaType("companyInfo")
-            .documentId("companyInfo")
+          S.editor()
+            .id("companyDetails")
+            .schemaType("companyDetails")
+            .documentId("companyDetails")
         ),
+      // S.listItem()
+      //   .title("Company Info")
+      //   .icon(MdGroups)
+      //   .child(
+      //     S.editor()
+      //       .id("companyInfo")
+      //       .schemaType("companyInfo")
+      //       .documentId("companyInfo")
+      //   ),
       S.divider(),
+      // S.listItem().title("Company Info").icon(MdGroups).child(
+      //   S.document().title("Company Info").schemaType("companyInfo")
+      //   // .documentId("companyInfo")
+      // )
+      S.listItem()
+        .title("About")
+        .child(
+          S.list()
+            .title("About")
+            .items([
+              S.listItem()
+                .title("FAQ")
+                .schemaType("faq")
+                .child(
+                  S.documentTypeList("faq").title("Frequently Asked Questions")
+                ),
+            ])
+        ),
       S.listItem()
         .title("Blog posts")
         .icon(MdDescription)
@@ -94,6 +120,8 @@ export default () =>
             "post",
             "siteSettings",
             "companyInfo",
+            "companyDetails",
+            "faq",
           ].includes(listItem.getId())
       ),
     ]);

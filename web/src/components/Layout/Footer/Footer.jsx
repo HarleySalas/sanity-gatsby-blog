@@ -53,8 +53,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="footer__li">
-                <Link to="/about/technology" className="footer__li__link">
-                  Технологии
+                <Link
+                  to="/about/technologies-and-materials"
+                  className="footer__li__link"
+                >
+                  Технологии и материалы
                 </Link>
               </li>
               <li className="footer__li">
@@ -92,7 +95,7 @@ const Footer = () => {
               <a
                 href="https://yandex.ru/maps/-/CCUB5VHHdC"
                 className="footer__address__link"
-                rel="nofollow"
+                rel="noreferrer"
                 target="_blank"
               >
                 ул. Станционная, д. 61

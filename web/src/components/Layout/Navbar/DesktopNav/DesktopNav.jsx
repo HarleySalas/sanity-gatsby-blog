@@ -54,11 +54,11 @@ const DesktopNav = () => {
               </li>
               <li className="desktop-nav__sub-li">
                 <Link
-                  to="/about/technology"
+                  to="/about/technologies-and-materials"
                   className="desktop-nav__sub-link"
                   activeClassName="desktop-nav__sub-link--active"
                 >
-                  Технологии
+                  Технологии и материалы
                 </Link>
               </li>
               <li className="desktop-nav__sub-li">

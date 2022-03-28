@@ -1,0 +1,42 @@
+@import "../../../../../styles/variables.scss";
+
+.how-we-work-steps {
+  margin-top: 5rem;
+  &__container {
+  }
+
+  &__h2 {
+    font-weight: 500;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  &__ol {
+    list-style: none;
+  }
+
+  &__li {
+    position: relative;
+    counter-increment: item;
+    display: flex;
+    padding: 3rem 0 3rem 0;
+    &::before {
+      margin: 0 3rem;
+      content: counter(item, decimal-leading-zero);
+      font-size: 5rem;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0.1rem;
+      background-color: $color-grey;
+    }
+  }
+
+  &__p {
+    align-self: flex-start;
+  }
+}

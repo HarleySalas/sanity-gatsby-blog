@@ -1,8 +1,8 @@
-import React from "react"
-import "./page.scss"
+import React from "react";
+import "./page.scss";
 
 const Page = ({ children }) => {
-  return <div className="page">{children}</div>
-}
+  return <main className="page">{children}</main>;
+};
 
-export default Page
+export default Page;

@@ -10,18 +10,18 @@ const FaqAccordion = () => {
       <div className="container faq-accordion__container">
         <Accordion>
           <AccordionItem title="Можно ли у вас заказать индивидуальный проект дома?">
-            <p className="faq-accordion__p">
+            <p className="faq-accordion__content__p">
               Да, мы можем разработать проект под вас с учетом всех ваших
               пожеланий.
             </p>
           </AccordionItem>
           <AccordionItem title="Продаете ли вы проекты домов?">
-            <p className="faq-accordion__p">
+            <p className="faq-accordion__content__p">
               Нет, мы не занимаемся продажей проектов.
             </p>
           </AccordionItem>
           <AccordionItem title="Тепло ли в доме зимой?">
-            <p className="faq-accordion__p">
+            <p className="faq-accordion__content__p">
               Да, все наши дома строятся с применением энергоэффективных
               материалов и технологий и относятся к классу А++ по
               энергоэффективности. Это позволяет поддерживать комфортную
