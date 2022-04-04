@@ -3,13 +3,15 @@ import { Link } from "gatsby";
 import "./navbar.scss";
 
 import DesktopNav from "./DesktopNav/DesktopNav";
+import MobileNav from "./MobileNav/MobileNav";
 
 import Logo from "../../../assets/mrs-logo-light.svg";
 
-import { useScrollTop } from "../../../hooks";
+import { useScrollTop, useMediaQuery } from "../../../hooks";
 
 const Navbar = () => {
   const isScrollTop = useScrollTop();
+  const isDesktop = useMediaQuery("(min-width: 75em)");
 
   return (
     <header className={`navbar ${isScrollTop && "navbar--top"}`}>
@@ -23,7 +25,8 @@ const Navbar = () => {
           <Link to="/" className="navbar__home">
             <Logo className="navbar__logo" />
           </Link>
-          <DesktopNav />
+          {isDesktop ? <DesktopNav /> : <MobileNav />}
+
           <div
             className={`navbar__line ${isScrollTop && "navbar__line--top"}`}
           ></div>

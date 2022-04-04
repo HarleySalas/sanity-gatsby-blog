@@ -2,16 +2,32 @@
 
 .navbar {
   position: fixed;
-  height: 8rem;
+  height: 5rem;
   width: 100%;
   // padding: 0rem 5rem;
   display: flex;
   z-index: 10000;
   transition: all 0.42s $ease;
 
+  @include respond(tab-port) {
+    height: 6rem;
+  }
+
+  @include respond(desktop-small) {
+    height: 8rem;
+  }
+
   &--top {
-    height: 11rem;
+    height: 8rem;
     transition: all 0.18s ease-in-out;
+
+    @include respond(tab-port) {
+      height: 9rem;
+    }
+
+    @include respond(desktop-small) {
+      height: 11rem;
+    }
   }
 
   &__background {
@@ -30,11 +46,6 @@
   }
 
   &__container {
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-    // position: relative;
-    // height: 100%;
   }
 
   &__wrapper {
@@ -52,7 +63,16 @@
   }
 
   &__logo {
-    height: 3.72rem;
+    height: 2.72rem;
+    z-index: 11000;
+
+    @include respond(tab-port) {
+      height: 3.24rem;
+    }
+
+    @include respond(desktop-small) {
+      height: 3.72rem;
+    }
   }
 
   &__line {
