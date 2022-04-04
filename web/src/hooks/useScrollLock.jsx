@@ -1,14 +1,21 @@
-import { useCallback, useLayoutEffect } from "react";
+import { useCallback, useLayoutEffect, useEffect } from "react";
 
 const useScrollLock = () => {
-  const isiOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  //   const isiOS =
+  //     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  let isiOS;
+  let scrollOffset;
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
+  }, []);
 
   const lockScroll = useCallback(() => {
     const scrollBarCompenstation =
       window.innerWidth - document.documentElement.offsetWidth;
-    let scrollOffset = document.documentElement.scrollTop();
-
+    let scrollOffset;
     //must use "document.documentElement" instead of "document.body" for gatsby
     document.documentElement.style.overflow = "hidden";
     document.documentElement.style.paddingRight = `${scrollBarCompenstation}px`;
@@ -27,7 +34,6 @@ const useScrollLock = () => {
   }, []);
 
   const unlockScroll = useCallback(() => {
-    const scrollOffset = document.documentElement.scrollTop();
     //must use "document.documentElement" instead of "document.body" for gatsby
     document.documentElement.style.overflow = "";
     document.documentElement.style.paddingRight = "";
