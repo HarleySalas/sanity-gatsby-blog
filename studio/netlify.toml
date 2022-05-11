@@ -1,5 +1,3 @@
-[[build.environment]]
-  NPM_FLAGS = "--force"
 [[redirects]]
   from = "/*"
   to = "/"
