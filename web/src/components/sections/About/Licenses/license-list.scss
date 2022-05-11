@@ -1,0 +1,14 @@
+@import "../../../../styles/variables.scss";
+
+.license-list {
+  &__container {
+    margin: 5rem 0;
+    @include respond(tab-port) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+}

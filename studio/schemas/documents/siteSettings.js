@@ -2,6 +2,7 @@ export default {
   name: "siteSettings",
   type: "document",
   title: "Site Settings",
+  liveEdit: false,
   __experimental_actions: ["update", /* 'create',/* 'delete', */ "publish"],
   fields: [
     {

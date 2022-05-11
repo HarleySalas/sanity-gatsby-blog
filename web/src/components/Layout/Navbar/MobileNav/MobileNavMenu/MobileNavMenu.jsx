@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "gatsby";
 import { CSSTransition } from "react-transition-group";
 import "./mobile-nav-menu.scss";
 import { useScrollLock } from "../../../../../hooks";
 
 const MobileNavMenu = ({ isOpen }) => {
-  const [rendered, setRendered] = useState(false);
+  const [, setRendered] = useState(false);
   const menuRef = useRef(null);
   const [lockScroll, unlockScroll] = useScrollLock();
 
@@ -19,8 +19,14 @@ const MobileNavMenu = ({ isOpen }) => {
 
   const handleOnExit = () => {
     setRendered(false);
+    //unlocks scroll when clicking X and closing the navigation menu.
     unlockScroll();
   };
+
+  useEffect(() => {
+    //unlocks scroll when clicking a link on the mobile navigation menu.
+    return unlockScroll();
+  }, [unlockScroll]);
 
   return (
     <CSSTransition
@@ -29,7 +35,7 @@ const MobileNavMenu = ({ isOpen }) => {
       classNames="mobile-nav-menu"
       unmountOnExit
       onEnter={() => handleOnEnter()}
-      onEntered={() => handleOnEntered}
+      onEntered={() => handleOnEntered()}
       onExit={() => handleOnExit()}
     >
       <nav className="mobile-nav-menu" ref={menuRef}>

@@ -21,8 +21,9 @@ const About = () => {
     <Layout title="О компании">
       <BasicPageHero
         title="О компании"
-        placeholderImage={AboutImage}
-        imageTop
+        // placeholderImage={AboutImage}
+        // imageTop
+        basic
       />
       about us
     </Layout>

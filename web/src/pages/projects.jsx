@@ -5,7 +5,7 @@ import BasicPageHero from "../components/BasicPageHero/BasicPageHero";
 const projects = () => {
   return (
     <Layout title="Проекты">
-      <BasicPageHero title="Проекты" />
+      <BasicPageHero title="Проекты" basic />
     </Layout>
   );
 };

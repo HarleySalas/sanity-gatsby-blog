@@ -22,7 +22,11 @@
     }
     &__logo {
       display: block;
-      height: 4.24rem;
+      height: 3.42rem;
+
+      @include respond(tab-land) {
+        height: 4.24rem;
+      }
     }
   }
 
@@ -31,14 +35,39 @@
     margin-bottom: 4rem;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(tab-land) {
+      flex-direction: row;
+      align-items: initial;
+    }
   }
 
   &__col {
+    margin-bottom: 3rem;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+
+    @include respond(tab-port) {
+      margin-bottom: 4rem;
+    }
+
+    @include respond(tab-land) {
+      margin-bottom: 0;
+    }
     &__title {
       color: $color-primary;
       font-weight: 500;
       letter-spacing: 0.08rem;
       font-size: 2.24rem;
+      text-align: center;
+
+      @include respond(tab-land) {
+        text-align: left;
+      }
     }
   }
 
@@ -47,6 +76,11 @@
   }
 
   &__li {
+    text-align: center;
+
+    @include respond(tab-land) {
+      text-align: left;
+    }
     &__link {
       color: rgba($color-white, 0.72);
       text-decoration: none;
@@ -59,6 +93,7 @@
   }
 
   &__phone {
+    display: block;
     color: rgba($color-white, 0.72);
     text-decoration: none;
     transition: color 0.24s $ease;
@@ -66,9 +101,21 @@
     &:hover {
       color: rgba($color-white, 1);
     }
+
+    text-align: center;
+
+    @include respond(tab-land) {
+      text-align: left;
+    }
   }
 
   &__address {
+    text-align: center;
+
+    @include respond(tab-land) {
+      text-align: left;
+    }
+
     &__link {
       color: rgba($color-white, 0.72);
       // text-decoration: none;
@@ -82,6 +129,12 @@
 
   &__hours {
     color: rgba($color-white, 0.72);
+
+    text-align: center;
+
+    @include respond(tab-land) {
+      text-align: left;
+    }
   }
 
   &__bottom {
@@ -89,6 +142,13 @@
     padding: 3rem 0;
     display: flex;
     justify-content: space-between;
+
+    flex-direction: column;
+    text-align: center;
+
+    @include respond(tab-land) {
+      flex-direction: row;
+    }
 
     &::before {
       content: "";

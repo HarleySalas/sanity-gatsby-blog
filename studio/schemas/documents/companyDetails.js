@@ -2,7 +2,8 @@ export default {
   name: "companyDetails",
   type: "document",
   title: "Company Details",
-  __experimental_actions: ["update", /* 'create',/* 'delete', */ "publish"],
+  liveEdit: false,
+  __experimental_actions: ["update", /* "create", /* 'delete', */ "publish"],
   fields: [
     {
       name: "companyName",

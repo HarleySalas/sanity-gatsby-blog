@@ -1,37 +1,25 @@
-import { useCallback, useLayoutEffect, useEffect } from "react";
+import { useCallback, useLayoutEffect, useRef } from "react";
+import useIsiOS from "./useIsiOS";
 
 const useScrollLock = () => {
-  //   const isiOS =
-  //     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  let isiOS;
-  let scrollOffset;
+  const isiOS = useIsiOS();
+  //   let scrollOffset = null;
 
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
-      isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    }
-  }, []);
+  const scrollOffset = useRef(null);
 
   const lockScroll = useCallback(() => {
-    const scrollBarCompenstation =
-      window.innerWidth - document.documentElement.offsetWidth;
-    let scrollOffset;
-    //must use "document.documentElement" instead of "document.body" for gatsby
-    document.documentElement.style.overflow = "hidden";
-    document.documentElement.style.paddingRight = `${scrollBarCompenstation}px`;
-
-    //for sticky elements that would otherwise be displaced
-    document.documentElement.style.paddingRight = `var(--scrollbar-compensation)`;
     document.documentElement.dataset.scrollLock = "true";
+    document.documentElement.style.overflow = "hidden";
+    document.documentElement.style.paddingRight = `var(--scrollbar-compensation)`;
 
     if (isiOS) {
-      // document.documentElement.scrollHeight
+      console.log("im iOS!");
       scrollOffset.current = window.pageYOffset;
       document.documentElement.style.position = "fixed";
       document.documentElement.style.top = `-${scrollOffset.current}px`;
       document.documentElement.style.width = "100%";
     }
-  }, []);
+  }, [isiOS]);
 
   const unlockScroll = useCallback(() => {
     //must use "document.documentElement" instead of "document.body" for gatsby
@@ -46,13 +34,15 @@ const useScrollLock = () => {
     }
 
     //for sticky elements that would otherwise be displaced
-    delete document.body.dataset.scrollLock;
-  }, []);
+    // document.documentElement.dataset.scrollLock = "false";
+    //used to have document.body for some reason, but assume it was a typo. nothing seems to break.
+    delete document.documentElement.dataset.scrollLock;
+  }, [isiOS]);
 
   //for sticky elements that would otherwise be displaced
   useLayoutEffect(() => {
     const scrollBarCompensation =
-      window.innderWidth - document.documentElement.offsetWidth;
+      window.innerWidth - document.documentElement.offsetWidth;
     document.documentElement.style.setProperty(
       "--scrollbar-compensation",
       `${scrollBarCompensation}px`

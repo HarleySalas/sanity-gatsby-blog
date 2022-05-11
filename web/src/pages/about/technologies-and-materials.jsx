@@ -6,7 +6,7 @@ import TechnologiesAndMaterialsMain from "../../components/sections/About/Techno
 const TechnologiesAndMaterials = () => {
   return (
     <Layout title="Технологии и материалы">
-      <BasicPageHero title="Технологии и материалы" />
+      <BasicPageHero title="Технологии и материалы" basic />
       <TechnologiesAndMaterialsMain />
     </Layout>
   );

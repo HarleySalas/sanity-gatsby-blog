@@ -6,7 +6,7 @@ import CompanyText from "../../components/sections/About/Company/CompanyText/Com
 const company = () => {
   return (
     <Layout title="О нас">
-      <BasicPageHero title="О нас" />
+      <BasicPageHero title="О нас" basic />
       <CompanyText />
     </Layout>
   );

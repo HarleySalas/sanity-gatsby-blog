@@ -2,10 +2,7 @@ import React from "react";
 import MobileNavIcon from "./MobileNavIcon/MobileNavIcon";
 import MobileNavMenu from "./MobileNavMenu/MobileNavMenu";
 
-import { useToggle } from "../../../../hooks";
-
-const MobileNav = () => {
-  const [isOpen, toggle] = useToggle(false);
+const MobileNav = ({ isOpen, toggle }) => {
   return (
     <>
       <MobileNavIcon isOpen={isOpen} toggle={toggle} />

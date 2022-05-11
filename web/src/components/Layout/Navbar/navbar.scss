@@ -4,6 +4,7 @@
   position: fixed;
   height: 5rem;
   width: 100%;
+  top: 0;
   // padding: 0rem 5rem;
   display: flex;
   z-index: 10000;
@@ -30,6 +31,10 @@
     }
   }
 
+  &--delay {
+    transition: all 0.42s $ease 0.42s;
+  }
+
   &__background {
     background-color: $color-black;
     height: 100%;
@@ -42,6 +47,10 @@
 
     &--top {
       transform: translateY(-100%);
+    }
+
+    &--delay {
+      transition: all 0.72s $ease 1s;
     }
   }
 

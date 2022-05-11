@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Seo from "./Seo/Seo";
 import Navbar from "./Navbar/Navbar";
 import Page from "./Page/Page";

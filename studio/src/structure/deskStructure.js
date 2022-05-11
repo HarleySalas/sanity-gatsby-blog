@@ -59,13 +59,26 @@ export default () =>
         ),
       S.listItem()
         .title("Company Details")
-        .icon(MdGroups)
+        .icon(MdSettings)
         .child(
           S.editor()
             .id("companyDetails")
             .schemaType("companyDetails")
             .documentId("companyDetails")
         ),
+      S.listItem()
+        .title("Licenses")
+        .schemaType("license")
+        .child(S.documentTypeList("license").title("Licenses")),
+      // S.listItem()
+      //   .title("Company Details")
+      //   .icon(MdGroups)
+      //   .child(
+      //     S.editor()
+      //       .id("companyDetails")
+      //       .schemaType("companyDetails")
+      //       .documentId("companyDetails")
+      //   ),
       // S.listItem()
       //   .title("Company Info")
       //   .icon(MdGroups)
@@ -88,9 +101,46 @@ export default () =>
             .items([
               S.listItem()
                 .title("FAQ")
-                .schemaType("faq")
                 .child(
-                  S.documentTypeList("faq").title("Frequently Asked Questions")
+                  S.editor()
+                    .id("faq")
+                    .schemaType("faq")
+                    .documentId("faq")
+                    .title("FAQ")
+                ),
+            ])
+        ),
+      S.listItem()
+        .title("Projects")
+        .child(
+          S.list()
+            .title("Projects")
+            .items([
+              S.listItem()
+                .title("Listings")
+                .schemaType("project")
+                .child(S.documentTypeList("project").title("Project Listings")),
+              S.listItem()
+                .title("Categories")
+                .schemaType("projectCategory")
+                .child(
+                  S.documentTypeList("projectCategory").title(
+                    "Project Categories"
+                  )
+                ),
+              S.listItem()
+                .title("Options")
+                .child(
+                  S.list()
+                    .title("Options")
+                    .items([
+                      S.listItem()
+                        .title("Foundations")
+                        .schemaType("foundation")
+                        .child(
+                          S.documentTypeList("foundation").title("Foundations")
+                        ),
+                    ])
                 ),
             ])
         ),
@@ -116,12 +166,16 @@ export default () =>
         (listItem) =>
           ![
             "category",
+            "projectCategory",
             "author",
             "post",
             "siteSettings",
-            "companyInfo",
             "companyDetails",
             "faq",
+            "project",
+            "foundation",
+            "finishing",
+            "license",
           ].includes(listItem.getId())
       ),
     ]);

@@ -1,20 +1,49 @@
+/*
+LIGHT WEIGHT
+*/
 @font-face {
   font-family: "Cera Pro";
-  src: url("../assets/fonts/Cera\ Pro\ Regular.otf");
-  font-weight: normal;
+  src: url("../assets/fonts/Cera\ Pro\ Light.otf");
+  font-weight: 300;
   font-style: normal;
 }
 
+/*
+LIGHT WEIGHT, ITALICIZED
+*/
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../assets/fonts/Cera\ Pro\ Light\ Italic.otf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/*
+NORMAL WEIGHT
+*/
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../assets/fonts/Cera\ Pro\ Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*
+NORMAL WEIGHT, ITALICIZED
+*/
+@font-face {
+  font-family: "Cera Pro";
+  src: url("../assets/fonts/Cera\ Pro\ Regular\ Italic.otf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*
+MEDIUM WEIGHT
+*/
 @font-face {
   font-family: "Cera Pro";
   src: url("../assets/fonts/Cera\ Pro\ Medium.otf");
   font-weight: 500;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "Cera Pro";
-  src: url("../assets/fonts/Cera\ Pro\ Regular\ Italic.otf");
-  font-weight: 500;
-  font-style: italic;
 }

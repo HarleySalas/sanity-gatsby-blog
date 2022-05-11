@@ -20,7 +20,6 @@ const BasicPageHero = ({ placeholderImage, title, imageTop, basic }) => {
             className={`basic-page-hero__background ${
               imageTop && "basic-page-hero__background--top"
             }`}
-            className="basic-page-hero__background basic-page-hero__background--top"
           ></BackgroundImage>
           <div className="basic-page-hero__background__overlay">
             <div className="container basic-page-hero__container">

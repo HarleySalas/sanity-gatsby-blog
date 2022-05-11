@@ -7,17 +7,27 @@ import MobileNav from "./MobileNav/MobileNav";
 
 import Logo from "../../../assets/mrs-logo-light.svg";
 
-import { useScrollTop, useMediaQuery } from "../../../hooks";
+import { useScrollTop, useMediaQuery, useToggle } from "../../../hooks";
 
 const Navbar = () => {
   const isScrollTop = useScrollTop();
   const isDesktop = useMediaQuery("(min-width: 75em)");
+  const [isMobileOpen, toggleMobile] = useToggle(false);
 
   return (
-    <header className={`navbar ${isScrollTop && "navbar--top"}`}>
+    <header
+      className={`navbar ${
+        (isScrollTop && "navbar--top") ||
+        (isMobileOpen && "navbar--top navbar--delay")
+      }`}
+    >
       <div
         className={`navbar__background ${
           isScrollTop && "navbar__background--top"
+        } ${
+          !isScrollTop &&
+          isMobileOpen &&
+          "navbar__background--top navbar__background--delay"
         }`}
       ></div>
       <div className="container navbar__container">
@@ -25,10 +35,16 @@ const Navbar = () => {
           <Link to="/" className="navbar__home">
             <Logo className="navbar__logo" />
           </Link>
-          {isDesktop ? <DesktopNav /> : <MobileNav />}
+          {isDesktop ? (
+            <DesktopNav />
+          ) : (
+            <MobileNav isOpen={isMobileOpen} toggle={toggleMobile} />
+          )}
 
           <div
-            className={`navbar__line ${isScrollTop && "navbar__line--top"}`}
+            className={`navbar__line ${
+              isScrollTop && !isMobileOpen && "navbar__line--top"
+            }`}
           ></div>
         </div>
       </div>

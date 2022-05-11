@@ -7,7 +7,7 @@ import HowWeWorkCustom from "../../components/sections/About/HowWeWork/HowWeWork
 const HowWeWork = () => {
   return (
     <Layout title="Как мы работаем">
-      <BasicPageHero title="Как мы работаем" />
+      <BasicPageHero title="Как мы работаем" basic />
       <HowWeWorkSteps />
       <HowWeWorkCustom />
     </Layout>
