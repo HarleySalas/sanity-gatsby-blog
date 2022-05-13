@@ -14,7 +14,7 @@ const HomeHero = () => {
     graphql`
       query {
         placeholderImage: file(
-          relativePath: { eq: "images/hero-image-2.png" }
+          relativePath: { eq: "images/hero-image-3.png" }
         ) {
           childImageSharp {
             gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

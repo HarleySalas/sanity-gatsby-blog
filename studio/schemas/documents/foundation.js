@@ -5,7 +5,7 @@ export default {
   liveEdit: false,
   fields: [
     {
-      name: "type",
+      name: "name",
       type: "string",
       title: "Foundation Type",
       description: "Name of foundation type",
@@ -26,8 +26,8 @@ export default {
       validation: (Rule) =>
         Rule.error("You must provide a foundation image.").required(),
       options: {
-        accept: ".png"
-      }
+        accept: ".png",
+      },
     },
   ],
 };

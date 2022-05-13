@@ -29,7 +29,16 @@ export default {
   preview: {
     select: {
       imageUrl: "asset.url",
-      title: "caption",
+      caption: "caption",
+      originalFilename: "asset.originalFilename",
+    },
+    prepare(selection) {
+      const { imageUrl, caption, originalFilename } = selection;
+
+      return {
+        imageUrl,
+        title: `${caption ? caption : originalFilename}`,
+      };
     },
   },
 };

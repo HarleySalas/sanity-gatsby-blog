@@ -10,6 +10,10 @@ export default {
         { title: "Normal", value: "normal" },
         { title: "Quote", value: "blockquote" },
       ],
+      lists: [
+        { title: "Bullet", value: "bullet" },
+        { title: "Number", value: "number" },
+      ],
       marks: {
         decorators: [
           { title: "Strong", value: "strong" },

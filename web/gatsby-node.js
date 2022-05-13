@@ -49,3 +49,20 @@
 // exports.createPages = async ({ graphql, actions }) => {
 //   await createBlogPostPages(graphql, actions);
 // };
+
+// async function createProjectPages(graphql, actions) {
+//     const { createPage } = actions;
+//     const result = aware graphql(`
+//         {
+//             allSanityProject(
+//                 filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+//             ) {
+//                 edges {
+//                     node {
+
+//                     }
+//                 }
+//             }
+//         }
+//     `)
+// }

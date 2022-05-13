@@ -1,8 +1,9 @@
 @import "../../../../styles/variables.scss";
 
 .license-list {
+  padding: 5rem 0;
   &__container {
-    margin: 5rem 0;
+    // margin: 5rem 0;
     @include respond(tab-port) {
       display: flex;
       flex-wrap: wrap;

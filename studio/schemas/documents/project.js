@@ -21,28 +21,25 @@ export default {
       initialValue: true,
     },
     {
+      name: "publishedAt",
+      type: "datetime",
+      title: "Published at",
+    },
+    {
       name: "slug",
       type: "slug",
       title: "Slug",
       description: "Slug/name of page link",
       options: {
-        source: "projectName",
+        source: "name",
         maxLength: 96,
       },
     },
     {
-      name: "mainImage",
-      type: "mainImage",
-      description:
-        "Main image, to be displayed first, as well as in previews of the project.",
-      title: "Main Image",
-      validation: (Rule) =>
-        Rule.required().error("You must provide a main image."),
-    },
-    {
-      name: "otherImages",
+      name: "images",
       type: "array",
-      description: "Other images of the project, not including the main image.",
+      description:
+        "Images of the project. The first image will be used as the primary image.",
       of: [{ type: "mainImage" }],
     },
     {
@@ -114,7 +111,7 @@ export default {
       ],
     },
     {
-      name: "Floors",
+      name: "floors",
       type: "number",
       title: "Floors",
       description: "Number of floors.",
@@ -153,7 +150,7 @@ export default {
     },
     {
       name: "description",
-      type: "bodyPortableText",
+      type: "simplePortableText",
       title: "Project Description",
       validation: (Rule) =>
         Rule.required().error("There must be a project description."),
@@ -180,4 +177,70 @@ export default {
         }),
     },
   ],
+  orderings: [
+    {
+      name: "publishingDateAsc",
+      title: "Publishing date new => old",
+      by: [
+        {
+          field: "publishedAt",
+          direction: "asc",
+        },
+        {
+          field: "name",
+          direction: "asc",
+        },
+      ],
+    },
+    {
+      name: "publishingDateDesc",
+      title: "Publishing date old => new",
+      by: [
+        {
+          field: "publishedAt",
+          direction: "desc",
+        },
+        {
+          field: "name",
+          direction: "asc",
+        },
+      ],
+    },
+    {
+      name: "nameAsc",
+      title: "Names, alphabetical, ascending",
+      by: [{ field: "name", direction: "asc" }],
+    },
+    {
+      name: "nameDesc",
+      title: "Names, alphabetical, descending",
+      by: [
+        {
+          field: "name",
+          direction: "desc",
+        },
+      ],
+    },
+  ],
+  preview: {
+    select: {
+      name: "name",
+      images: "images",
+    },
+    prepare(selection) {
+      const { name, images } = selection;
+
+      if (images) {
+        const image = images[0].asset;
+        return {
+          title: name,
+          media: image,
+        };
+      } else {
+        return {
+          title: name,
+        };
+      }
+    },
+  },
 };
