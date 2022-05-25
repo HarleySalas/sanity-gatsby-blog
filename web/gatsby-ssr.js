@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+const { Provider } = require("./src/context/store");
+
+export const wrapRootElement = ({ element }) => <Provider>{element}</Provider>;
