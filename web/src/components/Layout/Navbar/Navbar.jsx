@@ -21,6 +21,23 @@ const Navbar = () => {
         (isMobileOpen && "navbar--top navbar--delay")
       }`}
     >
+      {/* <Link to="/" className="navbar__home">
+        <Logo className="navbar__logo" />
+      </Link>
+      <Link
+        to="/projects"
+        className="desktop-nav__link"
+        activeClassName="desktop-nav__link--active"
+      >
+        Проекты
+      </Link>
+      <Link
+        to="/list"
+        className="desktop-nav__link"
+        activeClassName="desktop-nav__link--active"
+      >
+        List
+      </Link> */}
       <div
         className={`navbar__background ${
           isScrollTop && "navbar__background--top"

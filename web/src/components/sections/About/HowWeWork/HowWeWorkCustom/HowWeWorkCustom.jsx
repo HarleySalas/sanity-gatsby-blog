@@ -1,16 +1,12 @@
 import React from "react";
+import PortableText from "../../../../PortableText/PortableText";
 import "./how-we-work-custom.scss";
 
-const HowWeWorkCustom = () => {
+const HowWeWorkCustom = ({ text }) => {
   return (
     <section className="how-we-work-custom">
       <div className="container how-we-work-custom__container">
-        <p className="how-we-work-custom__p">
-          Если вы не знаете, какой проект выбрать или хотите дом по
-          индивидуальным меркам, мы поможем выбрать или рассчитать наиболее
-          подходящий для вас вариант, учитывая ваши потребности, требования и
-          возможности.
-        </p>
+        <PortableText data={text} noMargin />
       </div>
     </section>
   );

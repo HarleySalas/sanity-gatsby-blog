@@ -1,7 +1,83 @@
 @import "../../../../../styles/variables.scss";
 
 .company-text {
-  margin-top: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: $color-white-off;
   &__container {
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img-wrapper {
+    width: 100%;
+    max-width: 62rem;
+
+    @include respond(desktop-mid) {
+      width: 50%;
+    }
+
+    @include respond(desktop) {
+      width: 62rem;
+    }
+  }
+
+  &__img {
+    display: block;
+    box-shadow: 0px 0px 4rem 1rem rgba($color-black, 0.11);
+    border-radius: 0.24rem;
+    @include respond(desktop-mid) {
+      margin-right: 3.72rem;
+    }
+  }
+
+  &__text-wrapper {
+    width: 100%;
+    margin-top: 5rem;
+    background-color: $color-white;
+    border-radius: 0.24rem;
+    padding: 3.72rem 2.72rem;
+
+    @include respond(tab-port) {
+      padding: 4.24rem 3.72rem;
+    }
+
+    @include respond(tab-land) {
+      padding: 4.72rem 4.24rem;
+    }
+
+    @include respond(desktop-small) {
+      padding: 5.72rem 4.72rem;
+    }
+
+    @include respond(desktop-mid) {
+      width: 50%;
+      padding: 7.24rem 5.72rem;
+      margin-top: 0;
+    }
+
+    @include respond(desktop) {
+      flex: 1;
+      padding-left: 7.72rem;
+    }
+  }
+  &__p {
+    color: $color-grey-text;
+    font-size: 1.8rem;
+    // letter-spacing: 0.04rem;
+    line-height: 3.42rem;
+    text-indent: 2rem;
+    font-weight: 400;
+    margin-bottom: 2.72rem;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
   }
 }

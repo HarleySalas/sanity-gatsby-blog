@@ -9,13 +9,15 @@ import author from "./documents/author";
 import category from "./documents/category";
 import post from "./documents/post";
 import siteSettings from "./documents/siteSettings";
-import faq from "./documents/faq";
+import faq from "./documents/about/faq";
 import companyDetails from "./documents/companyDetails";
 import project from "./documents/project";
 import projectCategory from "./documents/projectCategory";
 import foundation from "./documents/foundation";
 import finishing from "./documents/finishing";
 import license from "./documents/license";
+import aboutUs from "./documents/about/about-us";
+import howWeWork from "./documents/about/how-we-work";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -31,7 +33,7 @@ import svgUpload from "./objects/svgUpload";
 import finishingOption from "./objects/finishingOption";
 import question from "./objects/question";
 import svgWithPreview from "./objects/svgWithPreview";
-
+import titledText from "./objects/titledText";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -58,6 +60,8 @@ export default createSchema({
     foundation,
     finishing,
     license,
+    aboutUs,
+    howWeWork,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
@@ -68,5 +72,6 @@ export default createSchema({
     finishingOption,
     question,
     svgWithPreview,
+    titledText,
   ]),
 });

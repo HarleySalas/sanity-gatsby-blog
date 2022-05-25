@@ -21,9 +21,14 @@
     display: flex;
     padding: 3rem 0 3rem 0;
     &::before {
-      margin: 0 3rem;
+      margin-right: 2rem;
       content: counter(item, decimal-leading-zero);
       font-size: 5rem;
+      color: rgba($color-black, 0.72);
+
+      @include respond(tab-port) {
+        margin-right: 5rem;
+      }
     }
     &::after {
       content: "";
@@ -32,8 +37,20 @@
       left: 0;
       width: 100%;
       height: 0.1rem;
-      background-color: $color-grey;
+      background-color: rgba($color-black, 0.42);
     }
+
+    &__content-wrapper {
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 0.11rem;
+    line-height: 1;
+    margin-bottom: 1.42rem;
   }
 
   &__p {

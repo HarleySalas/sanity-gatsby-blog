@@ -108,11 +108,21 @@ const DesktopNav = () => {
               Статьи
             </Link>
           </li>
+          {/* <li className="desktop-nav__li">
+            <Link
+              to="/list"
+              className="desktop-nav__link"
+              activeClassName="desktop-nav__link--active"
+            >
+              LIST (Temp)
+            </Link>
+          </li> */}
         </ul>
       </nav>
       <div className="desktop-nav__contact">
         <a href="tel:+74955161631" className="desktop-nav__contact__phone">
           +7 (495) 516 16 31
+          {/* +7 (111) 111 11 11 */}
         </a>
         <Link
           to="/contact"

@@ -1,14 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./faq-accordion.scss";
 
 import Accordion from "../../../../Accordion/Accordion";
 import AccordionItem from "../../../../Accordion/AccordionItem/AccordionItem";
+import PortableText from "../../../../PortableText/PortableText";
 
-const FaqAccordion = () => {
+const FaqAccordion = ({ faq }) => {
+  const [itemOpen, setItemOpen] = useState(null);
+
+  const handleSelect = (index) => {
+    if (itemOpen === index) {
+      setItemOpen(null);
+    } else {
+      setItemOpen(index);
+    }
+  };
+
   return (
     <section className="faq-accordion">
       <div className="container faq-accordion__container">
         <Accordion>
+          {faq &&
+            faq.map((question) => (
+              <AccordionItem
+                title={question.q}
+                key={question._key}
+                index={question._key}
+                itemOpen={itemOpen}
+                handleSelect={handleSelect}
+              >
+                <PortableText data={question._rawA} noMargin />
+              </AccordionItem>
+            ))}
+        </Accordion>
+        {/* <Accordion>
           <AccordionItem title="Можно ли у вас заказать индивидуальный проект дома?">
             <p className="faq-accordion__content__p">
               Да, мы можем разработать проект под вас с учетом всех ваших
@@ -58,7 +83,7 @@ const FaqAccordion = () => {
               </li>
             </ul>
           </AccordionItem>
-        </Accordion>
+        </Accordion> */}
       </div>
     </section>
   );

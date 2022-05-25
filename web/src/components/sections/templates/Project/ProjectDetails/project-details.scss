@@ -1,0 +1,173 @@
+@import "../../../../../styles/variables.scss";
+
+.project-details {
+  flex: 1;
+
+  @include respond(desktop-mid) {
+    padding: 0 0 2.72rem 2.72rem;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__price {
+    font-weight: 600;
+    line-height: 1;
+    position: relative;
+    font-size: 2.42rem;
+    padding: 2.72rem 0;
+    position: relative;
+
+    @include respond(tab-port) {
+      font-size: 2.72rem;
+    }
+
+    @include respond(desktop-small) {
+      padding: 3.24rem 0;
+    }
+
+    @include respond(desktop) {
+      font-size: 3rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 0.1rem;
+      background-color: rgba($color-grey-dark, 0.18);
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1.24rem;
+  }
+
+  &__category {
+    margin: 0 0.72rem 0.72rem 0;
+    background-color: $color-grey;
+    color: $color-grey-lightest;
+    font-weight: 400;
+    padding: 0 1.42rem;
+    border-radius: 5rem;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    line-height: 2;
+  }
+
+  &__detail {
+    &--1 {
+      width: 100%;
+    }
+
+    &--2 {
+      width: 50%;
+      margin-top: 2.42rem;
+
+      @include respond(tab-land) {
+        margin-top: 2.72rem;
+      }
+
+      @include respond(desktop) {
+        margin-top: 3.24rem;
+      }
+
+      &:nth-of-type(3) {
+        @include respond(desktop-small) {
+          margin-top: 4.42rem;
+        }
+
+        @include respond(desktop) {
+          margin-top: 5.72rem;
+        }
+      }
+
+      &:nth-of-type(4) {
+        @include respond(desktop-small) {
+          margin-top: 4.42rem;
+        }
+
+        @include respond(desktop) {
+          margin-top: 5.72rem;
+        }
+      }
+
+      &:nth-of-type(7) {
+        margin-top: 5.42rem;
+
+        @include respond(tab-land) {
+          margin-top: 7rem;
+        }
+
+        @include respond(desktop) {
+          margin-top: 9rem;
+        }
+      }
+
+      &:nth-of-type(8) {
+        margin-top: 5.42rem;
+
+        @include respond(tab-land) {
+          margin-top: 7rem;
+        }
+
+        @include respond(desktop) {
+          margin-top: 9rem;
+        }
+      }
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 0.24rem;
+    }
+
+    &__bottom {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__icon {
+      display: block;
+      fill: $color-grey-dark;
+      margin-right: 1rem;
+      height: 2.42rem;
+
+      @include respond(tab-land) {
+        height: 2.72rem;
+      }
+    }
+
+    &__value {
+      line-height: 1;
+      color: $color-grey-dark;
+      font-weight: 500;
+      font-size: 1.6rem;
+
+      @include respond(tab-port) {
+        font-size: 1.8rem;
+      }
+    }
+
+    &__description {
+      color: $color-grey-light-text;
+      line-height: 1;
+      font-weight: 400;
+      text-align: left;
+      font-size: 1.6rem;
+    }
+  }
+}

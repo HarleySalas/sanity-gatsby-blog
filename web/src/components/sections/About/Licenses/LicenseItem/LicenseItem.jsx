@@ -5,7 +5,7 @@ import "./license-item.scss";
 
 const LicenseItem = ({ data }) => {
   const imagePlaceholder = getImage(data.preview.asset);
-  console.log(data);
+
   return (
     <div className="license-item">
       <div className="license-item__img-wrapper">

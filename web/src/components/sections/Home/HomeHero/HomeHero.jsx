@@ -34,6 +34,7 @@ const HomeHero = () => {
         {...bgImage}
         preserveStackingContext
         className="home-hero__background"
+        backgroundColor="#26262c"
       >
         <div className="home-hero__background__overlay">
           <div className="home-hero__spacer"></div>

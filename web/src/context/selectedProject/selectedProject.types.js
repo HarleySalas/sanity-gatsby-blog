@@ -1,0 +1,6 @@
+const selectedProjectActionTypes = {
+  SET_SELECTED_PROJECT_DEFAULT: "SET_CURRENT_PROJECT_DEFAULT",
+  SET_SELECTED_PROJECT_FOUNDATION: "SET_SELECTED_PROJECT_FOUNDATION",
+};
+
+export default selectedProjectActionTypes;

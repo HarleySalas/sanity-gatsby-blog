@@ -1,0 +1,33 @@
+@import "../../../../../../styles/variables.scss";
+
+.project-foundations {
+  display: flex;
+  flex-direction: column;
+
+  @include respond(desktop-mid) {
+    flex-direction: row;
+  }
+
+  &__title {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    line-height: 1;
+    font-size: 1.8rem;
+    margin-bottom: 3.72rem;
+    text-align: center;
+
+    @include respond(desktop-mid) {
+      width: 27rem;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  &__ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}

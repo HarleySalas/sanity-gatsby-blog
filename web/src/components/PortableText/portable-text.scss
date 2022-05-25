@@ -1,0 +1,74 @@
+@import "../../styles/variables.scss";
+
+.portable-text {
+  padding: 5rem 0;
+
+  &--no-margin {
+    padding: 0 0;
+  }
+
+  &__p {
+    color: $color-grey-text;
+    font-size: 1.8rem;
+    // letter-spacing: 0.04rem;
+    line-height: 3.42rem;
+    text-indent: 2rem;
+    font-weight: 400;
+  }
+
+  &__h2 {
+    margin-top: 5.72rem;
+    margin-bottom: 2.42rem;
+    font-size: 2.72rem;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+  }
+
+  &__h3 {
+    margin-top: 4.24rem;
+    margin-bottom: 1.72rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+  }
+
+  & > * {
+    margin-bottom: 2.72rem;
+
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__ul {
+    list-style-position: inside;
+    list-style: none;
+    color: $color-grey-text;
+    font-weight: 400;
+    line-height: 3.42rem;
+  }
+
+  &__li {
+    margin-left: 5rem;
+    position: relative;
+    margin-bottom: 2.72rem;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "----";
+      font-weight: 400;
+      position: absolute;
+      left: -2.72rem;
+      top: 0.1rem;
+    }
+
+    &--number {
+      &::before {
+        content: "";
+      }
+    }
+  }
+}

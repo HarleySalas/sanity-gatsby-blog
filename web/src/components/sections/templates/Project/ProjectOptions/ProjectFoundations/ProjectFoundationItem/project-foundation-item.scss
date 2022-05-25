@@ -1,0 +1,99 @@
+@import "../../../../../../../styles/variables.scss";
+
+.project-foundation-item {
+  margin-top: 2.72rem;
+
+  &:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  &__button {
+    display: flex;
+    border: none;
+    text-align: inherit;
+    width: 100%;
+    padding: 5.72rem 3.72rem;
+    cursor: pointer;
+    border-radius: 0.42rem;
+    border: 0.1rem solid rgba($color-black, 0.18);
+    background-color: $color-white;
+    background-color: rgba($color-white-dark, 0.42);
+    justify-content: center;
+    transition: all 0.42s $ease;
+
+    &--active {
+      border: 0.1rem solid rgba($color-black, 0.42);
+      background-color: rgba($color-white-dark, 0.24);
+    }
+  }
+  &__img-wrapper {
+    min-width: 300px;
+    opacity: 0.42;
+    transition: all 0.42s $ease;
+    filter: grayscale(0.72);
+
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+
+    &--active {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+
+    @include respond(desktop-small) {
+      display: block;
+      padding-right: 5.72rem;
+    }
+  }
+
+  &__info-wrapper {
+  }
+
+  &__title-wrapper {
+  }
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    color: rgba($color-black, 1);
+    opacity: 0.42;
+    transition: opacity 0.42s $ease;
+    text-align: center;
+
+    &--active {
+      opacity: 1;
+    }
+
+    @include respond(desktop-small) {
+      text-align: left;
+      margin-bottom: 3.72rem;
+    }
+  }
+
+  &__description-wrapper {
+    opacity: 0.42;
+    transition: opacity 0.42s $ease;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__cost-wrapper {
+    opacity: 0.42;
+    transition: opacity 0.42s $ease;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3.72rem;
+
+    &--active {
+      opacity: 1;
+    }
+
+    @include respond(desktop-small) {
+      text-align: left;
+    }
+  }
+}

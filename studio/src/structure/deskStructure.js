@@ -1,4 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
+import id from "date-fns/esm/locale/id/index.js";
 import { MdSettings } from "react-icons/md";
 import {
   MdPerson,
@@ -66,10 +67,6 @@ export default () =>
             .schemaType("companyDetails")
             .documentId("companyDetails")
         ),
-      S.listItem()
-        .title("Licenses")
-        .schemaType("license")
-        .child(S.documentTypeList("license").title("Licenses")),
       // S.listItem()
       //   .title("Company Details")
       //   .icon(MdGroups)
@@ -99,6 +96,28 @@ export default () =>
           S.list()
             .title("About")
             .items([
+              S.listItem()
+                .title("About Us")
+                .child(
+                  S.editor()
+                    .id("aboutUs")
+                    .schemaType("aboutUs")
+                    .documentId("aboutUs")
+                    .title("About Us")
+                ),
+              S.listItem()
+                .title("How We Work")
+                .child(
+                  S.editor()
+                    .id("howWeWork")
+                    .schemaType("howWeWork")
+                    .documentId("howWeWork")
+                    .title("How We Work")
+                ),
+              S.listItem()
+                .title("Licenses")
+                .schemaType("license")
+                .child(S.documentTypeList("license").title("Licenses")),
               S.listItem()
                 .title("FAQ")
                 .child(
@@ -176,6 +195,7 @@ export default () =>
             "foundation",
             "finishing",
             "license",
+            "howWeWork",
           ].includes(listItem.getId())
       ),
     ]);

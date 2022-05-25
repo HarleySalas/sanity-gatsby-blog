@@ -3,7 +3,7 @@
 .accordion-item {
   display: block;
   &__title-wrapper {
-    background-color: $color-grey;
+    background-color: $color-grey-dark;
     padding: 1rem 0rem;
     border-radius: 0.24rem;
     border-bottom: 0.24rem solid $color-primary;
@@ -18,11 +18,11 @@
     transition: all 0.24s $ease;
 
     &:hover .accordion-item__title {
-      background-color: $color-grey-light;
+      background-color: rgba($color-white, 0.04);
     }
 
     &--active {
-      background-color: $color-grey-light;
+      background-color: rgba($color-grey-dark, 0.96);
     }
   }
 
@@ -30,6 +30,7 @@
     display: block;
     color: $color-white;
     padding: 1rem 9.48rem 1rem 5rem;
+    transition: all 0.24s $ease;
   }
 
   &__chevron {

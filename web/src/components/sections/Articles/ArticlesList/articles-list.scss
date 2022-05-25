@@ -1,0 +1,36 @@
+@import "../../../../styles/variables.scss";
+
+.articles-list {
+  background-color: $color-white-off;
+  padding: 2.42rem 0;
+  &__container {
+  }
+  &__ul {
+    list-style: none;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 2rem;
+
+    @include respond(tab-port) {
+    }
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(desktop-small) {
+      grid-gap: 3rem;
+      //   margin-top: 3rem;
+    }
+
+    @include respond(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(desktop-large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
