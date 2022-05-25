@@ -1,5 +1,5 @@
 const { isFuture } = require("date-fns");
-import { Provider } from "./src/context/store";
+const { Provider } = require("./src/context/store");
 // /**
 //  * Implement Gatsby's Node APIs in this file.
 //  *
