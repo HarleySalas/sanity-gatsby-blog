@@ -1,4 +1,5 @@
 const { isFuture } = require("date-fns");
+import { Provider } from "./src/context/store";
 // /**
 //  * Implement Gatsby's Node APIs in this file.
 //  *
@@ -88,6 +89,8 @@ const { isFuture } = require("date-fns");
 // exports.createPages = async ({ graphql, actions }) => {
 //   await createProjectPages(graphql, actions);
 // };
+
+export const wrapRootElement = ({ element }) => <Provider>{element}</Provider>;
 
 const createProjectPages = async (graphql, actions) => {
   const { createPage } = actions;
