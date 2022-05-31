@@ -8,6 +8,8 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   &__title {
@@ -17,6 +19,7 @@
     font-weight: 600;
     font-size: 1.6rem;
     letter-spacing: 0.11rem;
+    flex-shrink: 0;
   }
 
   &__nav {
@@ -51,6 +54,7 @@
     letter-spacing: 0.11rem;
     font-weight: 600;
     font-size: 1.6rem;
+    line-height: 2;
     transition: all 0.42s $ease;
 
     &:hover {

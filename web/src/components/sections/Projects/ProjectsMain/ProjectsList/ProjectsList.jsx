@@ -9,9 +9,6 @@ const ProjectsList = ({ projects }) => {
       {projects.map((project) => (
         <ProjectItem project={project} key={project.id} />
       ))}
-      {projects.map((project) => (
-        <ProjectItem project={project} key={project.id} />
-      ))}
     </ul>
   );
 };

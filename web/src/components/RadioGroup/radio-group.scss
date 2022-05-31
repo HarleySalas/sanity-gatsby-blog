@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  // margin: 2.42rem 0;
+
+  // @include respond(tab-land) {
+  //   margin: 3.72rem 0;
+  // }
+
+  &__title {
+    display: block;
+    font-weight: 400;
+    color: $color-white;
+    pointer-events: none;
+    line-height: 1;
+    font-size: 1.6rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 2.42rem;
+    margin-bottom: 1.72rem;
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+    }
+  }
+}

@@ -15,6 +15,7 @@ const Button = ({
   fullWidth,
   arrowRight,
   download,
+  center,
   ...props
 }) => {
   const btnClasses = `
@@ -73,7 +74,15 @@ const Button = ({
   }
 
   if (!fullWidth) {
-    btnElement = <div className="button__wrapper">{btnElement}</div>;
+    btnElement = (
+      <div
+        className={`button__wrapper ${
+          center ? "button__wrapper--center" : null
+        }`}
+      >
+        {btnElement}
+      </div>
+    );
   }
 
   return btnElement;

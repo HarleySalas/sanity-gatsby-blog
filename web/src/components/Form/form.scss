@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & > div {
+    margin-bottom: 2.42rem;
+
+    @include respond(tab-land) {
+      margin-bottom: 3.72rem;
+    }
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+  }
+
+  // background-color: red;
+  // justify-content: space-around;
+  // &__full {
+  //   width: 100%;
+  // }
+  // &__half {
+  //   width: 50%;
+  // }
+  // &__third {
+  //   width: 33.333%;
+  // }
+}

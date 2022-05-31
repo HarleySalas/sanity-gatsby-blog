@@ -1,2 +1,7 @@
 [build.environment]
   NODE_OPTIONS = "--max_old_space_size=4096"
+  
+[build]
+  command = "npm run build"
+  publish = "public"
+  functions = "functions/"

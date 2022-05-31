@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import SanityImage from "gatsby-plugin-sanity-image";
 import PortableText from "../../../PortableText/PortableText";
 import "./article-body.scss";
 import { useDate } from "../../../../hooks";

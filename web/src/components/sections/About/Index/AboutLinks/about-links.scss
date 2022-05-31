@@ -1,0 +1,101 @@
+@import "../../../../../styles/variables.scss";
+
+.about-links {
+  position: relative;
+  padding: 1.72rem 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: rgba($color-black, 0.18);
+  }
+
+  &__container {
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include respond(desktop-small) {
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.11rem;
+    margin-right: 3.72rem;
+    flex-shrink: 0;
+  }
+
+  &__ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include respond(desktop-small) {
+      justify-content: flex-start;
+    }
+  }
+  &__li {
+    margin-right: 4rem;
+
+    &:nth-last-of-type(1) {
+      margin-right: 0;
+    }
+
+    &:nth-last-of-type(1) {
+      .about-links__link::after {
+        content: "";
+      }
+    }
+  }
+  &__link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    color: rgba($color-black, 1);
+    font-size: 1.6rem;
+    line-height: 2;
+    font-weight: 600;
+    letter-spacing: 0.11rem;
+    text-transform: uppercase;
+    transition: all 0.42s $ease;
+
+    &:hover {
+      color: rgba($color-black, 0.72);
+    }
+
+    &::after {
+      content: "/";
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translate(50%, -50%);
+    }
+
+    &--active {
+      &:hover {
+        color: rgba($color-black, 1);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 0.2rem;
+        background-color: $color-black;
+      }
+    }
+  }
+}

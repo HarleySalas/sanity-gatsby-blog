@@ -13,7 +13,7 @@ const Category = ({ data }) => {
     data && data.categories ? mapEdgesToNodes(data.categories) : [];
 
   return (
-    <Layout title="Статьи">
+    <Layout title="Статьи" contactForm>
       <BasicPageHero title="Статьи" basic />
       <ArticlesCategories categories={categories} />
       <ArticlesList posts={posts} />

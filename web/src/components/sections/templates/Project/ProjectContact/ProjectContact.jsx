@@ -1,11 +1,24 @@
 import React, { useRef, useEffect } from "react";
 import "./project-contact.scss";
-import { useForm, Controller } from "react-hook-form";
-import Select from "react-select";
+import { useForm } from "react-hook-form";
 import { dynamicSort } from "../../../../../lib/helpers";
 import { useTrackedState, useDispatch } from "../../../../../context/store";
 import { setSelectedProjectFoundation } from "../../../../../context/selectedProject/selectedProject.actions";
 import Button from "../../../../Button/Button";
+
+import Form from "../../../../Form/Form";
+import Select from "../../../../Select/Select";
+import TextInput from "../../../../TextInput/TextInput";
+import TextArea from "../../../../TextArea/TextArea";
+import RadioGroup from "../../../../RadioGroup/RadioGroup";
+
+const defaultValues = {
+  foundation: null,
+  email: null,
+  phone: null,
+  contactMethod: "Email",
+  message: null,
+};
 
 const ProjectContact = ({ options }) => {
   const { foundations } = options;
@@ -18,17 +31,16 @@ const ProjectContact = ({ options }) => {
     register,
     handleSubmit,
     control,
-    watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ defaultValues });
 
   //when form select manually changes, change the state to match
-  const handleFoundationChange = (e) => {
-    if (e.value !== state.selectedProject.foundation.index) {
+  const handleFoundationChange = (selectedOption) => {
+    if (selectedOption.value !== state.selectedProject.foundation.index) {
       dispatch(
         setSelectedProjectFoundation({
-          foundation: sortedFoundations[e.value],
-          index: e.value,
+          foundation: sortedFoundations[selectedOption.value],
+          index: selectedOption.value,
         })
       );
     }
@@ -54,63 +66,55 @@ const ProjectContact = ({ options }) => {
         <div className="project-contact__wrapper">
           <div className="project-contact__note-wrapper"></div>
           <div className="project-contact__form-wrapper">
-            <form
-              className="project-contact__form"
-              onSubmit={handleSubmit(onSubmit)}
-              autoComplete="off"
-            >
-              {/* <select
-                className="project-contact__form__item project-contact__form__select"
-                {...register("foundation")}
+            <Form handleSubmit={handleSubmit} onSubmit={onSubmit}>
+              <Select
                 ref={foundationSelect}
-                onChange={(e) => handleFoundationChange(e)}
-              >
-                {sortedFoundations.map((foundation, index) => (
-                  <option
-                    value={index}
-                    className="project-contact__form__item project-contact__form__option"
-                    key={index}
-                  >
-                    {foundation.type.name}
-                  </option>
-                ))}
-              </select> */}
-              <Controller
-                name="foundation"
+                fieldName="foundation"
+                label="Foundation"
                 control={control}
-                render={({ field }) => (
-                  <Select
-                    {...field}
-                    ref={foundationSelect}
-                    onChange={(e) => handleFoundationChange(e)}
-                    className="project-contact__form__item project-contact__form__select"
-                    options={sortedFoundations.map((foundation, index) => ({
-                      value: index,
-                      label: foundation.type.name,
-                    }))}
-                  />
-                )}
+                handleChange={handleFoundationChange}
+                options={sortedFoundations.map((foundation, index) => ({
+                  value: index,
+                  label: foundation.type.name,
+                }))}
               />
-              <input
-                type="text"
-                className="project-contact__form__item project-contact__form__input"
-                {...register("email")}
+              <TextInput
+                fieldName="email"
+                register={register}
+                control={control}
+                errors={errors}
+                isRequired={true}
+                type="email"
+                customType="email"
+                label="Email"
               />
-              <input
-                type="phone"
-                {...register("phone")}
-                className="project-contact__form__item project-contact__form__input"
+              <TextInput
+                fieldName="phone"
+                register={register}
+                control={control}
+                errors={errors}
+                label="Phone"
+                customType="phone"
               />
-              {/* {errors.exampleRequired && <span>This field is required</span>} */}
-              <textarea
-                {...register("message")}
-                className="project-contact__form__item project-contact__form__textarea"
-              ></textarea>
-              {/* <input type="submit" /> */}
-              <Button type="submit" btnSize="sm" btnColor="grey">
+              <RadioGroup
+                fieldName="contactMethod"
+                register={register}
+                options={[
+                  { value: "Email", label: "Email" },
+                  { value: "Phone", label: "Phone" },
+                ]}
+              />
+              <TextArea
+                fieldName="message"
+                label="Message"
+                register={register}
+                placeholder="Testing 123"
+              />
+              <br />
+              <Button type="submit" btnSize="sm" btnColor="primary">
                 Send
               </Button>
-            </form>
+            </Form>
           </div>
         </div>
       </div>

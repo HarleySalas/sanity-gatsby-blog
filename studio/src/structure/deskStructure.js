@@ -67,29 +67,7 @@ export default () =>
             .schemaType("companyDetails")
             .documentId("companyDetails")
         ),
-      // S.listItem()
-      //   .title("Company Details")
-      //   .icon(MdGroups)
-      //   .child(
-      //     S.editor()
-      //       .id("companyDetails")
-      //       .schemaType("companyDetails")
-      //       .documentId("companyDetails")
-      //   ),
-      // S.listItem()
-      //   .title("Company Info")
-      //   .icon(MdGroups)
-      //   .child(
-      //     S.editor()
-      //       .id("companyInfo")
-      //       .schemaType("companyInfo")
-      //       .documentId("companyInfo")
-      //   ),
       S.divider(),
-      // S.listItem().title("Company Info").icon(MdGroups).child(
-      //   S.document().title("Company Info").schemaType("companyInfo")
-      //   // .documentId("companyInfo")
-      // )
       S.listItem()
         .title("About")
         .child(
@@ -161,23 +139,40 @@ export default () =>
                         ),
                     ])
                 ),
+              S.listItem()
+                .title("Featured Project")
+                .child(
+                  S.editor()
+                    .id("featuredProject")
+                    .schemaType("featuredProject")
+                    .documentId("featuredProject")
+                    .title("Featured Project")
+                ),
             ])
         ),
       S.listItem()
-        .title("Blog posts")
+        .title("Articles")
         .icon(MdDescription)
-        .schemaType("post")
-        .child(S.documentTypeList("post").title("Blog posts")),
-      S.listItem()
-        .title("Authors")
-        .icon(MdPerson)
-        .schemaType("author")
-        .child(S.documentTypeList("author").title("Authors")),
-      S.listItem()
-        .title("Categories")
-        .icon(MdLocalOffer)
-        .schemaType("category")
-        .child(S.documentTypeList("category").title("Categories")),
+        .child(
+          S.list()
+            .title("Articles")
+            .items([
+              S.listItem()
+                .title("Posts")
+                .schemaType("post")
+                .child(S.documentTypeList("post").title("Article Posts")),
+              S.listItem()
+                .title("Authors")
+                .icon(MdPerson)
+                .schemaType("author")
+                .child(S.documentTypeList("author").title("Authors")),
+              S.listItem()
+                .title("Categories")
+                .icon(MdLocalOffer)
+                .schemaType("category")
+                .child(S.documentTypeList("category").title("Categories")),
+            ])
+        ),
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above.
@@ -196,6 +191,8 @@ export default () =>
             "finishing",
             "license",
             "howWeWork",
+            "aboutUs",
+            "featuredProject",
           ].includes(listItem.getId())
       ),
     ]);

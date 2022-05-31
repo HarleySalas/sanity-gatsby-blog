@@ -1,0 +1,65 @@
+@import "../../../../../styles/variables.scss";
+
+.about-content {
+  margin: 7rem 0;
+
+  @include respond(desktop-small) {
+    margin: 11rem 0;
+  }
+  &__container {
+  }
+  &__wrapper {
+  }
+  &__h2 {
+    font-size: 3rem;
+    margin-top: 7.72rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+
+    @include respond(tab-land) {
+      font-size: 3.72rem;
+      margin-bottom: 3.72rem;
+    }
+  }
+  &__h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    margin-bottom: 2.24rem;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+    }
+  }
+  &__ul {
+    list-style-position: inside;
+    list-style: none;
+    font-weight: 400;
+    line-height: 1.42;
+    margin-bottom: 3.72rem;
+  }
+  &__li {
+    color: $color-grey-text;
+    margin-left: 5rem;
+    position: relative;
+    margin-bottom: 2.42rem;
+    font-size: 1.6rem;
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+      margin-bottom: 2.72rem;
+    }
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "----";
+      font-weight: 400;
+      position: absolute;
+      left: -2.72rem;
+      top: 0.1rem;
+    }
+  }
+}

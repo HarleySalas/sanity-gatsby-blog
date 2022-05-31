@@ -1,126 +1,77 @@
-import * as React from "react";
+import React from "react";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout/Layout";
 
 import HomeHero from "../components/sections/Home/HomeHero/HomeHero";
+import HomeFeaturedProject from "../components/sections/Home/HomeFeaturedProject/HomeFeaturedProject";
+import HomeLatestPost from "../components/sections/Home/HomeLatestPost/HomeLatestPost";
 
-const IndexPage = () => (
-  <Layout title="Home">
-    <HomeHero />
-  </Layout>
-);
+import { mapEdgesToNodes } from "../lib/helpers";
+
+const IndexPage = ({ location, data }) => {
+  const featuredProject = data.featuredProject.featured;
+  const latestPost = mapEdgesToNodes(data.latestPost)[0];
+
+  return (
+    <Layout title="Home" location={location} contactForm>
+      <HomeHero />
+      <HomeFeaturedProject featuredProject={featuredProject} />
+      <HomeLatestPost latestPost={latestPost} />
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  {
+    featuredProject: sanityFeaturedProject {
+      featured {
+        _id
+        name
+        price
+        bedrooms
+        bathrooms
+        interiorSize
+        floors
+        categories {
+          title
+        }
+        images {
+          ...ImageWithPreview
+          alt
+          caption
+        }
+        slug {
+          current
+        }
+      }
+    }
+    latestPost: allSanityPost(
+      limit: 1
+      filter: { publishedAt: { ne: null } }
+      sort: { order: DESC, fields: publishedAt }
+    ) {
+      edges {
+        node {
+          _id
+          title
+          publishedAt
+          _rawExcerpt
+          categories {
+            title
+          }
+          mainImage {
+            ...ImageWithPreview
+            alt
+            caption
+          }
+          slug {
+            current
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
-
-// import React from "react";
-// import { graphql } from "gatsby";
-// import {
-//   filterOutDocsPublishedInTheFuture,
-//   filterOutDocsWithoutSlugs,
-//   mapEdgesToNodes,
-// } from "../lib/helpers";
-// import BlogPostPreviewList from "../components/blog-post-preview-list";
-// import Container from "../components/container";
-// import GraphQLErrorList from "../components/graphql-error-list";
-// import SEO from "../components/seo";
-// import Layout from "../containers/layout";
-
-// export const query = graphql`
-//   fragment SanityImage on SanityMainImage {
-//     crop {
-//       _key
-//       _type
-//       top
-//       bottom
-//       left
-//       right
-//     }
-//     hotspot {
-//       _key
-//       _type
-//       x
-//       y
-//       height
-//       width
-//     }
-//     asset {
-//       _id
-//     }
-//   }
-
-//   query IndexPageQuery {
-//     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-//       title
-//       description
-//       keywords
-//     }
-//     posts: allSanityPost(
-//       limit: 6
-//       sort: { fields: [publishedAt], order: DESC }
-//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           publishedAt
-//           mainImage {
-//             ...SanityImage
-//             alt
-//           }
-//           title
-//           _rawExcerpt
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-// const IndexPage = (props) => {
-//   const { data, errors } = props;
-
-//   if (errors) {
-//     return (
-//       <Layout>
-//         <GraphQLErrorList errors={errors} />
-//       </Layout>
-//     );
-//   }
-
-//   const site = (data || {}).site;
-//   const postNodes = (data || {}).posts
-//     ? mapEdgesToNodes(data.posts)
-//         .filter(filterOutDocsWithoutSlugs)
-//         .filter(filterOutDocsPublishedInTheFuture)
-//     : [];
-
-//   if (!site) {
-//     throw new Error(
-//       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-//     );
-//   }
-
-//   return (
-//     <Layout>
-//       <SEO
-//         title={site.title}
-//         description={site.description}
-//         keywords={site.keywords}
-//       />
-//       <Container>
-//         <h1 hidden>Welcome to {site.title}</h1>
-//         {postNodes && (
-//           <BlogPostPreviewList
-//             title="Latest blog posts"
-//             nodes={postNodes}
-//             browseMoreHref="/archive/"
-//           />
-//         )}
-//       </Container>
-//     </Layout>
-//   );
-// };
-
-// export default IndexPage;

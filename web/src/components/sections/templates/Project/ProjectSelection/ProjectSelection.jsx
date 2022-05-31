@@ -7,7 +7,6 @@ const ProjectSelection = ({ project }) => {
   const state = useTrackedState();
 
   const totalPrice = useCallback(() => {
-    console.log(state.selectedProject.foundation);
     let total = project.price;
     if (state.selectedProject.foundation) {
       total = total + state.selectedProject.foundation.cost;

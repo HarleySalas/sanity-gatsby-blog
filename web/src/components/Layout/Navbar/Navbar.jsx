@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import { Link } from "gatsby";
 import "./navbar.scss";
 
@@ -9,10 +9,20 @@ import Logo from "../../../assets/mrs-logo-light.svg";
 
 import { useScrollTop, useMediaQuery, useToggle } from "../../../hooks";
 
-const Navbar = () => {
+const Navbar = ({ location }) => {
   const isScrollTop = useScrollTop();
   const isDesktop = useMediaQuery("(min-width: 75em)");
   const [isMobileOpen, toggleMobile] = useToggle(false);
+
+  const handleResizeWhileMobileOpen = useCallback(() => {
+    if (isDesktop && isMobileOpen) {
+      toggleMobile(false);
+    }
+  }, [isDesktop, isMobileOpen, toggleMobile]);
+
+  useEffect(() => {
+    handleResizeWhileMobileOpen();
+  }, [handleResizeWhileMobileOpen]);
 
   return (
     <header
@@ -21,23 +31,6 @@ const Navbar = () => {
         (isMobileOpen && "navbar--top navbar--delay")
       }`}
     >
-      {/* <Link to="/" className="navbar__home">
-        <Logo className="navbar__logo" />
-      </Link>
-      <Link
-        to="/projects"
-        className="desktop-nav__link"
-        activeClassName="desktop-nav__link--active"
-      >
-        Проекты
-      </Link>
-      <Link
-        to="/list"
-        className="desktop-nav__link"
-        activeClassName="desktop-nav__link--active"
-      >
-        List
-      </Link> */}
       <div
         className={`navbar__background ${
           isScrollTop && "navbar__background--top"
@@ -55,7 +48,11 @@ const Navbar = () => {
           {isDesktop ? (
             <DesktopNav />
           ) : (
-            <MobileNav isOpen={isMobileOpen} toggle={toggleMobile} />
+            <MobileNav
+              isOpen={isMobileOpen}
+              toggle={toggleMobile}
+              location={location}
+            />
           )}
 
           <div

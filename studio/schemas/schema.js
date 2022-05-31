@@ -18,6 +18,7 @@ import finishing from "./documents/finishing";
 import license from "./documents/license";
 import aboutUs from "./documents/about/about-us";
 import howWeWork from "./documents/about/how-we-work";
+import featuredProject from "./documents/featuredProject";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -62,6 +63,7 @@ export default createSchema({
     license,
     aboutUs,
     howWeWork,
+    featuredProject,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

@@ -10,6 +10,9 @@ const ArticlesList = ({ posts }) => {
           {posts &&
             posts.map((post) => <ArticlePreview post={post} key={post._id} />)}
         </div>
+        {posts.length < 1 && (
+          <div className="articles-list__not-found">No Articles Found</div>
+        )}
       </div>
     </section>
   );

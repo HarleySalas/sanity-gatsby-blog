@@ -70,7 +70,7 @@ const DesktopNav = () => {
                   Кредит и материнский капитал
                 </Link>
               </li>
-              <li className="desktop-nav__sub-li">
+              {/* <li className="desktop-nav__sub-li">
                 <Link
                   to="/about/reviews"
                   className="desktop-nav__sub-link"
@@ -78,7 +78,7 @@ const DesktopNav = () => {
                 >
                   Отзывы
                 </Link>
-              </li>
+              </li> */}
               <li className="desktop-nav__sub-li">
                 <Link
                   to="/about/licenses"

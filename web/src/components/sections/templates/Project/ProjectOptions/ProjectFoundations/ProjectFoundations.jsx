@@ -8,7 +8,7 @@ const ProjectFoundations = ({ foundations }) => {
 
   return (
     <div className="project-foundations">
-      <h3 className="project-foundations__title">Выберите основу</h3>
+      <h3 className="project-foundations__title">Выберите фундамент</h3>
       <ul className="project-foundations__ul">
         {sortedFoundations.map((foundation, index) => (
           <ProjectFoundationItem

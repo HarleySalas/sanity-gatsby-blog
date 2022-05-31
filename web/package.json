@@ -13,8 +13,10 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
+    "node-sass": "^6.0.1",
     "postcss": "^8.4.6",
-    "postcss-preset-env": "^7.3.1"
+    "postcss-preset-env": "^7.3.1",
+    "webpack": "^5.72.1"
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",
@@ -49,6 +51,7 @@
     "react-inlinesvg": "^3.0.0",
     "react-select": "^5.3.2",
     "react-tracked": "^1.7.9",
-    "react-transition-group": "^4.4.2"
+    "react-transition-group": "^4.4.2",
+    "webpack-filter-warnings-plugin": "^1.2.1"
   }
 }

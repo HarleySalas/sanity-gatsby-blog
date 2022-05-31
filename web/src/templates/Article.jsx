@@ -11,7 +11,7 @@ const Article = ({ data }) => {
   const post = posts[0];
 
   return (
-    <Layout title={`${post.title}`}>
+    <Layout title={`${post.title}`} contactForm>
       <ArticleHero mainImage={post.mainImage} title={post.title} />
       <ArticleBody
         image={post.mainImage}

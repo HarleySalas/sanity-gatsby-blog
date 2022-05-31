@@ -1,7 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .articles-list {
-  background-color: $color-white-off;
+  background-color: $color-white-dark;
   padding: 2.42rem 0;
   &__container {
   }
@@ -32,5 +32,13 @@
     @include respond(desktop-large) {
       grid-template-columns: repeat(4, 1fr);
     }
+  }
+
+  &__not-found {
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    padding: 11rem 0;
+    color: $color-grey-text;
   }
 }

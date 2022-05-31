@@ -3,7 +3,7 @@ import Layout from "../components/Layout/Layout";
 import BasicPageHero from "../components/BasicPageHero/BasicPageHero";
 import { graphql, useStaticQuery } from "gatsby";
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ location }) => {
   const { NotFoundImage } = useStaticQuery(
     graphql`
       query {
@@ -18,7 +18,7 @@ const NotFoundPage = () => {
     `
   );
   return (
-    <Layout title="404: Not found">
+    <Layout title="404: Not found" location={location} contactForm>
       <BasicPageHero title="404: Not Found" placeholderImage={NotFoundImage} />
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>

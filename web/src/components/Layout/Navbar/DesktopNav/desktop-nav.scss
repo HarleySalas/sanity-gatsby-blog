@@ -35,6 +35,10 @@
     align-items: center;
     justify-content: center;
     color: inherit;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    font-size: 1.5rem;
 
     &--active {
       color: $color-primary !important;
@@ -61,17 +65,17 @@
     top: 100%;
     transform: translate(-50%, 0);
     list-style: none;
-    background-color: $color-black;
+    background-color: $color-grey-dark;
     text-align: center;
-    border-radius: 0.42rem;
     border-radius: 0 0 0.42rem 0.42rem;
     overflow: hidden;
     perspective: 100rem;
     display: none;
+    backface-visibility: hidden;
 
     &:hover {
       display: block;
-      animation: growDownCenter 300ms $ease forwards;
+      animation: growDownCenter 240ms $ease forwards;
       transform-origin: top center;
     }
   }
@@ -95,11 +99,15 @@
   &__sub-link {
     color: $color-white;
     text-decoration: none;
-    padding: 1rem 5rem;
+    padding: 1.24rem 5rem;
     width: 100%;
     display: block;
-    line-height: 2.42rem;
+    line-height: 1.5;
     transition: all 0.24s $ease 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    font-size: 1.5rem;
 
     &:hover {
       background-color: rgba($color-white, 0.04);
@@ -176,6 +184,10 @@
       border: none;
       padding: 0.42rem 1.42rem;
       border-radius: 0.24rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.07rem;
+      font-size: 1.4rem;
       transition: all 0.14s $ease 0s;
     }
   }

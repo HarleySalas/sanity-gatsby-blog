@@ -1,0 +1,81 @@
+@import "../../styles/variables.scss";
+
+.radio {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &[type="radio"] {
+    margin: 0;
+    appearance: none;
+    background-color: transparent;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: 0.1rem solid rgba($color-white, 0.72);
+    border-radius: 50%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+
+    @include respond(tab-land) {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.32rem;
+      left: 0.32rem;
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 0.42s transform $ease;
+      box-shadow: inset 1rem 1rem $color-primary;
+      transform-origin: center;
+
+      @include respond(tab-land) {
+        top: 0.41rem;
+        left: 0.41rem;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &:checked {
+      border: 0.1rem solid rgba($color-white, 1);
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+
+    &:focus {
+      outline: max(1px, 0.15rem) solid rgba($color-primary, 1);
+      outline-offset: max(1px, 0.15rem);
+    }
+  }
+  &:after {
+    background-color: transparent;
+  }
+
+  &__label {
+    user-select: none;
+    text-align: left;
+  }
+
+  &__span {
+    display: inline-block;
+    position: relative;
+    padding-left: 1rem;
+    color: $color-white;
+    font-size: 1.6rem;
+
+    @include respond(tab-land) {
+      font-size: 1.8rem;
+    }
+  }
+}

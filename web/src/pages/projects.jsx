@@ -5,9 +5,9 @@ import ProjectsMain from "../components/sections/Projects/ProjectsMain/ProjectsM
 import { graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
 
-const projects = ({ data }) => {
+const projects = ({ location, data }) => {
   return (
-    <Layout title="Проекты">
+    <Layout title="Проекты" location={location}>
       <BasicPageHero title="Проекты" basic />
       <ProjectsMain
         projects={data && data.projects ? mapEdgesToNodes(data.projects) : []}

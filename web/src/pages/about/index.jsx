@@ -1,31 +1,15 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
 import BasicPageHero from "../../components/BasicPageHero/BasicPageHero";
-// import { graphql, useStaticQuery } from "gatsby";
 
-const About = () => {
-  // const { AboutImage } = useStaticQuery(
-  //   graphql`
-  //     query {
-  //       AboutImage: file(
-  //         relativePath: { eq: "images/page-hero-images/about-hero.jpg" }
-  //       ) {
-  //         childImageSharp {
-  //           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-  //         }
-  //       }
-  //     }
-  //   `
-  // );
+import AboutContent from "../../components/sections/About/Index/AboutContent/AboutContent";
+import AboutLinks from "../../components/sections/About/Index/AboutLinks/AboutLinks";
+const About = ({ location }) => {
   return (
-    <Layout title="О компании">
-      <BasicPageHero
-        title="О компании"
-        // placeholderImage={AboutImage}
-        // imageTop
-        basic
-      />
-      about us
+    <Layout title="О компании" location={location} contactForm>
+      <BasicPageHero title="О компании" basic />
+      <AboutLinks />
+      <AboutContent />
     </Layout>
   );
 };

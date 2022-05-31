@@ -64,8 +64,11 @@
 
     &__input {
       width: 100%;
-      border: 1px solid rgba($color-black, 0.42);
+      border: 2px solid rgba($color-primary, 1);
       background-color: rgba($color-white, 1);
+      border-radius: 0.42rem;
+      padding: 0.72rem 1.24rem;
+      font-size: 1.8rem;
     }
 
     &__select {

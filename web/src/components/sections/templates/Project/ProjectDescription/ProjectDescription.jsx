@@ -29,10 +29,10 @@ const ProjectDescription = ({ data }) => {
       </div>
       <div className="project-description__blueprints">
         <div className="project-description__blueprints__top">
-          <h2 className="project-description__blueprints__title">Чертежи</h2>
+          <h2 className="project-description__blueprints__title">План этажа</h2>
           <p className="project-description__blueprints__notice project-description__blueprints__notice--mobile">
-            В показанном чертеже могут отсутствовать некоторые детали. Для
-            максимально точного чертежа загрузите исходный файл чертежа.
+            На данном плане могут отсутствовать некоторые детали. Для
+            максимально точного изображения загрузите исходный файл.
           </p>
           <Button
             btnSize="sm"
@@ -88,10 +88,10 @@ const ProjectDescription = ({ data }) => {
           )}
         </div>
         <div className="project-description__blueprints__right">
-          <h2 className="project-description__blueprints__title">Чертежи</h2>
-          <p className="project-description__blueprints__notice">
-            В показанном чертеже могут отсутствовать некоторые детали. Для
-            максимально точного чертежа загрузите исходный файл чертежа.
+          <h2 className="project-description__blueprints__title">План этажа</h2>
+          <p className="project-description__blueprints__notice project-description__blueprints__notice--mobile">
+            На данном плане могут отсутствовать некоторые детали. Для
+            максимально точного изображения загрузите исходный файл.
           </p>
           <Button
             btnSize="sm"

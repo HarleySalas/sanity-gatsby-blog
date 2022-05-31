@@ -3,11 +3,13 @@ import Layout from "../../components/Layout/Layout";
 import BasicPageHero from "../../components/BasicPageHero/BasicPageHero";
 import FaqAccordion from "../../components/sections/About/Faq/FaqAccordion/FaqAccordion";
 import { graphql } from "gatsby";
+import AboutLinks from "../../components/sections/About/Index/AboutLinks/AboutLinks";
 
 const faq = ({ data }) => {
   return (
-    <Layout title="FAQ">
+    <Layout title="FAQ" contactForm>
       <BasicPageHero title="FAQ" basic />
+      <AboutLinks />
       <FaqAccordion faq={data.faq.questions} />
     </Layout>
   );

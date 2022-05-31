@@ -6,7 +6,7 @@ const ProjectOptions = ({ options }) => {
   const { foundations } = options;
   return (
     <section className="project-options">
-      <h2 className="project-options__title">Настройте свой проект</h2>
+      <h2 className="project-options__title">Рассчитайте свой проект</h2>
       <ProjectFoundations foundations={foundations} />
     </section>
   );
