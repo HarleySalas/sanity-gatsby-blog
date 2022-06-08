@@ -5,7 +5,7 @@ import GraphQLErrorList from "../components/GraphQLErrorList/GraphQLErrorList";
 import Layout from "../components/Layout/Layout";
 import ProjectTemplate from "../components/sections/templates/Project";
 
-const Project = ({ data, errors }) => {
+const Project = ({ data, errors, location }) => {
   const project = data && data.project;
   return (
     <>
@@ -15,7 +15,18 @@ const Project = ({ data, errors }) => {
         </Layout>
       )}
       {project && (
-        <Layout title={project.name}>
+        <Layout
+          title={project.name}
+          location={location}
+          contactForm
+          contactTitle={{
+            // prefix: "Спросите об этом проекте",
+            title: "Спросите об этом проекте",
+          }}
+          contactOptions={{
+            foundations: project.foundations,
+          }}
+        >
           <ProjectTemplate project={project} />
         </Layout>
       )}

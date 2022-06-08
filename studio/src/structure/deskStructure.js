@@ -173,6 +173,49 @@ export default () =>
                 .child(S.documentTypeList("category").title("Categories")),
             ])
         ),
+      S.listItem()
+        .title("Form Submissions")
+        .child(
+          S.list()
+            .title("Form Submissions")
+            .items([
+              S.listItem()
+                .title("New")
+                .schemaType("contactForm")
+                // .filter('_type == "contactForm"')
+                .child(
+                  S.documentTypeList("contactForm")
+                    .title("New Form Submissions")
+                    .filter('_type == "contactForm" && status == "New"')
+                ),
+              S.listItem()
+                .title("Open")
+                .schemaType("contactForm")
+                // .filter('_type == "contactForm"')
+                .child(
+                  S.documentTypeList("contactForm")
+                    .title("Open Form Submissions")
+                    .filter('_type == "contactForm" && status == "Open"')
+                ),
+              S.listItem()
+                .title("Closed")
+                .schemaType("contactForm")
+                // .filter('_type == "contactForm"')
+                .child(
+                  S.documentTypeList("contactForm")
+                    .title("Closed Form Submissions")
+                    .filter('_type == "contactForm" && status == "Closed"')
+                ),
+              S.listItem()
+                .title("All")
+                .schemaType("contactForm")
+                .child(
+                  S.documentTypeList("contactForm").title(
+                    "All Form Submissions"
+                  )
+                ),
+            ])
+        ),
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above.
@@ -193,6 +236,7 @@ export default () =>
             "howWeWork",
             "aboutUs",
             "featuredProject",
+            "contactForm",
           ].includes(listItem.getId())
       ),
     ]);

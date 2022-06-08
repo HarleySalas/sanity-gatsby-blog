@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import "./contact-form.scss";
 
 import Form from "../Form/Form";
 import TextInput from "../TextInput/TextInput";
+import Select from "../Select/Select";
 import TextArea from "../TextArea/TextArea";
 import RadioGroup from "../RadioGroup/RadioGroup";
 import Button from "../Button/Button";
+import { useTrackedState, useDispatch } from "../../context/store";
+import { setSelectedProjectFoundation } from "../../context/selectedProject/selectedProject.actions";
+import { dynamicSort } from "../../lib/helpers";
 
 const defaultValues = {
   name: "",
@@ -17,7 +21,7 @@ const defaultValues = {
   formId: "contact-form",
 };
 
-const ContactForm = () => {
+const ContactForm = ({ location, title, options }) => {
   const {
     register,
     handleSubmit,
@@ -25,6 +29,39 @@ const ContactForm = () => {
     control,
     formState: { errors },
   } = useForm({ defaultValues });
+
+  const foundations = options ? options.foundations : null;
+
+  const sortedFoundations = foundations
+    ? foundations.sort(dynamicSort("cost"))
+    : null;
+
+  const state = useTrackedState();
+  const dispatch = useDispatch();
+  const foundationSelect = useRef();
+
+  const paths = location.pathname.split("/").filter(Boolean);
+  const isProjectPage = paths[0] === "projects" && paths.length === 2;
+
+  const handleFoundationChange = (selectedOption) => {
+    if (selectedOption.value !== state.selectedProject.foundation.index) {
+      dispatch(
+        setSelectedProjectFoundation({
+          foundation: sortedFoundations[selectedOption.value],
+          index: selectedOption.value,
+        })
+      );
+    }
+  };
+
+  useEffect(() => {
+    options &&
+      foundationSelect.current &&
+      foundationSelect.current.setValue({
+        value: state.selectedProject.foundation.index,
+        label: state.selectedProject.foundation.type,
+      });
+  }, [foundationSelect, state.selectedProject.foundation, options]);
 
   const encode = (data) => {
     return Object.keys(data)
@@ -38,7 +75,21 @@ const ContactForm = () => {
     fetch(`/`, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact-form", ...data }),
+      body: encode({
+        "form-name": "contact-form",
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        preferredMethod: data.contactMethod,
+        location: location ? location.pathname : null,
+        project: isProjectPage
+          ? {
+              name: location.pathname.split("/").pop().toUpperCase(),
+              foundation: data.foundation.label,
+            }
+          : null,
+      }),
     })
       .then((response) => {
         reset();
@@ -53,8 +104,22 @@ const ContactForm = () => {
   return (
     <section className="contact-form">
       <div className="container contact-form__container">
-        <h2 className="contact-form__title">Свяжитесь с нами</h2>
-        <p className="contact-form__info">Есть вопрос?</p>
+        {title ? (
+          <>
+            {title.prefix ? (
+              <p className="contact-form__title">{title.prefix}</p>
+            ) : null}
+            {title.title ? (
+              <h2 className="contact-form__info">{title.title}</h2>
+            ) : null}
+          </>
+        ) : (
+          <>
+            <p className="contact-form__title">Свяжитесь с нами</p>
+            <h2 className="contact-form__info">Есть вопрос?</h2>
+          </>
+        )}
+
         <div className="contact-form__wrapper">
           <div className="contact-form__form">
             <Form
@@ -62,6 +127,19 @@ const ContactForm = () => {
               onSubmit={onSubmit}
               register={register}
             >
+              {options && options.foundations ? (
+                <Select
+                  ref={foundationSelect}
+                  fieldName="foundation"
+                  label="Foundation"
+                  control={control}
+                  handleChange={handleFoundationChange}
+                  options={sortedFoundations.map((foundation, index) => ({
+                    value: index,
+                    label: foundation.type.name,
+                  }))}
+                />
+              ) : null}
               <TextInput
                 fieldName="name"
                 register={register}

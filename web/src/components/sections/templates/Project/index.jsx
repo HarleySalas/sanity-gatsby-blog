@@ -9,7 +9,6 @@ import ProjectDetails from "./ProjectDetails/ProjectDetails";
 import ProjectDescription from "./ProjectDescription/ProjectDescription";
 import ProjectSelection from "./ProjectSelection/ProjectSelection";
 import ProjectOptions from "./ProjectOptions/ProjectOptions";
-import ProjectContact from "./ProjectContact/ProjectContact";
 
 const ProjectTemplate = ({ project }) => {
   const {
@@ -74,7 +73,6 @@ const ProjectTemplate = ({ project }) => {
         <ProjectDescription data={projectDescriptionData} />
         <ProjectOptions options={options} />
       </div>
-      <ProjectContact options={options} />
     </div>
   );
 };
