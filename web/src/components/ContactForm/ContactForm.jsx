@@ -40,8 +40,10 @@ const ContactForm = ({ location, title, options }) => {
   const dispatch = useDispatch();
   const foundationSelect = useRef();
 
-  const paths = location.pathname.split("/").filter(Boolean);
-  const isProjectPage = paths[0] === "projects" && paths.length === 2;
+  const paths = location ? location.pathname.split("/").filter(Boolean) : null;
+  const isProjectPage = paths
+    ? paths[0] === "projects" && paths.length === 2
+    : null;
 
   const handleFoundationChange = (selectedOption) => {
     if (selectedOption.value !== state.selectedProject.foundation.index) {
