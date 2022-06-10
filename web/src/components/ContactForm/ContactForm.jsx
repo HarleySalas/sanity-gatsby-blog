@@ -94,12 +94,6 @@ const ContactForm = ({ location, title, options }) => {
         projectFoundation: isProjectPage
           ? data.foundation && data.foundation.label
           : null,
-        // project: isProjectPage
-        //   ? {
-        //       name: location.pathname.split("/").pop().toUpperCase(),
-        //       foundation: data.foundation ? data.foundation.label : null,
-        //     }
-        //   : null,
       }),
     })
       .then((response) => {

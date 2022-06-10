@@ -33,9 +33,13 @@ exports.handler = async function (event, context, callback) {
       },
     };
 
-    const result = await client
-      .create(contactForm)
-      .catch((err) => console.log(err));
+    const result = await client.create(contactForm).catch((err) => {
+      console.log(err);
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: err }),
+      };
+    });
   }
 
   callback(null, {
