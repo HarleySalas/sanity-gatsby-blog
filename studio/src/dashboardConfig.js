@@ -12,16 +12,15 @@ export default {
                 "NOTE: Because these sites are static builds, they need to be re-deployed to see the changes when documents are published.",
               sites: [
                 {
-                  buildHookId:
-                    "623db031ec3f666a0323190c",
-                  title: "Sanity Studio",
+                  buildHookId: "62a35f7bb986f756400f4348",
+                  title: "Admin/Sanity Studio",
                   name: "sanity-gatsby-blog-studio-b5r5udj8",
                   apiId: "66d0b0ad-501d-4054-a10b-52549a68e766",
                 },
                 {
-                  buildHookId: "623db031418a166e14b41cbc",
-                  title: "Blog Website",
-                  name: "sanity-gatsby-blog-web-pao5bytf",
+                  buildHookId: "62a35e67961d605a619d507d",
+                  title: "Main Website",
+                  name: "mrshouse",
                   apiId: "8340b500-fe36-4430-a0a1-3327d8656771",
                 },
               ],
@@ -31,8 +30,7 @@ export default {
         data: [
           {
             title: "GitHub repo",
-            value:
-              "https://github.com/HarleySalas/sanity-gatsby-blog",
+            value: "https://github.com/HarleySalas/sanity-gatsby-blog",
             category: "Code",
           },
           {
