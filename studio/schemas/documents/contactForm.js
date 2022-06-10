@@ -5,6 +5,10 @@ export default {
   type: "document",
   title: "Contact Form",
   liveEdit: false,
+  initialValue: () => ({
+    formSubmittedDate: new Date().toISOString(),
+    status: "new",
+  }),
   fields: [
     {
       name: "name",
@@ -16,9 +20,13 @@ export default {
       name: "status",
       type: "string",
       title: "Status",
-      initialValue: "New",
+      initialValue: { _type: "string", value: "new" },
       options: {
-        list: ["New", "Open", "Closed"],
+        list: [
+          { title: "New", value: "new" },
+          { title: "Open", value: "open" },
+          { title: "Closed", value: "closed" },
+        ],
         layout: "dropdown",
       },
       validation: (Rule) =>
@@ -64,7 +72,6 @@ export default {
       type: "datetime",
       title: "Form Submitted",
       description: "Date and time that the form was originally submitted",
-      initialValue: new Date().toISOString(),
       readOnly: true,
     },
     {

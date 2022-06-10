@@ -186,7 +186,7 @@ export default () =>
                 .child(
                   S.documentTypeList("contactForm")
                     .title("New Form Submissions")
-                    .filter('_type == "contactForm" && status == "New"')
+                    .filter('_type == "contactForm" && status == "new"')
                 ),
               S.listItem()
                 .title("Open")
@@ -195,7 +195,7 @@ export default () =>
                 .child(
                   S.documentTypeList("contactForm")
                     .title("Open Form Submissions")
-                    .filter('_type == "contactForm" && status == "Open"')
+                    .filter('_type == "contactForm" && status == "open"')
                 ),
               S.listItem()
                 .title("Closed")
@@ -204,7 +204,7 @@ export default () =>
                 .child(
                   S.documentTypeList("contactForm")
                     .title("Closed Form Submissions")
-                    .filter('_type == "contactForm" && status == "Closed"')
+                    .filter('_type == "contactForm" && status == "closed"')
                 ),
               S.listItem()
                 .title("All")
