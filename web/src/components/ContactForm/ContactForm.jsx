@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import "./contact-form.scss";
 
@@ -55,14 +55,18 @@ const ContactForm = ({ location, title, options }) => {
     }
   };
 
-  useEffect(() => {
+  const setFoundationSelect = useCallback(() => {
     options &&
       foundationSelect.current &&
       foundationSelect.current.setValue({
         value: state.selectedProject.foundation.index,
         label: state.selectedProject.foundation.type,
       });
-  }, [foundationSelect, state.selectedProject.foundation, options]);
+  }, [options, foundationSelect, state.selectedProject.foundation]);
+
+  useEffect(() => {
+    setFoundationSelect();
+  }, [setFoundationSelect]);
 
   const encode = (data) => {
     return Object.keys(data)
@@ -87,7 +91,7 @@ const ContactForm = ({ location, title, options }) => {
         project: isProjectPage
           ? {
               name: location.pathname.split("/").pop().toUpperCase(),
-              foundation: data.foundation.label,
+              foundation: data.foundation ? data.foundation.label : null,
             }
           : null,
       }),
@@ -99,6 +103,10 @@ const ContactForm = ({ location, title, options }) => {
       .catch((error) => {
         console.log(error);
       });
+
+    reset();
+    setFoundationSelect();
+
     event.preventDefault();
   };
 
