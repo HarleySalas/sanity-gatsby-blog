@@ -18,7 +18,6 @@ const defaultValues = {
   phone: "",
   contactMethod: "Email",
   message: "",
-  formId: "contact-form",
 };
 
 const ContactForm = ({ location, title, options }) => {
@@ -78,7 +77,7 @@ const ContactForm = ({ location, title, options }) => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "contact-form",
+        formId: "contact-form",
         name: data.name,
         email: data.email,
         phone: data.phone,

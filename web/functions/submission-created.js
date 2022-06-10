@@ -3,6 +3,7 @@ const sanityClient = require("@sanity/client");
 const client = sanityClient({
   projectId: process.env.GATSBY_SANITY_PROJECT_ID,
   dataset: process.env.GATSBY_SANITY_PROJECT_DATASET,
+  apiVersion: "2021-10-21",
   token: process.env.GATSBY_SANITY_TOKEN,
   useCDN: false,
 });
@@ -14,6 +15,7 @@ exports.handler = async function (event, context, callback) {
   const isContactForm = payload.data.formId === "contact-form";
 
   if (isContactForm) {
+    console.log(process.env);
     const contactForm = {
       _type: "contactForm",
       name: payload.data.name,
@@ -34,6 +36,9 @@ exports.handler = async function (event, context, callback) {
       .create(contactForm)
       .catch((err) => console.log(err));
   }
+
+  console.log(contactForm);
+  console.log(`formId: ${payload.data.formId}`);
 
   callback(null, {
     statusCode: 200,
