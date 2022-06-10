@@ -17,18 +17,20 @@ exports.handler = async function (event, context, callback) {
   if (isContactForm) {
     const contactForm = {
       _type: "contactForm",
+      status: "new",
+      formSubmittedDate: new Date().toISOString(),
       name: payload.data.name,
       email: payload.data.email,
       phone: payload.data.phone,
       message: payload.data.message,
       preferredMethod: payload.data.preferredMethod,
       location: payload.data.location,
-      project: payload.data.project
-        ? {
-            projectName: payload.data.project.name,
-            projectFoundation: payload.data.project.foundation,
-          }
-        : null,
+      project: {
+        name: payload.data.projectName ? payload.data.projectName : null,
+        foundation: payload.data.projectFoundation
+          ? payload.data.projectFoundation
+          : null,
+      },
     };
 
     const result = await client

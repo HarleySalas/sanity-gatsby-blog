@@ -88,12 +88,18 @@ const ContactForm = ({ location, title, options }) => {
         message: data.message,
         preferredMethod: data.contactMethod,
         location: location ? location.pathname : null,
-        project: isProjectPage
-          ? {
-              name: location.pathname.split("/").pop().toUpperCase(),
-              foundation: data.foundation ? data.foundation.label : null,
-            }
+        projectName: isProjectPage
+          ? location.pathname.split("/").pop().toUpperCase()
           : null,
+        projectFoundation: isProjectPage
+          ? data.foundation && data.foundation.label
+          : null,
+        // project: isProjectPage
+        //   ? {
+        //       name: location.pathname.split("/").pop().toUpperCase(),
+        //       foundation: data.foundation ? data.foundation.label : null,
+        //     }
+        //   : null,
       }),
     })
       .then((response) => {
