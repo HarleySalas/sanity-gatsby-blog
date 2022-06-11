@@ -72,7 +72,6 @@ const ContactForm = ({ location, title, options }) => {
   const onSubmit = async (data, event) => {
     const results = await axios.post(
       "/.netlify/functions/contact",
-
       {
         formId: "contact-form",
         name: data.name,
