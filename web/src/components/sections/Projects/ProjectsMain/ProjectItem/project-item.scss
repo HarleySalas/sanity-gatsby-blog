@@ -7,8 +7,8 @@
   overflow: hidden;
   //   box-shadow: 0px 0px 9px 0px rgba($color-black, 0.33);
   // box-shadow: 0px 0px 24rem 1rem rgba($color-black, 0.18);
-  border-radius: 0.72rem;
-
+  border-radius: 0.42rem;
+  border: solid 0.1rem rgba($color-black, 0.18);
   background-color: $color-white;
   position: relative;
   z-index: 100;
@@ -115,7 +115,7 @@
     margin-top: 2.72rem;
 
     &:nth-of-type(2) {
-      margin-top: 1.42rem;
+      margin-top: 2.72rem;
     }
   }
 
@@ -123,12 +123,50 @@
     width: 50%;
   }
 
+  // &__detail-top {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   width: 100%;
+  //   margin-bottom: 0.24rem;
+  // }
+
+  // &__detail-icon {
+  //   display: block;
+  //   fill: $color-grey-dark;
+  //   margin-right: 1rem;
+
+  //   height: 2.72rem;
+  // }
+
+  // &__detail-value {
+  //   line-height: 1;
+  //   color: $color-grey-dark;
+  //   font-weight: 500;
+  //   font-size: 2rem;
+  // }
+
+  // &__detail-bottom {
+  //   width: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
+
+  // &__detail-description {
+  //   color: $color-grey-light-text;
+  //   line-height: 1;
+  //   font-weight: 400;
+  //   text-align: left;
+  //   font-size: 1.6rem;
+  // }
+
   &__detail-top {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 0.24rem;
+    margin-bottom: 0.42rem;
   }
 
   &__detail-icon {
@@ -136,14 +174,14 @@
     fill: $color-grey-dark;
     margin-right: 1rem;
 
-    height: 2.72rem;
+    height: 2.1rem;
   }
 
   &__detail-value {
     line-height: 1;
     color: $color-grey-dark;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   &__detail-bottom {
@@ -164,6 +202,6 @@
   &__btn-row {
     display: flex;
     justify-content: center;
-    margin: 2.72rem 0;
+    margin: 3.72rem 0 2.72rem 0;
   }
 }

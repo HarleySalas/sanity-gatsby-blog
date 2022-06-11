@@ -29,7 +29,10 @@ export default projects;
 
 export const query = graphql`
   query {
-    projects: allSanityProject {
+    projects: allSanityProject(
+      filter: { isActive: { eq: true } }
+      sort: { fields: name, order: ASC }
+    ) {
       edges {
         node {
           id

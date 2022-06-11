@@ -4,13 +4,23 @@
   &__container {
   }
 
+  &__carousel-wrapper {
+    background-color: $color-white-off;
+  }
+
   &__img-details {
-    margin: 5rem 0;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
+    background-color: $color-white-off;
+
+    @include respond(tab-land) {
+      padding: 3.72rem 0;
+    }
 
     @include respond(desktop-mid) {
       flex-direction: row;
+      padding: 5rem 0;
     }
   }
 }

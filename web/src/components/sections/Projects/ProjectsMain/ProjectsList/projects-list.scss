@@ -17,7 +17,6 @@
 
   @include respond(desktop-small) {
     grid-gap: 3rem;
-    // margin-top: 3rem;
   }
 
   @include respond(desktop) {

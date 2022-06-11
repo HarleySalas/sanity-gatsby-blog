@@ -2,6 +2,7 @@
 
 .project-carousel {
   width: 100%;
+  // background-color: $color-white-off;
 
   // @include respond(desktop-small) {
   //   width: 62%;
@@ -44,8 +45,9 @@
         display: flex;
         flex: 1;
         width: 100%;
-        padding: 0 2.42rem 0 0;
+        padding: 0 2.42rem 0 2.42rem;
         cursor: pointer;
+        background-color: $color-white;
       }
 
       &__point {
@@ -57,6 +59,7 @@
         border: none;
         padding: 0;
         cursor: pointer;
+        // background-color: $color-white-off;
 
         &__line {
           background-color: rgba($color-grey-dark, 0.18);

@@ -2,9 +2,19 @@
 
 .project-details {
   flex: 1;
+  background-color: $color-white;
+  padding: 0 2.42rem 3.72rem 2.42rem;
+
+  @include respond(tab-port) {
+    padding: 0 3.72rem 4.72rem 3.72rem;
+  }
+
+  @include respond(desktop-small) {
+    padding: 0 4.24rem 5.42rem 4.24rem;
+  }
 
   @include respond(desktop-mid) {
-    padding: 0 0 2.72rem 2.72rem;
+    padding: 0 2.72rem 2.72rem 2.72rem;
   }
 
   &__wrapper {
