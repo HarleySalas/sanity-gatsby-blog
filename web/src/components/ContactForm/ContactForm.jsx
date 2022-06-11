@@ -148,6 +148,9 @@ const ContactForm = ({ location, title, options }) => {
       },
       {
         headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Content-Type",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
           Accept: "application/json",
           "Content-Type": "application/json;charset=UTF-8",
         },
