@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 import "./contact-form.scss";
 
 import Form from "../Form/Form";
@@ -68,15 +69,16 @@ const ContactForm = ({ location, title, options }) => {
     setFoundationSelect();
   }, [setFoundationSelect]);
 
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
+  // const encode = (data) => {
+  //   return Object.keys(data)
+  //     .map(
+  //       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+  //     )
+  //     .join("&");
+  // };
 
-  const onSubmit = (data, event) => {
+  const onSubmit = async (data, event) => {
+    /*
     fetch(`/`, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -103,7 +105,56 @@ const ContactForm = ({ location, title, options }) => {
       .catch((error) => {
         console.log(error);
       });
+    */
+    const results = await axios.post(
+      "/.netlify/functions/submission-created",
 
+      // encode({
+      //   formId: "contact-form",
+      //   name: data.name,
+      //   email: data.email,
+      //   phone: data.phone,
+      //   message: data.message,
+      //   preferredMethod: data.contactMethod,
+      //   location: location ? location.pathname : null,
+      //   projectName: isProjectPage
+      //     ? location.pathname.split("/").pop().toUpperCase()
+      //     : null,
+      //   projectFoundation: isProjectPage
+      //     ? data.foundation && data.foundation.label
+      //     : null,
+      // }),
+
+      // {
+      //   headers: {
+      //     "Content-Type": "application/x-www-form-urlencoded",
+      //   },
+      // }
+
+      {
+        formId: "contact-form",
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        preferredMethod: data.contactMethod,
+        location: location ? location.pathname : null,
+        projectName: isProjectPage
+          ? location.pathname.split("/").pop().toUpperCase()
+          : null,
+        projectFoundation: isProjectPage
+          ? data.foundation && data.foundation.label
+          : null,
+      },
+      {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+      }
+    );
+
+    console.log(results.data);
     reset();
     setFoundationSelect();
 
