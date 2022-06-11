@@ -43,7 +43,7 @@ const ContactForm = ({ location, title, options }) => {
   const paths = location ? location.pathname.split("/").filter(Boolean) : null;
   const isProjectPage = paths
     ? paths[0] === "projects" && paths.length === 2
-    : null;
+    : false;
 
   const handleFoundationChange = (selectedOption) => {
     if (selectedOption.value !== state.selectedProject.foundation.index) {
@@ -69,67 +69,9 @@ const ContactForm = ({ location, title, options }) => {
     setFoundationSelect();
   }, [setFoundationSelect]);
 
-  // const encode = (data) => {
-  //   return Object.keys(data)
-  //     .map(
-  //       (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-  //     )
-  //     .join("&");
-  // };
-
   const onSubmit = async (data, event) => {
-    /*
-    fetch(`/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        formId: "contact-form",
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        preferredMethod: data.contactMethod,
-        location: location ? location.pathname : null,
-        projectName: isProjectPage
-          ? location.pathname.split("/").pop().toUpperCase()
-          : null,
-        projectFoundation: isProjectPage
-          ? data.foundation && data.foundation.label
-          : null,
-      }),
-    })
-      .then((response) => {
-        reset();
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    */
     const results = await axios.post(
       "/.netlify/functions/contact",
-
-      // encode({
-      //   formId: "contact-form",
-      //   name: data.name,
-      //   email: data.email,
-      //   phone: data.phone,
-      //   message: data.message,
-      //   preferredMethod: data.contactMethod,
-      //   location: location ? location.pathname : null,
-      //   projectName: isProjectPage
-      //     ? location.pathname.split("/").pop().toUpperCase()
-      //     : null,
-      //   projectFoundation: isProjectPage
-      //     ? data.foundation && data.foundation.label
-      //     : null,
-      // }),
-
-      // {
-      //   headers: {
-      //     "Content-Type": "application/x-www-form-urlencoded",
-      //   },
-      // }
 
       {
         formId: "contact-form",
