@@ -107,7 +107,7 @@ const ContactForm = ({ location, title, options }) => {
       });
     */
     const results = await axios.post(
-      "/.netlify/functions/submission-created",
+      "/.netlify/functions/contact",
 
       // encode({
       //   formId: "contact-form",
