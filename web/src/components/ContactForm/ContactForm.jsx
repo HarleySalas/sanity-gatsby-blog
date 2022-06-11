@@ -114,7 +114,9 @@ const ContactForm = ({ location, title, options }) => {
               <p className="contact-form__title">{title.prefix}</p>
             ) : null}
             {title.title ? (
-              <h2 className="contact-form__info">{title.title}</h2>
+              <h2 className="contact-form__info">
+                <span className="contact-form__info__span">{title.title}</span>
+              </h2>
             ) : null}
           </>
         ) : (

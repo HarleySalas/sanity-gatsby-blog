@@ -2,7 +2,6 @@ import React from "react";
 import "./projects-main.scss";
 
 import ProjectsList from "./ProjectsList/ProjectsList";
-import ProjectsContact from "../ProjectsContact/ProjectsContact";
 
 const ProjectsMain = ({ projects }) => {
   return (
@@ -12,8 +11,6 @@ const ProjectsMain = ({ projects }) => {
           <ProjectsList projects={projects} />
         </div>
       </div>
-
-      <ProjectsContact />
     </div>
   );
 };

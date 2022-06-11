@@ -7,18 +7,46 @@
   &__info {
     color: $color-white;
     font-weight: 400;
-    font-size: 3.72rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 5.72rem;
+    line-height: 1.42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-land) {
+      font-size: 3.24rem;
+    }
+
+    @include respond(desktop-small) {
+      font-size: 3.72rem;
+    }
+    &__span {
+      display: block;
+      width: 100%;
+
+      @include respond(tab-port) {
+        width: 80%;
+      }
+
+      @include respond(desktop-small) {
+        width: 65%;
+      }
+    }
   }
 
   &__title {
     color: $color-white;
     font-weight: 500;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.11rem;
+
+    @include respond(tab-port) {
+      font-size: 1.8rem;
+    }
   }
 
   &__form {

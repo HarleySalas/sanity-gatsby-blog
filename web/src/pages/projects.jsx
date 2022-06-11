@@ -7,7 +7,16 @@ import { mapEdgesToNodes } from "../lib/helpers";
 
 const projects = ({ location, data }) => {
   return (
-    <Layout title="Проекты" location={location}>
+    <Layout
+      title="Проекты"
+      location={location}
+      contactForm
+      contactTitle={{
+        prefix: "Не нашли, что искали?",
+        title:
+          "Мы также вносим изменения в существующие проекты и разрабатываем индивидуальные!",
+      }}
+    >
       <BasicPageHero title="Проекты" basic />
       <ProjectsMain
         projects={data && data.projects ? mapEdgesToNodes(data.projects) : []}
