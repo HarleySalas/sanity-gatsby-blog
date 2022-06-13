@@ -35,20 +35,6 @@ const InlineLink = ({
     </>
   );
 
-  // return (
-  //   <>
-  //    <Link
-  //     to={linkTo}
-  //     className={`inline-link ${className || null}`}
-  //     style={{ fontWeight: fontWeight }}
-  //     ref={linkRef}
-  //   >
-  //     {internals}
-  //   </Link>
-  //   </>
-
-  // );
-
   return (
     <>
       {external ? (
