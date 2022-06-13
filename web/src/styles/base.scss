@@ -3,10 +3,11 @@
 html {
   box-sizing: border-box;
   overflow-x: hidden;
-  background-color: $color-white;
+  background-color: $color-grey-dark;
 }
 body {
   margin: 0;
+  background-color: $color-white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-wrap: break-word;
