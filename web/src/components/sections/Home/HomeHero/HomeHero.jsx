@@ -17,7 +17,7 @@ const HomeHero = () => {
           relativePath: { eq: "images/home-hero-image.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
         }
       }
