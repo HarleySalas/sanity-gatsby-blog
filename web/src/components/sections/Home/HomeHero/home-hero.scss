@@ -4,6 +4,7 @@
   &__background {
     height: 100vh;
     min-height: 50rem;
+    z-index: 1;
 
     @include respond(tab-land) {
       height: 80vh;

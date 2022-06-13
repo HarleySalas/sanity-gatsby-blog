@@ -14,10 +14,10 @@ const HomeHero = () => {
     graphql`
       query {
         placeholderImage: file(
-          relativePath: { eq: "images/hero-image-3.png" }
+          relativePath: { eq: "images/home-hero-image.png" }
         ) {
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
           }
         }
       }
@@ -34,7 +34,7 @@ const HomeHero = () => {
         {...bgImage}
         preserveStackingContext
         className="home-hero__background"
-        backgroundColor="#26262c"
+        // backgroundColor="#26262c"
       >
         <div className="home-hero__background__overlay">
           <div className="home-hero__spacer"></div>
