@@ -30,7 +30,10 @@ const BasicPageHero = ({ placeholderImage, title, imageTop, basic }) => {
       ) : (
         <div className="basic-page-hero__background__overlay basic-page-hero__background__overlay--empty">
           <div className="container basic-page-hero__container">
-            <h1 className="basic-page-hero__title">{title}</h1>
+            <div className="basic-page-hero__spacer"></div>
+            <div className="basic-page-hero__wrapper">
+              <h1 className="basic-page-hero__title">{title}</h1>
+            </div>
           </div>
         </div>
       )}
