@@ -14,7 +14,7 @@ const IndexPage = ({ location, data }) => {
   const latestPost = mapEdgesToNodes(data.latestPost)[0];
 
   return (
-    <Layout title="Home" location={location} contactForm>
+    <Layout title="Главная" location={location} contactForm>
       <HomeHero />
       <HomeFeaturedProject featuredProject={featuredProject} />
       <HomeLatestPost latestPost={latestPost} />
