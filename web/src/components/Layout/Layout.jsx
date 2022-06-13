@@ -9,13 +9,14 @@ const Layout = ({
   children,
   location,
   title,
+  description,
   contactForm,
   contactTitle,
   contactOptions,
 }) => {
   return (
     <div className="layout">
-      <Seo title={title} />
+      <Seo title={title} description={description} />
       <Navbar location={location} />
       <Page>{children}</Page>
       {contactForm && (
