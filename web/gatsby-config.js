@@ -10,7 +10,7 @@ const isProd = process.env.NODE_ENV === "production";
 module.exports = {
   siteMetadata: {
     title: `MRS House`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Строим современные теплые каркасные дома по финским и канадским технологиям. Москва и МО. Кредит, рассрочка, материнский капитал. Звоните!`,
     author: `@harleysalas`,
     siteUrl: `https://m-r-s.ru/`,
   },
@@ -41,7 +41,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `https://m-r-s.ru/`,
-        sitemap: `https://wayfarestudios.com/sitemap.xml`,
+        sitemap: `https://m-r-s.ru/sitemap/sitemap.xml`,
         policy: [{ userAgent: `*`, allow: `/` }],
       },
     },
@@ -69,13 +69,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
+        name: `MRS House`,
+        short_name: `MRS`,
+        start_url: `https://m-r-s.ru`,
+        background_color: `#f2f2f2`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        theme_color: `#343436`,
         display: `minimal-ui`,
         icon: `src/assets/favicon.png`, // This path is relative to the root of the site.
       },
