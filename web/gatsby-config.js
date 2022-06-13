@@ -71,7 +71,7 @@ module.exports = {
       options: {
         name: `MRS House`,
         short_name: `MRS`,
-        start_url: `https://m-r-s.ru`,
+        start_url: isProd ? `https://m-r-s.ru` : "http://localhost:8000",
         background_color: `#f2f2f2`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
