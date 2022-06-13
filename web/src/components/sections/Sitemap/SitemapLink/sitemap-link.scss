@@ -1,0 +1,20 @@
+@import "../../../../styles/variables.scss";
+
+.sitemap-link {
+  margin-bottom: 1rem;
+
+  &:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: rgba($color-black, 0.72);
+    transition: color 0.24s $ease;
+    line-height: 1.42;
+
+    &:hover {
+      color: rgba($color-black, 0.9);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../../../styles/variables.scss";
+
+.sitemap-container {
+  background-color: $color-white-off;
+  padding: 3.72rem 0;
+
+  @include respond(tab-land) {
+    padding: 5rem 0;
+  }
+
+  @include respond(desktop-mid) {
+    padding: 7rem 0;
+  }
+
+  &__container {
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

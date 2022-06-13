@@ -1,0 +1,32 @@
+@import "../../../../styles/variables.scss";
+
+.sitemap-category {
+  background-color: $color-white;
+  border-radius: 0.42rem;
+  border: solid 0.1rem rgba($color-black, 0.18);
+  padding: 2rem;
+
+  @include respond(tab-port) {
+    padding: 2.72rem;
+  }
+
+  @include respond(tab-land) {
+    padding: 3.24rem;
+  }
+
+  @include respond(desktop-small) {
+    padding: 3.72rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 0.07rem;
+    margin-bottom: 1.24rem;
+  }
+
+  &__ul {
+    list-style: none;
+  }
+}
