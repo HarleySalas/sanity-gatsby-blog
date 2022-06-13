@@ -34,14 +34,13 @@ const HomeHero = () => {
         {...bgImage}
         preserveStackingContext
         className="home-hero__background"
-        // backgroundColor="#26262c"
+        backgroundColor="#26262c"
       >
         <div className="home-hero__background__overlay">
           <div className="home-hero__spacer"></div>
           <div className="container home-hero__container">
             <span className="home-hero__subtitle">От 990 000 ₽</span>
             <h1 className="home-hero__title">
-              {/* {isDesktop ? "yes" : "Каркасные дома по технологиям из Канады и Финляндии из Канады и Финляндии"} */}
               {isDesktop ? (
                 <>
                   Каркасные дома по технологиям
