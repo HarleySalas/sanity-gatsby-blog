@@ -21,6 +21,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
@@ -34,6 +35,14 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://m-r-s.ru/`,
+        sitemap: `https://wayfarestudios.com/sitemap.xml`,
+        policy: [{ userAgent: `*`, allow: `/` }],
       },
     },
     {
