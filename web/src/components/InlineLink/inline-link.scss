@@ -1,0 +1,51 @@
+@import "../../styles/variables.scss";
+
+.inline-link {
+  position: relative;
+  color: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  //   font-weight: 500;
+  text-decoration: none;
+  opacity: 0.72;
+  transition: opacity 0.24s $ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:hover .inline-link__underline {
+    opacity: 1;
+  }
+
+  &:visited {
+    color: inherit !important;
+  }
+
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: rgba($color-black, 0.72) solid 0.2rem;
+    outline-offset: 0.24rem;
+  }
+
+  &:active,
+  &:focus .inline-link__underline {
+    opacity: 1;
+  }
+
+  &__span {
+  }
+
+  &__underline {
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    bottom: 0;
+    left: 0;
+    opacity: 0.72;
+  }
+}
