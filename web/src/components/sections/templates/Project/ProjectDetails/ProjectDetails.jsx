@@ -115,7 +115,7 @@ const ProjectDetails = ({ details }) => {
             <div className="project-details__detail__value">Размер</div>
           </div>
           <div className="project-details__detail__bottom">
-            <div className="project-details__detail__description">{`${totalArea[0]}м x ${totalArea[1]}м`}</div>
+            <div className="project-details__detail__description">{`${totalArea[0]} x ${totalArea[1]} м`}</div>
           </div>
         </div>
       </div>
