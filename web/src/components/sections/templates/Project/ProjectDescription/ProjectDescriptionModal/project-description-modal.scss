@@ -12,33 +12,64 @@
     padding: 2rem 5rem;
   }
 
+  // &__btn {
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: -4.8rem;
+  //   background: transparent;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   width: 4.8rem;
+  //   height: 4.8rem;
+  //   outline: none;
+  //   border: none;
+  //   padding: 0;
+  //   cursor: pointer;
+
+  //   &:hover .project-description-modal__icon {
+  //     fill: rgba($color-black, 1);
+  //   }
+  // }
+
   &__btn {
     position: absolute;
-    bottom: 0;
-    right: -4.8rem;
+    top: 0;
+    left: 0;
     background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4.8rem;
-    height: 4.8rem;
+    width: 100%;
+    height: 100%;
     outline: none;
     border: none;
-    padding: 0;
-    cursor: pointer;
+    cursor: zoom-in;
+  }
 
-    &:hover .project-description-modal__icon {
-      fill: rgba($color-black, 1);
+  &__close {
+    display: block;
+    position: absolute;
+    top: 0;
+    border: none;
+    outline: none;
+    left: 0;
+    width: 4.8rem;
+    height: 4.8rem;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgba($color-black, 0.72);
+    transition: color 0.42s $ease;
+
+    &:hover {
+      color: rgba($color-black, 1);
     }
   }
 
-  &__icon {
-    display: block;
+  // &__icon {
+  //   display: block;
 
-    fill: rgba($color-black, 0.72);
-    transition: fill 0.42s $ease;
-    width: 3rem;
-  }
+  //   fill: rgba($color-black, 0.72);
+  //   transition: fill 0.42s $ease;
+  //   width: 3rem;
+  // }
 
   &__blueprint {
     display: block;
