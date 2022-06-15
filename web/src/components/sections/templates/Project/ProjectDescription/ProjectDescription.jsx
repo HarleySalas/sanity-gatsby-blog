@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import "./project-description.scss";
 import Button from "../../../../Button/Button";
 import ArrowStroke from "../../../../../assets/icons/arrow-stroke.svg";
+import ProjectDescriptionModal from "./ProjectDescriptionModal/ProjectDescriptionModal";
 
 const ProjectDescription = ({ data }) => {
   const { blueprintsDisplay, originalBlueprint, _rawDescription } = data;
@@ -55,12 +56,15 @@ const ProjectDescription = ({ data }) => {
                       className="project-description__blueprints__carousel__slide"
                       key={index}
                     >
-                      <div
-                        className="project-description__blueprints__file"
-                        dangerouslySetInnerHTML={{
-                          __html: blueprint.svg.source,
-                        }}
-                      ></div>
+                      <div className="project-description__blueprints__file-wrapper">
+                        <div
+                          className="project-description__blueprints__file"
+                          dangerouslySetInnerHTML={{
+                            __html: blueprint.svg.source,
+                          }}
+                        ></div>
+                        <ProjectDescriptionModal blueprint={blueprint} />
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -79,12 +83,17 @@ const ProjectDescription = ({ data }) => {
               </button>
             </div>
           ) : (
-            <div
-              className="project-description__blueprints__file"
-              dangerouslySetInnerHTML={{
-                __html: blueprintsDisplay[0].svg.source,
-              }}
-            ></div>
+            <>
+              <div className="project-description__blueprints__file-wrapper">
+                <div
+                  className="project-description__blueprints__file"
+                  dangerouslySetInnerHTML={{
+                    __html: blueprintsDisplay[0].svg.source,
+                  }}
+                ></div>
+                <ProjectDescriptionModal blueprint={blueprintsDisplay[0]} />
+              </div>
+            </>
           )}
         </div>
         <div className="project-description__blueprints__right">
