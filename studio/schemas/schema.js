@@ -37,6 +37,10 @@ import question from "./objects/question";
 import svgWithPreview from "./objects/svgWithPreview";
 import titledText from "./objects/titledText";
 import selectedProject from "./objects/selectedProject";
+import bank from "./objects/bank";
+import companyRequisites from "./objects/companyRequisites";
+import featureOption from "./objects/featureOption";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -79,5 +83,8 @@ export default createSchema({
     svgWithPreview,
     titledText,
     selectedProject,
+    bank,
+    companyRequisites,
+    featureOption,
   ]),
 });
