@@ -6,14 +6,31 @@ export default {
     {
       name: "type",
       title: "Finishing Type",
-      type: "reference",
-      to: [{ type: "finishing" }],
+      type: "string",
+      description: `Вид отделки, обычно "без отделки" или "с отделкой"`,
+    },
+    {
+      name: "description",
+      type: "simplePortableText",
+      title: "Description",
+      description:
+        "Optional description of the option, usually a paragraph, or so long.",
+    },
+    {
+      name: "features",
+      type: "array",
+      of: [
+        {
+          type: "featureOption",
+        },
+      ],
     },
     {
       name: "cost",
-      title: "Finishing",
+      title: "Cost",
       type: "number",
-      description: "Cost of the finishing type for this project.",
+      description:
+        "Cost of the finishing type for this project. Unfinished is always 0.",
     },
   ],
 };
