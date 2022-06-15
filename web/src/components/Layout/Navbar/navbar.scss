@@ -8,7 +8,7 @@
   // padding: 0rem 5rem;
   display: flex;
   z-index: 10000;
-  transition: all 0.42s $ease;
+  transition: height 0.42s $ease;
 
   @include respond(tab-port) {
     height: 6rem;
@@ -20,7 +20,7 @@
 
   &--top {
     height: 8rem;
-    transition: all 0.18s ease-in-out;
+    transition: height 0.18s ease-in-out;
 
     @include respond(tab-port) {
       height: 9rem;
@@ -102,4 +102,8 @@
       transition: transform 0.72s $ease 0.72s;
     }
   }
+}
+
+[data-scroll-lock] .navbar {
+  padding-right: var(--scrollbar-compensation);
 }
