@@ -18,8 +18,6 @@ const InlineLink = ({
       const styles = getComputedStyle(linkRef.current);
       setLinkColor(styles.color);
       setFontWeight(Number(styles.fontWeight) + 100);
-
-      console.log(styles.color);
     }, 300);
   }, []);
 
