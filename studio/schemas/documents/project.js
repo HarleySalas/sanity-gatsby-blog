@@ -156,6 +156,27 @@ export default {
         Rule.required().error("There must be a project description."),
     },
     {
+      name: "finishingOptions",
+      title: "Finishing Options",
+      description: "Finishing options available for this project.",
+      type: "array",
+      of: [{ type: "finishingOption" }],
+      validation: (Rule) =>
+        Rule.custom((finishingOptions) => {
+          if (typeof finishingOptions === "undefined") {
+            return true;
+          }
+
+          const finishingOptionsContainsABase = (arr) => {
+            return arr.some((value) => value["cost"] === 0);
+          };
+
+          return finishingOptionsContainsABase(finishingOptions)
+            ? true
+            : "There must be at least one option with a base price of 0.";
+        }),
+    },
+    {
       name: "foundations",
       title: "Foundations",
       description: "Foundations available for this project.",
