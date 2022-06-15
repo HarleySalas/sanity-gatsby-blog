@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.portable-text-document {
+  background-color: $color-white-dark;
+  padding: 3.72rem 0;
+
+  &__container {
+  }
+  &__wrapper {
+    background-color: $color-white;
+    // padding: 5rem 7rem;
+    overflow: hidden;
+    padding: 2rem 2rem;
+    border-radius: 0.42rem;
+
+    @include respond(tab-port) {
+      padding: 2rem 3.72rem;
+    }
+
+    @include respond(tab-land) {
+      padding: 2.42rem 4.72rem;
+    }
+
+    @include respond(desktop-small) {
+      padding: 3.72rem 7.72rem;
+    }
+
+    @include respond(desktop-mid) {
+      padding: 4.72rem 11rem;
+    }
+
+    @include respond(desktop) {
+      padding: 5.72rem 18rem;
+    }
+  }
+}
