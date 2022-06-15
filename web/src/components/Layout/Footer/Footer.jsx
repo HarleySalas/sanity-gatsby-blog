@@ -120,8 +120,22 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer__warning">
-        Вся представленная на сайте информация не является публичной офертой
+      <div className="footer__end">
+        <ul className="footer__end__ul">
+          <li className="footer__end__li">
+            <Link to="/privacy-policy" className="footer__end__link">
+              Политика конфиденциальности
+            </Link>
+          </li>
+          <li className="footer__end__li">
+            <Link to="/terms-of-use" className="footer__end__link">
+              Пользовательское соглашение
+            </Link>
+          </li>
+        </ul>
+        <div className="footer__end__warning">
+          Вся представленная на сайте информация не является публичной офертой
+        </div>
       </div>
     </footer>
   );
