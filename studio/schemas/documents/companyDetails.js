@@ -8,27 +8,42 @@ export default {
     {
       name: "companyName",
       type: "string",
-      title: "Official Company Name",
+      title: "Имя компании / Official Company Name",
     },
     {
       name: "workHours",
-      title: "Work Hours",
+      title: "Часы работы / Work Hours",
       type: "string",
     },
     {
       name: "companyPhone",
-      title: "Company Phone",
+      title: "Контактный телефон / Company Phone",
       type: "string",
     },
     {
       name: "businessAddress",
-      title: "Business Address",
+      title: "Адрес компании / Business Address",
       type: "address",
     },
     {
       name: "companyEmail",
-      title: "Primary Company Contact Email",
+      title: "Email компании / Primary Communication Email",
       type: "string",
+    },
+    {
+      name: "companyRequisites",
+      title: "Реквизиты компании / Company Requisites",
+      type: "companyRequisites",
+    },
+    {
+      name: "termsOfUse",
+      title: "Пользовательское соглашение / Terms of Use",
+      type: "simplePortableText",
+    },
+    {
+      name: "privacyPolicy",
+      title: "Политика обработки персональных данных / Privacy Policy",
+      type: "simplePortableText",
     },
   ],
 };
