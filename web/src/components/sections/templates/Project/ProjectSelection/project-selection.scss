@@ -4,9 +4,17 @@
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 7rem;
+  height: 5rem;
   background-color: $color-grey-dark;
   z-index: 999;
+
+  @include respond(tab-port) {
+    height: 6rem;
+  }
+
+  @include respond(desktop-small) {
+    height: 8rem;
+  }
 
   &__container {
     display: flex;
