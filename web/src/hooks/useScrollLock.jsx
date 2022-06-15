@@ -3,7 +3,6 @@ import useIsiOS from "./useIsiOS";
 
 const useScrollLock = () => {
   const isiOS = useIsiOS();
-  //   let scrollOffset = null;
 
   const scrollOffset = useRef(null);
 
