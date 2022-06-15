@@ -4,3 +4,6 @@ export { default as useMediaQuery } from "./useMediaQuery";
 export { default as useScrollLock } from "./useScrollLock";
 export { default as useIsiOS } from "./useIsiOS";
 export { default as useDate } from "./useDate";
+export { default as usePortal } from "./usePortal";
+export { default as useOnClickOutside } from "./useOnClickOutside";
+export { default as useThrottle } from "./useThrottle";
