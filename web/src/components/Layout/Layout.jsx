@@ -5,6 +5,7 @@ import Page from "./Page/Page";
 import Footer from "./Footer/Footer";
 import ContactForm from "../ContactForm/ContactForm";
 import CookieConsent from "../CookieConsent/CookieConsent";
+import { useHasMounted } from "../../hooks";
 import "./layout.scss";
 
 const Layout = ({
@@ -16,6 +17,7 @@ const Layout = ({
   contactTitle,
   contactOptions,
 }) => {
+  const hasMounted = useHasMounted();
   return (
     <div className="layout">
       <Seo title={title} description={description} />
@@ -29,7 +31,7 @@ const Layout = ({
         />
       )}
       <Footer />
-      <CookieConsent />
+      {hasMounted ? <CookieConsent /> : null}
     </div>
   );
 };
