@@ -1,0 +1,65 @@
+@import "../../styles/variables.scss";
+
+.cookie-consent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+
+  &__foreground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-black, 0.42);
+    animation: fadeIn 0.42s $ease forwards;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__box {
+    padding: 2rem 0;
+    background-color: $color-grey-dark;
+    width: 100%;
+    // border-top: 2.42rem solid $color-grey-dark;
+    // border-bottom: 2.42rem solid $color-grey-dark;
+    box-shadow: 0px 0px 4rem 2rem rgba($color-black, 0.18);
+  }
+
+  &__container {
+  }
+
+  &__wrapper {
+    display: flex;
+    // align-items: center;
+    flex-direction: column;
+
+    @include respond(tab-land) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    flex: 1;
+
+    color: $color-white;
+    font-size: 1.6rem;
+    margin-bottom: 2.42rem;
+
+    @include respond(tab-land) {
+      padding-right: 3.72rem;
+      margin-bottom: 0;
+    }
+
+    @include respond(desktop-small) {
+      padding-right: 18rem;
+    }
+
+    @include respond(desktop) {
+      padding-right: 24rem;
+    }
+  }
+}

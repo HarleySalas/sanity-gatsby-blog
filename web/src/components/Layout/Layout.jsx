@@ -4,6 +4,8 @@ import Navbar from "./Navbar/Navbar";
 import Page from "./Page/Page";
 import Footer from "./Footer/Footer";
 import ContactForm from "../ContactForm/ContactForm";
+import CookieConsent from "../CookieConsent/CookieConsent";
+import "./layout.scss";
 
 const Layout = ({
   children,
@@ -27,6 +29,7 @@ const Layout = ({
         />
       )}
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
