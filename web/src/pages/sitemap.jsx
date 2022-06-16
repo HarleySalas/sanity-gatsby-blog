@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout/Layout";
 import BasicPageHero from "../components/BasicPageHero/BasicPageHero";
-import staticSitemapData from "../../client-config/sitemap-data.json";
+import staticSitemapData from "../../content/sitemap-data.json";
 
 import SitemapContainer from "../components/sections/Sitemap/SitemapContainer/SitemapContainer";
 import SitemapCategory from "../components/sections/Sitemap/SitemapCategory/SitemapCategory";
