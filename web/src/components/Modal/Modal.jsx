@@ -10,7 +10,7 @@ import { window } from "browser-monads";
 import "./modal.scss";
 
 const Modal = forwardRef((props, ref) => {
-  const [display, toggleDisplay] = useToggle(false);
+  const [display, toggleDisplay] = useToggle(props.initialDisplay);
   const Portal = usePortal();
   const foregroundRef = useRef(null);
   const [lockScroll, unlockScroll] = useScrollLock();
