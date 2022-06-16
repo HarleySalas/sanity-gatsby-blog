@@ -1,5 +1,32 @@
 @import "./variables.scss";
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: none;
+  scrollbar-color: rgba($color-white, 0.11) rgba($color-grey-dark, 1);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 1.1rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba($color-grey-dark, 1);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba($color-white, 0.11);
+  border-radius: 20px;
+  border: 0.2rem solid rgba($color-grey-dark, 1);
+  transition: color 0.42s $ease;
+
+  &:hover {
+    background-color: rgba($color-white, 0.14);
+  }
+}
+
 html {
   box-sizing: border-box;
   overflow-x: hidden;
