@@ -14,11 +14,15 @@ const InlineLink = ({
   const [fontWeight, setFontWeight] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      const styles = getComputedStyle(linkRef.current);
-      setLinkColor(styles.color);
-      setFontWeight(Number(styles.fontWeight) + 100);
+    const modifyStyles = setTimeout(() => {
+      const styles = linkRef.current ? getComputedStyle(linkRef.current) : null;
+      setLinkColor(styles && styles.color ? styles.color : null);
+      setFontWeight(
+        Number(styles && styles.fontWeight ? styles.fontWeight : 400) + 100
+      );
     }, 300);
+
+    return () => clearTimeout(modifyStyles);
   }, []);
 
   const internals = (
