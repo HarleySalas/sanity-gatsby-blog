@@ -7,3 +7,4 @@ export { default as useDate } from "./useDate";
 export { default as usePortal } from "./usePortal";
 export { default as useOnClickOutside } from "./useOnClickOutside";
 export { default as useThrottle } from "./useThrottle";
+export { default as useStickyState } from "./useStickyState";
