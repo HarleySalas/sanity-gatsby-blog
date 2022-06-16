@@ -9,8 +9,7 @@
     "dev": "gatsby develop",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "postinstall": "cd ./node_modules/gatsby-plugin-gdpr-cookies && npm install && npm run build"
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
