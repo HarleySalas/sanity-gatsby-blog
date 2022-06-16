@@ -31,7 +31,7 @@ const Layout = ({
         />
       )}
       <Footer />
-      {hasMounted ? <CookieConsent /> : null}
+      {hasMounted ? <CookieConsent location={location} /> : null}
     </div>
   );
 };
