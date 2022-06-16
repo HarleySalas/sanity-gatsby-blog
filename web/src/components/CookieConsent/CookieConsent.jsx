@@ -2,13 +2,15 @@ import React, { useEffect, useRef } from "react";
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies";
 import { useStickyState, usePortal, useScrollLock } from "../../hooks";
 import { isBrowser } from "../../lib/helpers";
+import { useLocation } from "@reach/router";
 import InlineLink from "../InlineLink/InlineLink";
 import "./cookie-consent.scss";
 
 import Button from "../Button/Button";
 
-const CookieConsent = ({ location }) => {
+const CookieConsent = () => {
   const Portal = usePortal();
+  const location = useLocation();
   const [lockScroll, unlockScroll] = useScrollLock();
   const elRef = useRef(null);
 
