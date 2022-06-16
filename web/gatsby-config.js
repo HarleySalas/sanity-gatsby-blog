@@ -24,6 +24,14 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-portal`,
     {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        yandexMetrika: {
+          trackingId: process.env.YANDEX_METRIKA_TRACKING_ID,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
