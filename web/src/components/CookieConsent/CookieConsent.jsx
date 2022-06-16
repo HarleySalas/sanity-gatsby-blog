@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies";
-import { useStickyState, usePortal, useScrollLock } from "../../hooks";
+import {
+  useStickyState,
+  usePortal,
+  useScrollLock,
+  useHasMounted,
+} from "../../hooks";
 import { isBrowser } from "../../lib/helpers";
 import InlineLink from "../InlineLink/InlineLink";
 import "./cookie-consent.scss";
@@ -8,6 +13,7 @@ import "./cookie-consent.scss";
 import Button from "../Button/Button";
 
 const CookieConsent = ({ location }) => {
+  const hasMounted = useHasMounted();
   const Portal = usePortal();
   const [lockScroll, unlockScroll] = useScrollLock();
   const elRef = useRef(null);
@@ -36,6 +42,10 @@ const CookieConsent = ({ location }) => {
 
     return () => unlockScroll();
   }, [elRef, bannerHidden, lockScroll, unlockScroll]);
+
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
     <>

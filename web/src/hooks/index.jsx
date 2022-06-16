@@ -8,3 +8,4 @@ export { default as usePortal } from "./usePortal";
 export { default as useOnClickOutside } from "./useOnClickOutside";
 export { default as useThrottle } from "./useThrottle";
 export { default as useStickyState } from "./useStickyState";
+export { default as useHasMounted } from "./useHasMounted";
