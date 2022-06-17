@@ -10,6 +10,7 @@ const useScrollLock = () => {
     document.documentElement.dataset.scrollLock = "true";
     document.documentElement.style.overflow = "hidden";
     document.documentElement.style.paddingRight = `var(--scrollbar-compensation)`;
+    document.documentElement.style.backgroundColor = `#26262c`;
 
     if (isiOS) {
       console.log("im iOS!");

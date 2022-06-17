@@ -1,4 +1,13 @@
 @import "../../styles/variables.scss";
 
 .layout {
+  background-color: $color-white;
+  &__scrollbar-placeholder {
+    position: fixed;
+    right: -var(--scrollbar-compensation);
+    top: 0;
+    height: 100%;
+    width: var(--scrollbar-compensation);
+    background-color: rgba($color-grey-dark, 1);
+  }
 }

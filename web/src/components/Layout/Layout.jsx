@@ -20,6 +20,7 @@ const Layout = ({
   const hasMounted = useHasMounted();
   return (
     <div className="layout">
+      <div className="layout__scrollbar-placeholder"></div>
       <Seo title={title} description={description} />
       <Navbar location={location} />
       <Page>{children}</Page>
