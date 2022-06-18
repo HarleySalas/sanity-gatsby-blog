@@ -1,0 +1,120 @@
+@import "../../styles/variables.scss";
+
+// .checkbox {
+//   &__label {
+//     position: relative;
+//     display: block;
+//     width: 3rem;
+//     height: 3rem;
+//     // display: flex;
+//     // align-items: center;
+//     // padding: 0.5rem;
+//   }
+
+//   &__input {
+//     position: relative;
+//     // flex-shrink: 0;
+//     width: 3rem;
+//     height: 3rem;
+//     appearance: none;
+//     -moz-appearance: none;
+//     outline: none;
+//     background: $color-white;
+//     cursor: pointer;
+//     border: 0.1rem solid $color-primary;
+
+//     &:checked {
+//       background: red;
+//     }
+
+//     &:checked .checkbox__checkmark {
+//       background-color: green;
+//     }
+//   }
+
+//   &__checkmark {
+//     // flex-shrink: 0;
+//     // padding: 0.5rem 1rem;
+//     // color: green;
+//     cursor: pointer;
+
+//     &::before {
+//       content: "";
+//       width: 2rem;
+//       height: 2rem;
+//       background-color: green;
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//     }
+//   }
+
+//   //   &__checkmark {
+//   //     flex-shrink: 0;
+//   //     padding: 0.5rem 1rem;
+//   //     color: green;
+//   //     cursor: pointer;
+
+//   //     &::before {
+//   //       content: " ";
+//   //       position: absolute;
+//   //       top: 50%;
+//   //       right: 50%;
+//   //       bottom: 50%;
+//   //       left: 50%;
+//   //       transition: all 0.24s $ease;
+//   //       background: $color-primary;
+//   //     }
+//   //   }
+// }
+
+.checkbox {
+  &__label {
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      + .checkbox__checkmark {
+        // background-color: red;
+        // border-width: 1.5rem;
+
+        &::after {
+          //   font-size: 4rem;
+          //   color: green;
+          background-color: rgba($color-primary, 1);
+        }
+      }
+    }
+  }
+
+  &__checkmark {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    border: 3px solid rgba($color-grey-dark, 1);
+    border-radius: 0.24rem;
+    box-sizing: border-box;
+    transition: all 150ms;
+    cursor: pointer;
+
+    /* If you want to put an icon in psuedo class */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 5px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: transparent;
+      border-radius: 0.1rem;
+      //   background-color: green;
+    }
+  }
+}
