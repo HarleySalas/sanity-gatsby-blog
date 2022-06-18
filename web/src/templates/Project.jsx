@@ -55,6 +55,17 @@ export const query = graphql`
         id
         title
       }
+      finishingOptions {
+        _key
+        _rawDescription
+        type
+        cost
+        features {
+          _key
+          title
+          _rawDescription
+        }
+      }
       foundations {
         type {
           name
