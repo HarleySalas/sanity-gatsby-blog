@@ -41,7 +41,7 @@ const CookieConsent = () => {
 
   return (
     <>
-      {!bannerHidden && (
+      {!bannerHidden ? (
         <Portal>
           <div className="cookie-consent" ref={elRef}>
             <div className="cookie-consent__foreground">
@@ -57,7 +57,11 @@ const CookieConsent = () => {
                         Подробнее
                       </InlineLink>
                     </div>
-                    <Button btnSize="sm" onClick={enableAnalytics}>
+                    <Button
+                      btnSize="sm"
+                      onClick={enableAnalytics}
+                      className="cookie-consent__btn"
+                    >
                       Принять
                     </Button>
                   </div>
@@ -66,7 +70,7 @@ const CookieConsent = () => {
             </div>
           </div>
         </Portal>
-      )}
+      ) : null}
     </>
   );
 };
