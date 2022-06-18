@@ -16,11 +16,12 @@ const Button = ({
   arrowRight,
   download,
   center,
+  className,
   ...props
 }) => {
   const btnClasses = `
         button
-
+     
         ${!btnSize && "button--md"}
         ${btnSize === "sm" && "button--sm"}
         ${btnSize === "md" && "button--md"}
@@ -36,6 +37,7 @@ const Button = ({
         ${btnStyle === "outline" && "button--outline"}
         ${btnStyle === "rounded" && "button--rounded"}
         ${btnStyle === "rounded-outline" && "button--rounded-outline"}
+        ${className}
     `;
 
   let btnElement = (
