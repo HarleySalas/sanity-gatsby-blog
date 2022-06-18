@@ -33,4 +33,16 @@ export default {
         "Cost of the finishing type for this project. Unfinished is always 0.",
     },
   ],
+  preview: {
+    select: {
+      type: "type",
+      cost: "cost",
+    },
+    prepare(selection) {
+      const { type, cost } = selection;
+      return {
+        title: `${type} - ${cost} ₽`,
+      };
+    },
+  },
 };

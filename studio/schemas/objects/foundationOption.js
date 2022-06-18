@@ -25,7 +25,7 @@ export default {
     prepare(selection) {
       const { type, cost, image } = selection;
       return {
-        title: `${type} - ₽ ${cost}`,
+        title: `${type} - ${cost} ₽`,
         media: image,
       };
     },
