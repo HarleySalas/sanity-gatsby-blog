@@ -44,7 +44,7 @@ const HomeLatestPost = ({ latestPost }) => {
           </Button>
           <div className="home-latest-post__content__link-wrapper">
             <Link to="/articles" className="home-latest-post__content__link">
-              Все проекты
+              Все статьи
               <ArrowStroke className="home-latest-post__content__link__arrow" />
             </Link>
           </div>
