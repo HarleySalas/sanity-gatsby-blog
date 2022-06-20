@@ -140,6 +140,19 @@
   &__img-wrapper {
     width: 100%;
 
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: rgba($color-grey-dark, 0.24);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 500;
+    }
+
     @include respond(desktop-small) {
       width: 50%;
     }
@@ -150,8 +163,10 @@
   }
 
   &__img {
+    display: block;
     width: 100%;
     margin-bottom: 3.72rem;
+    opacity: 1;
 
     @include respond(desktop-small) {
       margin-bottom: 0;
