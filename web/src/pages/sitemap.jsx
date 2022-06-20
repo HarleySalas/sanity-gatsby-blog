@@ -29,7 +29,7 @@ const sitemap = ({ location, data }) => {
     <Layout title="Sitemap" location={location} contactForm>
       <BasicPageHero title="Sitemap" basic />
       <SitemapContainer>
-        <SitemapCategory title="main" data={staticSitemapData.mainLinks} />
+        <SitemapCategory title="Основные" data={staticSitemapData.mainLinks} />
         <SitemapCategory
           title="О КОМПАНИИ"
           data={staticSitemapData.aboutLinks}
