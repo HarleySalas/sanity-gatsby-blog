@@ -1,5 +1,6 @@
 import { throttle } from "../lib/helpers";
 import { useEffect, useMemo, useCallback, useState } from "react";
+import { window } from "browser-monads";
 
 const useWindowResize = () => {
   const [windowSize, setWindowSize] = useState({
