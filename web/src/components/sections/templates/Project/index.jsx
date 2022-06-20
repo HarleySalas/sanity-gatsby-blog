@@ -26,6 +26,7 @@ const ProjectTemplate = ({ project }) => {
     originalBlueprint,
     _rawDescription,
     foundations,
+    finishingOptions,
   } = project;
   const details = {
     price,
@@ -43,7 +44,7 @@ const ProjectTemplate = ({ project }) => {
     _rawDescription,
   };
 
-  const options = { foundations };
+  const options = { foundations, finishingOptions };
 
   const dispatch = useDispatch();
 
