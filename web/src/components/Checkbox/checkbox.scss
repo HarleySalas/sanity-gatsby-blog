@@ -78,14 +78,13 @@
 
     &:checked {
       + .checkbox__checkmark {
-        // background-color: red;
-        // border-width: 1.5rem;
-
         &::after {
-          //   font-size: 4rem;
-          //   color: green;
           background-color: rgba($color-primary, 1);
         }
+      }
+
+      + .checkbox__checkmark--project {
+        border: 2px solid rgba($color-grey-dark, 0.72);
       }
     }
   }
@@ -95,7 +94,7 @@
     width: 3rem;
     height: 3rem;
     background: transparent;
-    border: 3px solid rgba($color-grey-dark, 1);
+    border: 2px solid rgba($color-grey-dark, 1);
     border-radius: 0.24rem;
     box-sizing: border-box;
     transition: all 150ms;
@@ -115,6 +114,10 @@
       background-color: transparent;
       border-radius: 0.1rem;
       //   background-color: green;
+    }
+
+    &--project {
+      border: 2px solid rgba($color-grey-dark, 0.12);
     }
   }
 }
