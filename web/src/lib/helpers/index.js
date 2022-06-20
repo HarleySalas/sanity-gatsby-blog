@@ -4,3 +4,4 @@ export { default as correctGrammarFromValue } from "./correctGrammarFromValue";
 export { default as correctGrammarForTwo } from "./correctGrammarForTwo";
 export { default as dynamicSort } from "./dynamicSort";
 export { default as isBrowser } from "./isBrowser";
+export { default as throttle } from "./throttle";
