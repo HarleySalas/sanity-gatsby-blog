@@ -77,4 +77,14 @@
       width: 42%;
     }
   }
+
+  &__notice {
+    text-align: center;
+    color: rgba($color-white, 0.72);
+    margin-bottom: 2.42rem;
+
+    @include respond(tab-land) {
+      margin-bottom: 3.72rem;
+    }
+  }
 }
