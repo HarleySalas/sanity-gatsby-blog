@@ -1,68 +1,77 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
+import useWindowResize from "./useWindowResize";
 
 const useAccordion = (itemIds) => {
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(-1);
   const contentRefs = useRef([]);
+  const [accordionContentHeights, setAccordionContentHeights] = useState({});
+  const windowSize = useWindowResize();
 
-  const addRef = (el) => {
-    if (el && !contentRefs.current.includes(el)) {
-      contentRefs.current.push(el);
-    }
-  };
+  const handleAccordionContentHeights = useCallback(() => {
+    contentRefs.current &&
+      setAccordionContentHeights(
+        Object.fromEntries(
+          contentRefs.current.map((el) => [
+            el.id,
+            {
+              scrollHeight: el.scrollHeight,
+            },
+          ])
+        )
+      );
+  }, []);
 
-  //   const handleAccordionToggle = useCallback(
-  //     (id) => {
-  //       if (activeItem === id) {
-  //         setActiveItem(-1);
-  //       }
-
-  //       if (activeItem !== id) {
-  //         setActiveItem(id);
-  //       }
-  //     },
-  //     [activeItem, setActiveItem]
-  //   );
-
-  const handleAccordionToggle = useCallback(
-    (e) => {
-      const id = e.currentTarget.dataset.id;
-      if (activeItem === id) {
-        setActiveItem(-1);
-      }
-
-      if (activeItem !== id) {
-        setActiveItem(id);
+  const addRef = useCallback(
+    (el) => {
+      if (el && !contentRefs.current.includes(el)) {
+        contentRefs.current.push(el);
       }
     },
-    [activeItem]
+    [contentRefs]
   );
+
+  const handleAccordionToggle = useCallback((e) => {
+    const id = e.currentTarget.dataset.id;
+
+    const handleActiveItem = () => {
+      setActiveItem((prevItem) => {
+        prevItem === id ? setActiveItem(-1) : setActiveItem(id);
+      });
+    };
+
+    if (e.type === "keydown" && e.keyCode === "13") handleActiveItem();
+    if (e.type === "click") handleActiveItem();
+  }, []);
+
+  //set content heights
+  useEffect(() => {
+    handleAccordionContentHeights();
+  }, [handleAccordionContentHeights, windowSize]);
 
   const accordionProps = Object.fromEntries(
     itemIds.map((id) => [
       id,
       {
+        isActive: activeItem === id ? true : false,
         triggerProps: {
           "data-id": id,
           "aria-controls": id,
           "aria-expanded": `${activeItem === id}`,
           tabIndex: "0",
-          //   onClick: () => handleAccordionToggle(id),
           onClick: handleAccordionToggle,
-          onKeyDown: ({ keyCode }) => {
-            if (keyCode === 13) handleAccordionToggle(id);
-          },
+          onKeyDown: handleAccordionToggle,
         },
         contentProps: {
           id: id,
           "aria-hidden": `${activeItem === id ? false : true}`,
           ref: addRef,
-          key: `content-${id}-key`,
           style: {
             overflow: "hidden",
             position: "relative",
             maxHeight: `${
               activeItem === id
-                ? contentRefs.current.find((el) => el.id === id).scrollHeight
+                ? accordionContentHeights &&
+                  accordionContentHeights[id].scrollHeight
                 : 0
             }px`,
           },
@@ -71,15 +80,7 @@ const useAccordion = (itemIds) => {
     ])
   );
 
-  //   const cachedAccordionProps = useDeepMemo(
-  //     () => accordionProps,
-  //     [accordionProps]
-  //   );
-
-  return {
-    activeItem,
-    accordionProps,
-  };
+  return accordionProps;
 };
 
 export default useAccordion;
