@@ -8,6 +8,7 @@ const InlineLink = ({
   className,
   spanClassName,
   external,
+  sameWeight,
 }) => {
   const linkRef = useRef(null);
   const [linkColor, setLinkColor] = useState(null);
@@ -18,12 +19,16 @@ const InlineLink = ({
       const styles = linkRef.current ? getComputedStyle(linkRef.current) : null;
       setLinkColor(styles && styles.color ? styles.color : null);
       setFontWeight(
-        Number(styles && styles.fontWeight ? styles.fontWeight : 400) + 100
+        sameWeight
+          ? styles && styles.fontWeight
+            ? styles.fontWeight
+            : 400
+          : Number(styles && styles.fontWeight ? styles.fontWeight : 400) + 100
       );
     }, 300);
 
     return () => clearTimeout(modifyStyles);
-  }, []);
+  }, [sameWeight]);
 
   const internals = (
     <>
