@@ -1,0 +1,28 @@
+@import "../../../../../../../../styles/variables.scss";
+
+.project-finishing-item-feature {
+  margin-left: 3.72rem;
+  margin-bottom: 1.72rem;
+  transition: all 0.42s $ease;
+
+  color: $color-grey-text;
+  &:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__icon {
+    margin-right: 2.72rem;
+    font-weight: 500;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.07rem;
+  }
+
+  &__description {
+    margin-left: 3.42rem;
+  }
+}

@@ -26,6 +26,7 @@ exports.handler = async (event, context) => {
       location: data.location,
       project: {
         name: data.projectName ? data.projectName : "",
+        finish: data.projectFinish ? data.projectFinish : "",
         foundation: data.projectFoundation ? data.projectFoundation : "",
       },
     };

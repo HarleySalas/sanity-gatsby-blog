@@ -6,6 +6,11 @@ const selectedProjectInitialState = {
     type: "",
     cost: 0,
   },
+  finish: {
+    key: "",
+    type: "",
+    cost: 0,
+  },
 };
 
 export default selectedProjectInitialState;

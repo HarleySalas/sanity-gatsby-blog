@@ -54,9 +54,16 @@ const ProjectTemplate = ({ project }) => {
         name: project.name,
         price: project.price,
         foundations: project.foundations,
+        finishes: project.finishingOptions,
       })
     );
-  }, [dispatch, project.name, project.price, project.foundations]);
+  }, [
+    dispatch,
+    project.name,
+    project.price,
+    project.foundations,
+    project.finishingOptions,
+  ]);
 
   useEffect(() => {
     setDefaults();

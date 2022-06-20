@@ -11,8 +11,15 @@ const ProjectSelection = ({ project }) => {
     if (state.selectedProject.foundation) {
       total = total + state.selectedProject.foundation.cost;
     }
+    if (state.selectedProject.finish) {
+      total = total + state.selectedProject.finish.cost;
+    }
     return toRubleFormat(total);
-  }, [project.price, state.selectedProject.foundation]);
+  }, [
+    project.price,
+    state.selectedProject.foundation,
+    state.selectedProject.finish,
+  ]);
 
   if (state.selectedProject) {
     return (

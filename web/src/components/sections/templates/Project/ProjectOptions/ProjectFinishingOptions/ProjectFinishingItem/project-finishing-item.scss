@@ -1,0 +1,170 @@
+@import "../../../../../../../styles/variables.scss";
+
+.project-finishing-item {
+  margin: 0 auto 2.72rem auto;
+  width: 100%;
+
+  @include respond(tab-port) {
+    width: 90%;
+  }
+
+  @include respond(tab-port) {
+    width: 85%;
+  }
+
+  @include respond(desktop-small) {
+    margin: 0 auto 3.72rem auto;
+    width: 65%;
+  }
+
+  &__accordion {
+    background-color: rgba($color-grey-dark, 0.21);
+    border: 2px solid rgba($color-grey-dark, 0.12);
+    transition: all 0.42s $ease;
+
+    &--active {
+      border: 2px solid rgba($color-grey-dark, 0.72);
+      background-color: rgba($color-grey-dark, 0.17);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    // padding: 2rem 2.42rem;
+    padding: 1rem 1.42rem;
+
+    @include respond(desktop-small) {
+    }
+  }
+
+  &__type-cost {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @include respond(desktop-mid) {
+      flex-direction: row;
+    }
+  }
+
+  &__type {
+    margin-left: 1.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    color: rgba($color-black, 1);
+    opacity: 0.72;
+    transition: opacity 0.42s $ease;
+    text-align: left;
+    font-size: 1.7rem;
+    line-height: 1.24;
+
+    @include respond(desktop-small) {
+      margin-left: 2.42rem;
+      margin-right: 3.42rem;
+      text-align: left;
+      font-size: 2rem;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__cost {
+    display: block;
+    opacity: 0.72;
+    transition: opacity 0.42s $ease;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-left: 1.72rem;
+    line-height: 1.24;
+    text-align: left;
+
+    &--active {
+      opacity: 1;
+    }
+
+    @include respond(desktop-small) {
+      font-size: 2rem;
+      margin-left: 2.42rem;
+    }
+
+    @include respond(desktop-mid) {
+      flex-grow: 1;
+      text-align: right;
+      margin-right: 3.42rem;
+    }
+  }
+
+  &__chevron-btn {
+    margin-left: auto;
+    background-color: rgba($color-grey-dark, 0);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.24s $ease;
+    width: 4.2rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.24rem;
+
+    &:hover {
+      background-color: rgba($color-grey-dark, 0.11);
+    }
+
+    &--active {
+      background-color: rgba($color-grey-dark, 0.07);
+    }
+  }
+
+  &__chevron {
+    display: block;
+    fill: rgba($color-grey-dark, 0.5);
+    height: 2.4rem;
+    width: 2.4rem;
+    transition-duration: 0.24s;
+    transition-property: transform, fill;
+    transition-timing-function: $ease;
+
+    &--active {
+      transform: rotate(90deg);
+      fill: rgba($color-grey-dark, 0.8);
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    background-color: rgba($color-grey-dark, 0.18);
+
+    transition: max-height 0.42s $ease;
+
+    &__wrapper {
+      padding: 1.72rem 2.72rem;
+
+      @include respond(desktop-small) {
+        padding: 2.72rem 3.72rem;
+      }
+    }
+
+    &__description {
+      margin-bottom: 1.72rem;
+
+      @include respond(desktop-small) {
+        margin-bottom: 2.72rem;
+      }
+
+      &--noMargin {
+        margin-bottom: 0;
+      }
+    }
+
+    &__ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

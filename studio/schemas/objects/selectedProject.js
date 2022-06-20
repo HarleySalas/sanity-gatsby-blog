@@ -9,6 +9,11 @@ export default {
       title: "Название проекта / Project Name",
     },
     {
+      name: "finish",
+      type: "string",
+      title: "Отделка проекта / Project Finish",
+    },
+    {
       name: "foundation",
       type: "string",
       title: "Фундамент проекта / Project Foundation",

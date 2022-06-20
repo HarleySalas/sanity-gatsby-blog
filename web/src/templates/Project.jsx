@@ -25,6 +25,7 @@ const Project = ({ data, errors, location }) => {
           }}
           contactOptions={{
             foundations: project.foundations,
+            finishes: project.finishingOptions,
           }}
         >
           <ProjectTemplate project={project} />

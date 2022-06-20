@@ -1,0 +1,24 @@
+@import "../../../../../../styles/variables.scss";
+
+.project-finishing-options {
+  margin-bottom: 11rem;
+  &__title {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.11rem;
+    line-height: 1;
+    font-size: 1.8rem;
+    margin-bottom: 3.72rem;
+    text-align: center;
+
+    // @include respond(desktop-mid) {
+    //   width: 27rem;
+    //   text-align: left;
+    //   margin-bottom: 0;
+    // }
+  }
+
+  &__ul {
+    list-style: none;
+  }
+}
