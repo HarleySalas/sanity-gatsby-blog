@@ -7,7 +7,7 @@ const ArticlesCategories = ({ categories }) => {
     <div className="articles-categories">
       <div className="container articles-categories__container">
         <div className="articles-categories__wrapper">
-          <div className="articles-categories__title">Browse by Category</div>
+          <div className="articles-categories__title">Выберите категорию</div>
           <nav className="articles-categories__nav">
             <ul className="articles-categories__ul">
               <li className="articles-categories__li">
