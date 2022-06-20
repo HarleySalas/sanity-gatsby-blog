@@ -39,7 +39,7 @@ const HomeHero = () => {
         <div className="home-hero__background__overlay">
           <div className="home-hero__spacer"></div>
           <div className="container home-hero__container">
-            <span className="home-hero__subtitle">От 990 000 ₽</span>
+            <span className="home-hero__subtitle">От 2 430 000 ₽</span>
             <h1 className="home-hero__title">
               {isDesktop ? (
                 <>
