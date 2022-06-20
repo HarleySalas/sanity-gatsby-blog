@@ -50,7 +50,8 @@ export default () =>
     .title("Content")
     .items([
       S.listItem()
-        .title("Settings")
+        .id("settings")
+        .title("Настройки / Settings")
         .icon(MdSettings)
         .child(
           S.editor()
@@ -59,7 +60,8 @@ export default () =>
             .documentId("siteSettings")
         ),
       S.listItem()
-        .title("Company Details")
+        .id("companyDetails")
+        .title("Информация о компании / Company Details")
         .icon(MdSettings)
         .child(
           S.editor()
@@ -69,34 +71,42 @@ export default () =>
         ),
       S.divider(),
       S.listItem()
-        .title("About")
+        .id("about")
+        .title(`Страница "О компании" / About`)
         .child(
           S.list()
-            .title("About")
+            .id("about")
+            .title(`Страница "О компании" / About`)
             .items([
               S.listItem()
-                .title("About Us")
+                .id("aboutUs")
+                .title("О нас / About Us")
                 .child(
                   S.editor()
                     .id("aboutUs")
                     .schemaType("aboutUs")
                     .documentId("aboutUs")
-                    .title("About Us")
+                    .title("О нас / About Us")
                 ),
               S.listItem()
-                .title("How We Work")
+                .id("howWeWork")
+                .title("Как мы работаем / How We Work")
                 .child(
                   S.editor()
                     .id("howWeWork")
                     .schemaType("howWeWork")
                     .documentId("howWeWork")
-                    .title("How We Work")
+                    .title("Как мы работаем / How We Work")
                 ),
               S.listItem()
-                .title("Licenses")
+                .id("licenses")
+                .title("Лицензии / Licenses")
                 .schemaType("license")
-                .child(S.documentTypeList("license").title("Licenses")),
+                .child(
+                  S.documentTypeList("license").title("Лицензии / Licenses")
+                ),
               S.listItem()
+                .id("faq")
                 .title("FAQ")
                 .child(
                   S.editor()
@@ -108,111 +118,151 @@ export default () =>
             ])
         ),
       S.listItem()
-        .title("Projects")
+        .id("projects")
+        .title("Проекты / Projects")
         .child(
           S.list()
-            .title("Projects")
+            .id("projects")
+            .title("Проекты / Projects")
             .items([
               S.listItem()
-                .title("Listings")
+                .id("listings")
+                .title("Перечень проектов / Listings")
                 .schemaType("project")
-                .child(S.documentTypeList("project").title("Project Listings")),
-              S.listItem()
-                .title("Categories")
-                .schemaType("projectCategory")
                 .child(
-                  S.documentTypeList("projectCategory").title(
-                    "Project Categories"
-                  )
+                  S.documentTypeList("project")
+                    .id("project")
+                    .title("Перечень проектов / Project Listings")
                 ),
               S.listItem()
-                .title("Options")
+                .id("categories")
+                .title("Категории домов / Categories")
+                .schemaType("projectCategory")
+                .child(
+                  S.documentTypeList("projectCategory")
+                    .id("categories")
+                    .title("Категории домов / Project Categories")
+                ),
+              S.listItem()
+                .id("options")
+                .title("Варианты выбора / Options")
                 .child(
                   S.list()
-                    .title("Options")
+                    .id("options")
+                    .title("Варианты выбора / Options")
                     .items([
                       S.listItem()
-                        .title("Foundations")
+                        .id("foundations")
+                        .title("Фундаменты / Foundations")
                         .schemaType("foundation")
                         .child(
-                          S.documentTypeList("foundation").title("Foundations")
+                          S.documentTypeList("foundation")
+                            .id("foundations")
+                            .title("Фундаменты / Foundations")
                         ),
                     ])
                 ),
               S.listItem()
-                .title("Featured Project")
+                .id("featuredProject")
+                .title("Популярный проект / Featured Project")
                 .child(
                   S.editor()
                     .id("featuredProject")
                     .schemaType("featuredProject")
                     .documentId("featuredProject")
-                    .title("Featured Project")
+                    .title("Популярный проект / Featured Project")
                 ),
             ])
         ),
       S.listItem()
-        .title("Articles")
+        .id("articles")
+        .title("Статьи / Articles")
         .icon(MdDescription)
         .child(
           S.list()
-            .title("Articles")
+            .id("articles")
+            .title("Статьи / Articles")
             .items([
               S.listItem()
-                .title("Posts")
+                .id("posts")
+                .title("Все статьи / Posts")
                 .schemaType("post")
-                .child(S.documentTypeList("post").title("Article Posts")),
+                .child(
+                  S.documentTypeList("post")
+                    .id("posts")
+                    .title("Все статьи / Article Posts")
+                ),
               S.listItem()
-                .title("Authors")
+                .id("authors")
+                .title("Авторы / Authors")
                 .icon(MdPerson)
                 .schemaType("author")
-                .child(S.documentTypeList("author").title("Authors")),
+                .child(
+                  S.documentTypeList("author")
+                    .id("authors")
+                    .title("Авторы / Authors")
+                ),
               S.listItem()
-                .title("Categories")
+                .id("categories")
+                .title("Категории / Categories")
                 .icon(MdLocalOffer)
                 .schemaType("category")
-                .child(S.documentTypeList("category").title("Categories")),
+                .child(
+                  S.documentTypeList("category")
+                    .id("categories")
+                    .title("Категории / Categories")
+                ),
             ])
         ),
       S.listItem()
-        .title("Form Submissions")
+        .id("formSubmissions")
+        .title("Полученные формы / Form Submissions")
         .child(
           S.list()
-            .title("Form Submissions")
+            .id("formSubmissions")
+            .title("Полученные формы / Form Submissions")
             .items([
               S.listItem()
-                .title("New")
+                .id("new")
+                .title("Новые / New")
                 .schemaType("contactForm")
                 // .filter('_type == "contactForm"')
                 .child(
                   S.documentTypeList("contactForm")
-                    .title("New Form Submissions")
+                    .id("newFormSubmissions")
+                    .title("Новые заявки / New Form Submissions")
                     .filter('_type == "contactForm" && status == "new"')
                 ),
               S.listItem()
-                .title("Open")
+                .id("open")
+                .title("В процессе / Open")
                 .schemaType("contactForm")
                 // .filter('_type == "contactForm"')
                 .child(
                   S.documentTypeList("contactForm")
-                    .title("Open Form Submissions")
+                    .id("openFormSubmissions")
+                    .title("Заявки в работе / Open Form Submissions")
                     .filter('_type == "contactForm" && status == "open"')
                 ),
               S.listItem()
-                .title("Closed")
+                .id("closed")
+                .title("Завершенные / Closed")
                 .schemaType("contactForm")
                 // .filter('_type == "contactForm"')
                 .child(
                   S.documentTypeList("contactForm")
-                    .title("Closed Form Submissions")
+                    .id("closedFormSubmissions")
+                    .title("Завершенные заявки / Closed Form Submissions")
                     .filter('_type == "contactForm" && status == "closed"')
                 ),
               S.listItem()
-                .title("All")
+                .id("all")
+                .title("Все / All")
                 .schemaType("contactForm")
                 .child(
-                  S.documentTypeList("contactForm").title(
-                    "All Form Submissions"
-                  )
+                  S.documentTypeList("contactForm")
+                    .id("allFormSubmissions")
+                    .title("Все заявки / All Form Submissions")
                 ),
             ])
         ),

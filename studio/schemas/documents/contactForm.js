@@ -13,7 +13,7 @@ export default {
     {
       name: "name",
       type: "string",
-      title: "Name",
+      title: "Имя / Name",
       readOnly: true,
     },
     {
@@ -23,9 +23,9 @@ export default {
       initialValue: { _type: "string", value: "new" },
       options: {
         list: [
-          { title: "New", value: "new" },
-          { title: "Open", value: "open" },
-          { title: "Closed", value: "closed" },
+          { title: "Новые / New", value: "new" },
+          { title: "В процессе / Open", value: "open" },
+          { title: "Завершенные / Closed", value: "closed" },
         ],
         layout: "dropdown",
       },
@@ -41,57 +41,61 @@ export default {
     {
       name: "phone",
       type: "string",
-      title: "Phone",
+      title: "Телефон / Phone",
       readOnly: true,
     },
     {
       name: "message",
       type: "text",
-      title: "Message",
+      title: "Сообщение / Message",
       rows: 10,
       readOnly: true,
     },
     {
       name: "preferredMethod",
       type: "string",
-      title: "Preferred method of contat",
+      title: "Предпочтительный способ связи / Preferred method of contat",
       options: {
-        list: ["Email", "Phone"],
+        list: [
+          { title: "Email", value: "Phone" },
+          { title: "Телефон / Phone", value: "Phone" },
+        ],
         layout: "radio",
       },
     },
     {
       name: "location",
       type: "string",
-      title: "Location",
+      title: "Ссылка сайта / Location",
       description: "Page that the form was submitted from.",
       readOnly: true,
     },
     {
       name: "formSubmittedDate",
       type: "datetime",
-      title: "Form Submitted",
+      title: "Форма отправлена / Form Submitted",
       description: "Date and time that the form was originally submitted",
       readOnly: true,
     },
     {
       name: "project",
       type: "selectedProject",
-      title: "Project",
-      description: "Selected options of the project they were viewing.",
+      title: "Проект / Project",
+      description:
+        "Выбранные опции проекта, которые были выбраны / Selected options of the project they were viewing.",
       readOnly: true,
     },
     {
       name: "dateLastCommunicated",
       type: "date",
-      title: "Date Last Communicated",
+      title: "Дата последней коммуникации / Date Last Communicated",
       description: "Date of the most recent communication event.",
       initialValue: format(new Date(), "yyyy-MM-dd"),
     },
     {
       name: "notes",
       type: "text",
-      title: "Notes",
+      title: "Заметки / Notes",
       rows: 10,
     },
   ],

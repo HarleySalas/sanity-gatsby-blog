@@ -8,15 +8,16 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Title",
-      description: "Titles should be catchy, descriptive, and not too long",
+      title: "Название статьи / Title",
+      description:
+        "Названия должны быть цепляющими, не длинными / Titles should be catchy, descriptive, and not too long",
     },
     {
       name: "slug",
       type: "slug",
-      title: "Slug",
+      title: "Имя ссылки / Slug",
       description:
-        "Some frontends will require a slug to be set to be able to show the post",
+        "Имя ссылки для статьи / Some frontends will require a slug to be set to be able to show the post",
       options: {
         source: "title",
         maxLength: 96,
@@ -25,24 +26,25 @@ export default {
     {
       name: "publishedAt",
       type: "datetime",
-      title: "Published at",
-      description: "This can be used to schedule post for publishing",
+      title: "Опубликовано / Published at",
+      description:
+        "Может быть использовано для отложенного постинга / This can be used to schedule post for publishing",
     },
     {
       name: "mainImage",
       type: "mainImage",
-      title: "Main image",
+      title: "Главная картинка / Main image",
     },
     {
       name: "excerpt",
       type: "excerptPortableText",
-      title: "Excerpt",
+      title: "О статье / Excerpt",
       description:
-        "This ends up on summary pages, on Google, when people share your post in social media.",
+        "Описание будет видно в поисковиках Яндекс, Google, когда люди делятся в соцсетях / This ends up on summary pages, on Google, when people share your post in social media.",
     },
     {
       name: "authors",
-      title: "Authors",
+      title: "Автор / Authors",
       type: "array",
       of: [
         {
@@ -53,7 +55,7 @@ export default {
     {
       name: "categories",
       type: "array",
-      title: "Categories",
+      title: "Категории / Categories",
       of: [
         {
           type: "reference",
@@ -66,7 +68,7 @@ export default {
     {
       name: "body",
       type: "bodyPortableText",
-      title: "Body",
+      title: "Текст статьи / Body",
     },
   ],
   orderings: [

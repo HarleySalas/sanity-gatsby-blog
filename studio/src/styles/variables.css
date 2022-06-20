@@ -9,6 +9,9 @@
 */
 
 :root {
+  /* --brand-primary: #ed6830;
+
+  --main-navigation-color: #26262c; */
   /* Brand colors */
   /*
   --brand-primary: var(--brand-primary);
@@ -27,4 +30,8 @@
   --main-navigation-color: var(--brand-secondary);
   --main-navigation-color--inverted: var(--brand-secondary--inverted);
   */
+}
+
+:global([class^="ArrayInput"] [class^="DefaultButton_text"])::before {
+  content: "Добавить / Add item";
 }

@@ -1,19 +1,20 @@
 export default {
   name: "foundationOption",
   type: "object",
-  title: "Foundation Option",
+  title: "Варианты фундаментов / Foundation Option",
   fields: [
     {
       name: "type",
-      title: "Foundation Type",
+      title: "Вид Фундамента / Foundation Type",
       type: "reference",
       to: [{ type: "foundation" }],
     },
     {
       name: "cost",
-      title: "Foundation Cost",
+      title: "Цена / Foundation Cost",
       type: "number",
-      description: "Cost of the foundation type for this project.",
+      description:
+        "Цена фундамента для этого проекта / Cost of the foundation type for this project.",
     },
   ],
   preview: {

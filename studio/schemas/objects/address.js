@@ -1,31 +1,31 @@
 export default {
   name: "address",
   type: "object",
-  title: "Address",
+  title: "Адрес / Address",
   fields: [
     {
       name: "streetAddress",
-      title: "Street Address",
+      title: "Улица / Street Address",
       type: "string",
     },
     {
       name: "city",
-      title: "City",
+      title: "Город / City",
       type: "string",
     },
     {
       name: "region",
-      title: "Region",
+      title: "Регион / Region",
       type: "string",
     },
     {
       name: "zipcode",
-      title: "Postal Code",
+      title: "Индекс / Postal Code",
       type: "string",
     },
     {
       name: "mapLink",
-      title: "Link to Map",
+      title: "Ссылка на карту / Link to Map",
       type: "url",
     },
   ],

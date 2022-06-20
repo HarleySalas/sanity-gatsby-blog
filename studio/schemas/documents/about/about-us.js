@@ -8,7 +8,7 @@ export default {
     {
       name: "body",
       type: "bodyPortableText",
-      title: "Body",
+      title: "О компании",
     },
   ],
 };

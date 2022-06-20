@@ -45,6 +45,14 @@
     {
       "title": "FAQ",
       "link": "/about/faq"
+    },
+    {
+      "title": "Политика конфиденциальности",
+      "link": "/privacy-policy"
+    },
+    {
+      "title": "Пользовательское соглашение",
+      "link": "/terms-of-use"
     }
   ]
 }

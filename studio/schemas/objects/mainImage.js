@@ -1,7 +1,7 @@
 export default {
   name: "mainImage",
   type: "image",
-  title: "Image",
+  title: "Картинка / Image",
   options: {
     hotspot: true,
   },
@@ -9,7 +9,7 @@ export default {
     {
       name: "caption",
       type: "string",
-      title: "Caption",
+      title: "Подпись / Caption",
       options: {
         isHighlighted: true,
       },
@@ -17,8 +17,8 @@ export default {
     {
       name: "alt",
       type: "string",
-      title: "Alternative text",
-      description: "Important for SEO and accessiblity.",
+      title: "Альтернативный текст / Alternative text",
+      description: "Важно для SEO / Important for SEO and accessiblity.",
       validation: (Rule) =>
         Rule.error("You have to fill out the alternative text.").required(),
       options: {

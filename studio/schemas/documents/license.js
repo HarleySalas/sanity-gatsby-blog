@@ -7,22 +7,22 @@ export default {
     {
       name: "type",
       type: "string",
-      title: "License Type",
-      description: "Title of the license",
+      title: "Тип лицензии / License Type",
+      description: "Название лицензии / Title of the license",
     },
     {
       name: "file",
       type: "file",
-      title: "File",
-      description: "PDF File of the license",
+      title: "Файл / File",
+      description: "Загрузите файл в формате PDF / PDF File of the license",
       accept: "pdf",
     },
     {
       name: "preview",
       type: "image",
-      title: "License preview image",
+      title: "Предпросмотр лицензии / License preview image",
       description:
-        "First page of the license in png/jpeg, for preview purposes.",
+        "Загрузите файл в формате png/jpeg / First page of the license in png/jpeg, for preview purposes.",
       accept: "png, jpeg, jpg",
     },
   ],

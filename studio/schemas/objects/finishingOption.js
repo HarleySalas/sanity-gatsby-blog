@@ -1,20 +1,20 @@
 export default {
   name: "finishingOption",
   type: "object",
-  title: "Finishing Option",
+  title: "Варианты отделки / Finishing Option",
   fields: [
     {
       name: "type",
-      title: "Finishing Type",
+      title: "Вид отделки / Finishing Type",
       type: "string",
-      description: `Вид отделки, обычно "без отделки" или "с отделкой"`,
+      description: `Вид отделки, обычно "без отделки", "черновая отделка" или "чистовая отделка"`,
     },
     {
       name: "description",
       type: "simplePortableText",
-      title: "Description",
+      title: "Описание / Description",
       description:
-        "Optional description of the option, usually a paragraph, or so long.",
+        "Необязательное описание варианта, обычно абзац / Optional description of the option, usually a paragraph, or so long.",
     },
     {
       name: "features",
@@ -27,10 +27,10 @@ export default {
     },
     {
       name: "cost",
-      title: "Cost",
+      title: "Цена / Cost",
       type: "number",
       description:
-        "Cost of the finishing type for this project. Unfinished is always 0.",
+        "Цена за отделку, без отделки всегда 0 / Cost of the finishing type for this project. Unfinished is always 0.",
     },
   ],
   preview: {

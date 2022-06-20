@@ -1,17 +1,17 @@
 export default {
   name: "selectedProject",
   type: "object",
-  title: "Selected Project",
+  title: "Выбранный проект / Selected Project",
   fields: [
     {
       name: "name",
       type: "string",
-      title: "Project Name",
+      title: "Название проекта / Project Name",
     },
     {
       name: "foundation",
       type: "string",
-      title: "Project Foundation",
+      title: "Фундамент проекта / Project Foundation",
     },
   ],
 };

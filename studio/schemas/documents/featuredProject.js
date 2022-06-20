@@ -7,8 +7,9 @@ export default {
   fields: [
     {
       name: "featured",
-      title: "Featured Project",
-      description: "This project will be featured on the Home Page.",
+      title: "Популярный проект / Featured Project",
+      description:
+        "Этот проект будет отображаться как популярный на главной странице / This project will be featured on the Home Page.",
       type: "reference",
       to: {
         type: "project",

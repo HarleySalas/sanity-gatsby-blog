@@ -6,12 +6,12 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Title",
+      title: "Название / Title",
     },
     {
       name: "description",
       type: "simplePortableText",
-      title: "Description",
+      title: "Описание / Description",
     },
   ],
 };

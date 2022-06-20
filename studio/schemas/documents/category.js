@@ -7,12 +7,12 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Title",
+      title: "Название категории / Title",
     },
     {
       name: "slug",
       type: "slug",
-      title: "Slug",
+      title: "Имя ссылки / Slug",
       options: {
         // add a button to generate slug from the title field
         source: "title",
@@ -21,7 +21,7 @@ export default {
     {
       name: "description",
       type: "text",
-      title: "Description",
+      title: "Описание / Description",
     },
   ],
 };

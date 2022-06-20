@@ -8,8 +8,8 @@ export default {
     {
       name: "questions",
       type: "array",
-      title: "Questions",
-      of: [{ type: "question" }],
+      title: "Вопросы / Questions",
+      of: [{ type: "question", title: "Вопросы / Questions" }],
     },
   ],
 };

@@ -14,22 +14,22 @@ export default {
     },
     {
       name: "isActive",
-      title: "Active",
+      title: "Активный / Active",
       type: "boolean",
       description:
-        "Set to active when the project should be visible on the website.",
+        "Нажмите на кнопку, чтобы проект отображался на сайте / Set to active when the project should be visible on the website.",
       initialValue: true,
     },
     {
       name: "publishedAt",
       type: "datetime",
-      title: "Published at",
+      title: "Опубликован / Published at",
     },
     {
       name: "slug",
       type: "slug",
-      title: "Slug",
-      description: "Slug/name of page link",
+      title: "Имя ссылки / Slug",
+      description: "Название ссылки на проект / Slug/name of page link",
       options: {
         source: "name",
         maxLength: 96,
@@ -38,34 +38,38 @@ export default {
     {
       name: "images",
       type: "array",
+      title: "Картинки / Images",
       description:
-        "Images of the project. The first image will be used as the primary image.",
+        "Загрузите картинки проекта. Первая картинка будет использоваться как главная / Images of the project. The first image will be used as the primary image.",
       of: [{ type: "mainImage" }],
     },
     {
       name: "blueprintsDisplay",
       type: "array",
+      title: "Планы этажей / Blueprints",
       description:
-        "Blueprints of each floor, in SVG format, to be displayed on the page.",
+        "План каждого этажа в SVG формате для отображения на странице проекта / Blueprints of each floor, in SVG format, to be displayed on the page.",
       of: [{ type: "svgWithPreview" }],
     },
     {
       name: "originalBlueprint",
       type: "file",
-      description: "PDF Original, accurate blueprint for download.",
+      title: "Оригинальные планы этажей / Blueprints",
+      description:
+        "План каждого этажа в формате PDF для скачивания / PDF Original, accurate blueprint for download.",
       accept: "pdf",
     },
     {
       name: "excerpt",
       type: "excerptPortableText",
-      title: "Excerpt",
+      title: "О проекте / Excerpt",
       description:
-        "This ends up on summary pages, on Google, when people share the project on social media.",
+        "Этот текст будет на страницах в поиске Яндекс или Google, когда люди делятся проектом в соцсетях / This ends up on summary pages, on Google, when people share the project on social media.",
     },
     {
       name: "categories",
       type: "array",
-      title: "Categories",
+      title: "Категории / Categories",
       of: [
         {
           type: "reference",
@@ -78,18 +82,18 @@ export default {
     {
       name: "price",
       type: "number",
-      title: "Price",
+      title: "Цена / Price",
       description:
-        "Base price of the project in rubles, without symbols of any form",
+        "Базовая цена проекта в рублях, без какого-либо обозначения рубля / Base price of the project in rubles, without symbols of any form",
       validation: (Rule) =>
         Rule.required().error("A base price must be provided."),
     },
     {
       name: "bedrooms",
       type: "string",
-      title: "Bedrooms",
+      title: "Спальни / Bedrooms",
       description:
-        "Number of bedrooms. Can be provided in a range format, eg: '3-4', without spaces, or simply as a number.",
+        "Количество спален. Можно в варьирующемся формате '3-4' без пробелов или просто одно число / Number of bedrooms. Can be provided in a range format, eg: '3-4', without spaces, or simply as a number.",
       validation: (Rule) => [
         Rule.required().error(
           "You must indiciate the number of bedrooms available."
@@ -100,9 +104,9 @@ export default {
     {
       name: "bathrooms",
       type: "string",
-      title: "Bathrooms",
+      title: "Санузлы / Bathrooms",
       description:
-        "Number of bathrooms. Can be provided in a range format, eg: '3-4', without spaces, or simply as a number.",
+        "Количество санузлов. Можно в варьирующемся формате '3-4' без пробелов или просто одно число / Number of bathrooms. Can be provided in a range format, eg: '3-4', without spaces, or simply as a number.",
       validation: (Rule) => [
         Rule.required().error(
           "You must indiciate the number of bathrooms available."
@@ -113,15 +117,16 @@ export default {
     {
       name: "floors",
       type: "number",
-      title: "Floors",
-      description: "Number of floors.",
+      title: "Этажи / Floors",
+      description: "Количнство этажей / Number of floors.",
       validation: (Rule) => Rule.required().error(""),
     },
     {
       name: "interiorSize",
       type: "number",
-      title: "Interior Size",
-      description: "Interior size, measured in square meters.",
+      title: "Площадь дома / Interior Size",
+      description:
+        "Метраж дома в квадратных метрах, только число / Interior size, measured in square meters.",
       validation: (Rule) =>
         Rule.required().error(
           "You must provide the interior size of the home."
@@ -130,18 +135,18 @@ export default {
     {
       name: "totalSize",
       type: "number",
-      title: "Total Size",
+      title: "Общая площадь дома / Total Size",
       description:
-        "Total size of the home, including porches, terraces and balconies, measured in square meters.",
+        "Размер дома в квадратных метрах, включая террасы, крыльцо, балконы и тд / Total size of the home, including porches, terraces and balconies, measured in square meters.",
       validation: (Rule) =>
         Rule.required().error("You must provide the total size of the home."),
     },
     {
       name: "totalArea",
       type: "array",
-      title: "Total Area",
+      title: "Размер дома / Total Area",
       description:
-        "Total area footprint of the home, measured in meters, eg: 10x12). Please provide each dimension as a number, separately.",
+        "Размер дома в метрах, например, 10x12, каждый параметр как отдельное число, на отдельных строчках / Total area footprint of the home, measured in meters, eg: 10x12). Please provide each dimension as a number, separately.",
       of: [{ type: "number" }],
       validation: (Rule) => [
         Rule.required().error("Total area is required."),
@@ -151,14 +156,15 @@ export default {
     {
       name: "description",
       type: "simplePortableText",
-      title: "Project Description",
+      title: "Описание проекта / Project Description",
       validation: (Rule) =>
         Rule.required().error("There must be a project description."),
     },
     {
       name: "finishingOptions",
-      title: "Finishing Options",
-      description: "Finishing options available for this project.",
+      title: "Виды отделки / Finishing Options",
+      description:
+        "Доступные виды отделки для проекта / Finishing options available for this project.",
       type: "array",
       of: [{ type: "finishingOption" }],
       validation: (Rule) =>
@@ -178,8 +184,9 @@ export default {
     },
     {
       name: "foundations",
-      title: "Foundations",
-      description: "Foundations available for this project.",
+      title: "Фундаменты / Foundations",
+      description:
+        "Доступные виды фундаментов для проекта / Foundations available for this project.",
       type: "array",
       of: [{ type: "foundationOption" }],
       validation: (Rule) =>

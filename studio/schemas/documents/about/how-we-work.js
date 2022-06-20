@@ -8,13 +8,18 @@ export default {
     {
       name: "steps",
       type: "array",
-      title: "Steps",
-      of: [{ type: "titledText" }],
+      title: "Этапы работы с клиентом / Steps of work",
+      of: [
+        {
+          type: "titledText",
+          title: "Этап / Step",
+        },
+      ],
     },
     {
       name: "message",
       type: "simplePortableText",
-      title: "Message",
+      title: "Текст под этапами / Text",
     },
   ],
 };

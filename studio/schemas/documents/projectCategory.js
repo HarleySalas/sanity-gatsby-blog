@@ -7,12 +7,12 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Title",
+      title: "Название категории / Title",
     },
     {
       name: "description",
       type: "text",
-      title: "description",
+      title: "Описание / Description",
     },
   ],
 };
