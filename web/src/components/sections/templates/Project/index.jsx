@@ -9,7 +9,7 @@ import ProjectDetails from "./ProjectDetails/ProjectDetails";
 import ProjectDescription from "./ProjectDescription/ProjectDescription";
 import ProjectSelection from "./ProjectSelection/ProjectSelection";
 import ProjectOptions from "./ProjectOptions/ProjectOptions";
-
+import projectFinishesDefault from "./ProjectOptions/ProjectFinishingOptions/projectFinishesDefault";
 const ProjectTemplate = ({ project }) => {
   const {
     name,
@@ -22,6 +22,8 @@ const ProjectTemplate = ({ project }) => {
     interiorSize,
     totalSize,
     totalArea,
+    buildingArea,
+    constructionArea,
     blueprintsDisplay,
     originalBlueprint,
     _rawDescription,
@@ -36,6 +38,8 @@ const ProjectTemplate = ({ project }) => {
     floors,
     interiorSize,
     totalSize,
+    buildingArea,
+    constructionArea,
     totalArea,
   };
   const projectDescriptionData = {
@@ -54,7 +58,10 @@ const ProjectTemplate = ({ project }) => {
         name: project.name,
         price: project.price,
         foundations: project.foundations,
-        finishes: project.finishingOptions,
+        finishes:
+          project.finishingOptions.length > 0
+            ? project.finishingOptions
+            : projectFinishesDefault,
       })
     );
   }, [
@@ -81,7 +88,6 @@ const ProjectTemplate = ({ project }) => {
           </div>
         </div>
       </div>
-
       <div className="container">
         <ProjectDescription data={projectDescriptionData} />
         <ProjectOptions options={options} />

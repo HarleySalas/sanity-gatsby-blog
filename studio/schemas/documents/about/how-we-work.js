@@ -6,6 +6,17 @@ export default {
   __experimental_actions: ["update", /* 'create',/* 'delete', */ "publish"],
   fields: [
     {
+      name: "guarantees",
+      type: "array",
+      title: "Гарантии / Guarantees",
+      of: [
+        {
+          type: "titledText",
+          title: "Guarantee",
+        },
+      ],
+    },
+    {
       name: "steps",
       type: "array",
       title: "Этапы работы с клиентом / Steps of work",

@@ -6,9 +6,14 @@
   }
 
   &__h2 {
-    font-weight: 500;
     font-size: 3rem;
-    margin-bottom: 5rem;
+    font-weight: 400;
+    margin: 4.24rem 0 3.42rem 0;
+
+    @include respond(desktop-small) {
+      font-size: 4rem;
+      margin: 11.24rem 0 7.42rem 0;
+    }
   }
 
   &__ol {
@@ -23,7 +28,7 @@
     &::before {
       margin-right: 2rem;
       content: counter(item, decimal-leading-zero);
-      font-size: 5rem;
+      font-size: 3.72rem;
       color: rgba($color-black, 0.72);
 
       @include respond(tab-port) {

@@ -35,11 +35,18 @@
   &--rounded {
   }
 
+  &--xs {
+    font-size: 1.5rem;
+    letter-spacing: 0.11rem;
+    padding: 0.24rem 1.42rem;
+    font-weight: 500;
+  }
+
   &--sm {
     font-size: 1.6rem;
     letter-spacing: 0.18rem;
     padding: 0.72rem 2.42rem;
-    font-weight: 400;
+    font-weight: 500;
 
     & .button__icon__arrow-right {
       height: 1.7rem;

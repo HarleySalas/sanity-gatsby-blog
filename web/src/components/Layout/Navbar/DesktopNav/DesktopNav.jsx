@@ -26,13 +26,7 @@ const DesktopNav = () => {
             </Link>
           </li>
           <li className="desktop-nav__li">
-            <Link
-              to="/about"
-              className="desktop-nav__link"
-              activeClassName="desktop-nav__link--active"
-            >
-              О компании
-            </Link>
+            <div className="desktop-nav__link">О компании</div>
             <ul className="desktop-nav__sub-ul">
               <li className="desktop-nav__sub-li">
                 <Link

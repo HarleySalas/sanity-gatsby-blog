@@ -4,13 +4,15 @@ import BasicPageHero from "../../components/BasicPageHero/BasicPageHero";
 import FaqAccordion from "../../components/sections/About/Faq/FaqAccordion/FaqAccordion";
 import { graphql } from "gatsby";
 import AboutLinks from "../../components/sections/About/Index/AboutLinks/AboutLinks";
+import AboutNextPrev from "../../components/sections/About/Index/AboutNextPrev/AboutNextPrev";
 
-const faq = ({ data }) => {
+const faq = ({ data, location }) => {
   return (
-    <Layout title="FAQ" contactForm>
+    <Layout title="FAQ" contactForm location={location}>
       <BasicPageHero title="FAQ" basic />
       <AboutLinks />
       <FaqAccordion faq={data.faq.questions} />
+      <AboutNextPrev prev="Лицензии" prevLink="/about/licenses" />
     </Layout>
   );
 };

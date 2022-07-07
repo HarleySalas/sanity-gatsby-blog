@@ -2,17 +2,7 @@
 
 .about-links {
   position: relative;
-  padding: 1.72rem 0;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.1rem;
-    background-color: rgba($color-black, 0.18);
-  }
+  // padding: 1.72rem 0;
 
   &__container {
   }
@@ -76,13 +66,13 @@
       color: rgba($color-black, 0.72);
     }
 
-    &::after {
-      content: "/";
-      position: absolute;
-      right: -2rem;
-      top: 50%;
-      transform: translate(50%, -50%);
-    }
+    // &::after {
+    //   content: "/";
+    //   position: absolute;
+    //   right: -2rem;
+    //   top: 50%;
+    //   transform: translate(50%, -50%);
+    // }
 
     &--active {
       &:hover {
@@ -91,7 +81,7 @@
       &::before {
         content: "";
         position: absolute;
-        bottom: 0;
+        bottom: 0.24rem;
         width: 100%;
         height: 0.2rem;
         background-color: $color-black;

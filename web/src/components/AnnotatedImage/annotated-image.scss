@@ -1,0 +1,61 @@
+@import "../../styles/variables.scss";
+
+.annotated-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.72rem 0;
+  background-color: rgba($color-grey-dark, 0.18);
+
+  @include respond(tab-land) {
+    padding: 3.72rem 0;
+  }
+
+  &__img-wrapper {
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    overflow: visible;
+
+    @include respond(tab-port) {
+      width: 50rem;
+    }
+
+    @include respond(tab-land) {
+      width: auto;
+      height: 36rem;
+    }
+  }
+  &__img {
+    position: relative;
+    display: block;
+    width: 100%;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+
+    &[data-loading] {
+      bottom: 7rem;
+      right: 0 !important;
+      z-index: 1500;
+    }
+
+    // img[data-loading] {
+    //   bottom: 7rem;
+    //   z-index: 1500 !important;
+    //   opacity: 1 !important;
+    // }
+
+    // @include respond(tab-port) {
+    //   width: 100%;
+    // }
+
+    @include respond(tab-land) {
+      width: auto;
+      height: 100%;
+    }
+  }
+}

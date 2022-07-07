@@ -90,49 +90,49 @@
         margin-top: 3.24rem;
       }
 
-      &:nth-of-type(3) {
-        @include respond(desktop-small) {
-          margin-top: 4.42rem;
-        }
+      // &:nth-of-type(3) {
+      //   @include respond(desktop-small) {
+      //     margin-top: 4.42rem;
+      //   }
 
-        @include respond(desktop) {
-          margin-top: 5.72rem;
-        }
-      }
+      //   @include respond(desktop) {
+      //     margin-top: 5.72rem;
+      //   }
+      // }
 
-      &:nth-of-type(4) {
-        @include respond(desktop-small) {
-          margin-top: 4.42rem;
-        }
+      // &:nth-of-type(4) {
+      //   @include respond(desktop-small) {
+      //     margin-top: 4.42rem;
+      //   }
 
-        @include respond(desktop) {
-          margin-top: 5.72rem;
-        }
-      }
+      //   @include respond(desktop) {
+      //     margin-top: 5.72rem;
+      //   }
+      // }
 
-      &:nth-of-type(7) {
-        margin-top: 5.42rem;
+      // &:nth-of-type(7) {
+      //   margin-top: 5.42rem;
 
-        @include respond(tab-land) {
-          margin-top: 7rem;
-        }
+      //   @include respond(tab-land) {
+      //     margin-top: 7rem;
+      //   }
 
-        @include respond(desktop) {
-          margin-top: 9rem;
-        }
-      }
+      //   @include respond(desktop) {
+      //     margin-top: 9rem;
+      //   }
+      // }
 
-      &:nth-of-type(8) {
-        margin-top: 5.42rem;
+      // &:nth-of-type(8) {
+      //   margin-top: 5.42rem;
 
-        @include respond(tab-land) {
-          margin-top: 7rem;
-        }
+      //   @include respond(tab-land) {
+      //     margin-top: 7rem;
+      //   }
 
-        @include respond(desktop) {
-          margin-top: 9rem;
-        }
-      }
+      //   @include respond(desktop) {
+      //     margin-top: 9rem;
+      //   }
+      // }
     }
 
     &__top {
@@ -164,12 +164,14 @@
     &__value {
       line-height: 1;
       color: $color-grey-dark;
-      font-weight: 500;
-      font-size: 1.6rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      text-align: center;
 
-      @include respond(tab-port) {
-        font-size: 1.8rem;
-      }
+      // @include respond(tab-port) {
+      //   font-size: 1.8rem;
+      // }
     }
 
     &__description {

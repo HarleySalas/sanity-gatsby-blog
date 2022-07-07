@@ -20,6 +20,7 @@ import aboutUs from "./documents/about/about-us";
 import howWeWork from "./documents/about/how-we-work";
 import featuredProject from "./documents/featuredProject";
 import contactForm from "./documents/contactForm";
+import technologyAndMaterials from "./documents/about/technology-and-materials";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -40,6 +41,9 @@ import selectedProject from "./objects/selectedProject";
 import bank from "./objects/bank";
 import companyRequisites from "./objects/companyRequisites";
 import featureOption from "./objects/featureOption";
+import annotation from "./objects/annotation";
+import annotatedImage from "./objects/annotatedImage";
+import portableText from "./objects/portableText";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -71,6 +75,7 @@ export default createSchema({
     howWeWork,
     featuredProject,
     contactForm,
+    technologyAndMaterials,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
@@ -86,5 +91,8 @@ export default createSchema({
     bank,
     companyRequisites,
     featureOption,
+    annotation,
+    annotatedImage,
+    portableText,
   ]),
 });

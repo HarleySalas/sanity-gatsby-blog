@@ -1,0 +1,144 @@
+@import "../../../../../../styles/variables.scss";
+
+.about-links-mobile {
+  &__wrapper {
+  }
+
+  &__accordion {
+    position: relative;
+    padding: 1.72rem 0;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.1rem;
+      background-color: rgba($color-black, 0.18);
+    }
+  }
+
+  &__container {
+  }
+
+  &__accordion-wrapper {
+    // display: flex;
+    // justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.11rem;
+    margin-right: 3.72rem;
+    flex-shrink: 0;
+  }
+
+  &__trigger {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__chevron {
+    display: block;
+    height: 2.24rem;
+    fill: rgba($color-grey-dark, 0.72);
+    transform: rotate(0deg);
+    transition: all 0.24s $ease;
+
+    &:hover {
+      fill: rgba($color-grey-dark, 1);
+    }
+
+    &--active {
+      transform: rotate(90deg);
+      fill: rgba($color-grey-dark, 1);
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    transition: all 0.24s $ease;
+  }
+
+  &__ul {
+    list-style: none;
+  }
+
+  &__li {
+    position: relative;
+    padding: 1rem 0;
+    background-color: rgba($color-grey-dark, 0.16);
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 0.1rem;
+      background-color: rgba($color-grey-dark, 0.18);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      background-color: rgba($color-grey-dark, 0.11);
+    }
+
+    &--active {
+      background-color: rgba($color-grey-dark, 0.11);
+    }
+  }
+
+  &__li-container {
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+
+    color: rgba($color-grey-dark, 0.72);
+
+    &:hover {
+      color: rgba($color-grey-dark, 1);
+    }
+
+    &--active {
+      color: rgba($color-grey-dark, 1);
+
+      &:hover {
+        color: rgba($color-grey-dark, 1);
+      }
+
+      & > .about-links-mobile__link-wrapper::before {
+        content: "";
+        position: absolute;
+        bottom: -0.24rem;
+        width: 100%;
+        height: 0.2rem;
+        background-color: rgba($color-grey-dark, 1);
+        // transform: scaleX(1);
+        // transition: all 0.42s $ease;
+        animation: growRight 0.42s $ease forwards;
+      }
+    }
+  }
+
+  &__link-wrapper {
+    position: relative;
+    color: inherit;
+    font-size: 1.6rem;
+    line-height: 2;
+    font-weight: 600;
+    letter-spacing: 0.11rem;
+    text-transform: uppercase;
+    transition: all 0.42s $ease;
+  }
+}

@@ -1,0 +1,57 @@
+@import "../../../../../styles/variables.scss";
+
+.company-about {
+  margin: 5.42rem 0;
+
+  @include respond(desktop-small) {
+    margin: 7.42rem 0;
+  }
+
+  &__container {
+  }
+
+  &__wrapper {
+    @include respond(desktop-small) {
+      display: flex;
+    }
+  }
+
+  &__half {
+    position: relative;
+
+    @include respond(desktop-small) {
+      width: 65%;
+
+      &:nth-of-type(1) {
+        width: 35%;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 4.24rem;
+    @include respond(desktop-small) {
+      margin-top: 0;
+      margin-left: 5.72rem;
+    }
+
+    @include respond(desktop-mid) {
+      margin-left: 7.42rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+
+    @include respond(tab-port) {
+      width: 42rem;
+      margin: 0 auto;
+    }
+
+    @include respond(desktop-small) {
+      width: 100%;
+      margin: initial;
+    }
+  }
+}

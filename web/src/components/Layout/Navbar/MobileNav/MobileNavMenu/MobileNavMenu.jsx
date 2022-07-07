@@ -5,11 +5,14 @@ import "./mobile-nav-menu.scss";
 import { useScrollLock } from "../../../../../hooks";
 import LogoEmblem from "../../../../../assets/logo-emblem.svg";
 import PhoneIcon from "../../../../../assets/icons/phone-outline.svg";
+import Chevron from "../../../../../assets/icons/chevron.svg";
 
 const MobileNavMenu = ({ location, isOpen, toggle }) => {
   const [, setRendered] = useState(false);
   const menuRef = useRef(null);
   const [lockScroll, unlockScroll] = useScrollLock();
+  const [dropdownActive, setDropdownActive] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleOnEnter = () => {
     lockScroll();
@@ -70,14 +73,107 @@ const MobileNavMenu = ({ location, isOpen, toggle }) => {
               </Link>
             </li>
             <li className="mobile-nav-menu__li">
-              <Link
-                to="/about"
+              <div
+                tabIndex="0"
+                role="button"
+                aria-expanded={dropdownActive}
                 className="mobile-nav-menu__link"
-                activeClassName="mobile-nav-menu__link--active"
-                onClick={() => handleClick("/about")}
+                onClick={() => setDropdownActive(!dropdownActive)}
+                onKeyDown={(e) =>
+                  e.key === "Enter" && setDropdownActive(!dropdownActive)
+                }
               >
-                О компании
-              </Link>
+                <span className="mobile-nav-menu__link__span">О компании</span>
+                <Chevron
+                  className={`mobile-nav-menu__dropdown__chevron ${
+                    dropdownActive
+                      ? "mobile-nav-menu__dropdown__chevron--active"
+                      : null
+                  }`}
+                />
+              </div>
+              <div
+                className="mobile-nav-menu__dropdown"
+                ref={dropdownRef}
+                style={
+                  dropdownActive
+                    ? {
+                        maxHeight: `${
+                          dropdownRef.current
+                            ? dropdownRef.current.scrollHeight
+                            : 0
+                        }px`,
+                      }
+                    : null
+                }
+              >
+                <ul className="mobile-nav-menu__ul">
+                  <li className="mobile-nav-menu__li mobile-nav-menu__li--sub">
+                    <Link
+                      to="/about/company"
+                      className="mobile-nav-menu__link mobile-nav-menu__link--sub"
+                      activeClassName="mobile-nav-menu__link--active"
+                      onClick={() => handleClick("/about/company")}
+                    >
+                      О НАС
+                    </Link>
+                  </li>
+                  <li className="mobile-nav-menu__li mobile-nav-menu__li--sub">
+                    <Link
+                      to="/about/how-we-work"
+                      className="mobile-nav-menu__link mobile-nav-menu__link--sub"
+                      activeClassName="mobile-nav-menu__link--active"
+                      onClick={() => handleClick("/about/how-we-work")}
+                    >
+                      КАК МЫ РАБОТАЕМ
+                    </Link>
+                  </li>
+                  <li className="mobile-nav-menu__li mobile-nav-menu__li--sub">
+                    <Link
+                      to="/about/technologies-and-materials"
+                      className="mobile-nav-menu__link mobile-nav-menu__link--sub"
+                      activeClassName="mobile-nav-menu__link--active"
+                      onClick={() =>
+                        handleClick("/about/technologies-and-materials")
+                      }
+                    >
+                      ТЕХНОЛОГИИ И МАТЕРИАЛЫ
+                    </Link>
+                  </li>
+                  <li className="mobile-nav-menu__li mobile-nav-menu__li--sub">
+                    <Link
+                      to="/about/credit-maternity-capital"
+                      className="mobile-nav-menu__link mobile-nav-menu__link--sub"
+                      activeClassName="mobile-nav-menu__link--active"
+                      onClick={() =>
+                        handleClick("/about/credit-maternity-capital")
+                      }
+                    >
+                      КРЕДИТ И МАТЕРИНСКИЙ КАПИТАЛ
+                    </Link>
+                  </li>
+                  <li className="mobile-nav-menu__li mobile-nav-menu__li--sub">
+                    <Link
+                      to="/about/licenses"
+                      className="mobile-nav-menu__link mobile-nav-menu__link--sub"
+                      activeClassName="mobile-nav-menu__link--active"
+                      onClick={() => handleClick("/about/licenses")}
+                    >
+                      ЛИЦЕНЗИИ
+                    </Link>
+                  </li>
+                  <li className="mobile-nav-menu__li mobile-nav-menu__li--sub">
+                    <Link
+                      to="/about/faq"
+                      className="mobile-nav-menu__link mobile-nav-menu__link--sub"
+                      activeClassName="mobile-nav-menu__link--active"
+                      onClick={() => handleClick("/about/faq")}
+                    >
+                      FAQ
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className="mobile-nav-menu__li">
               <Link

@@ -2,8 +2,9 @@ import React from "react";
 import InlineLink from "../InlineLink/InlineLink";
 import { PortableText as BasePortableText } from "@portabletext/react";
 import "./portable-text.scss";
+import AnnotatedImage from "../AnnotatedImage/AnnotatedImage";
 
-const portableTextComponents = (document) => {
+const portableTextComponents = ({ document, guarantee }) => {
   return {
     block: {
       normal: ({ children }) => (
@@ -27,10 +28,21 @@ const portableTextComponents = (document) => {
           {children}
         </p>
       ),
+      blockEmphasis: ({ children }) => (
+        <p className="portable-text__p portable-text__p--emphasis">
+          <em>{children}</em>
+        </p>
+      ),
     },
     list: {
       bullet: ({ children }) => (
-        <ul className="portable-text__ul">{children}</ul>
+        <ul
+          className={`portable-text__ul ${
+            guarantee ? "portable-text__ul--guarantee" : null
+          }`}
+        >
+          {children}
+        </ul>
       ),
       number: ({ children }) => (
         <ol className="portable-text__ol">{children}</ol>
@@ -65,18 +77,18 @@ const portableTextComponents = (document) => {
         return { children };
       },
     },
+    types: {
+      annotatedImage: AnnotatedImage,
+    },
   };
 };
 
-const PortableText = ({ data, noMargin, document }) => {
+const PortableText = ({ data, noMargin, document, guarantee }) => {
   return (
     <div className={`portable-text ${noMargin && "portable-text--no-margin"}`}>
       <BasePortableText
         value={data}
-        // components={
-        //   document ? documentPortableTextComponents : portableTextComponents
-        // }
-        components={portableTextComponents(document)}
+        components={portableTextComponents({ document, guarantee })}
       />
     </div>
   );

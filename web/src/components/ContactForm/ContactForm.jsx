@@ -14,6 +14,7 @@ import {
   setSelectedProjectFinishing,
   setSelectedProjectFoundation,
 } from "../../context/selectedProject/selectedProject.actions";
+import { setSharedStateCurrentPageContactSection } from "../../context/sharedState/sharedState.actions";
 import { dynamicSort } from "../../lib/helpers";
 import InlineLink from "../InlineLink/InlineLink";
 
@@ -34,6 +35,8 @@ const ContactForm = ({ location, title, options }) => {
     formState: { errors },
   } = useForm({ defaultValues });
 
+  const contactSectionRef = useRef(null);
+
   const foundations = options ? options.foundations : null;
   const finishes = options ? options.finishes : null;
 
@@ -52,6 +55,16 @@ const ContactForm = ({ location, title, options }) => {
   const isProjectPage = paths
     ? paths[0] === "projects" && paths.length === 2
     : false;
+
+  useEffect(() => {
+    if (contactSectionRef.current) {
+      dispatch(
+        setSharedStateCurrentPageContactSection({
+          contactSection: contactSectionRef,
+        })
+      );
+    }
+  }, [contactSectionRef, dispatch]);
 
   const handleFoundationChange = (selectedOption) => {
     if (selectedOption.value !== state.selectedProject.foundation.index) {
@@ -144,7 +157,7 @@ const ContactForm = ({ location, title, options }) => {
   };
 
   return (
-    <section className="contact-form">
+    <section className="contact-form" ref={contactSectionRef}>
       <div className="container contact-form__container">
         {title ? (
           <>

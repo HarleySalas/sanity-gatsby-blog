@@ -15,6 +15,7 @@ const Button = ({
   fullWidth,
   arrowRight,
   download,
+  href,
   center,
   className,
   ...props
@@ -23,6 +24,7 @@ const Button = ({
         button
      
         ${!btnSize && "button--md"}
+        ${btnSize === "xs" && "button--xs"}
         ${btnSize === "sm" && "button--sm"}
         ${btnSize === "md" && "button--md"}
         ${btnSize === "lg" && "button--lg"}
@@ -70,6 +72,14 @@ const Button = ({
   if (download) {
     btnElement = (
       <a href={download} aria-label={children}>
+        {btnElement}
+      </a>
+    );
+  }
+
+  if (href) {
+    btnElement = (
+      <a href={href} aria-label={children}>
         {btnElement}
       </a>
     );

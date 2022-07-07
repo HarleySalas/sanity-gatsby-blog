@@ -1,0 +1,81 @@
+@import "../../../../../styles/variables.scss";
+
+.about-next-prev {
+  background-color: $color-white-dark;
+  padding: 2.72rem 0;
+
+  &__wrapper {
+    @include respond(tab-land) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__block {
+    background-color: $color-white;
+    flex: 0.5;
+    padding: 2rem 2rem;
+    margin-bottom: 2rem;
+
+    @include respond(tab-port) {
+      padding: 2.72rem 3.72rem;
+      margin: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.07rem;
+    color: rgba($color-grey-dark, 0.72);
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: rgba($color-grey-dark, 0.72);
+    position: relative;
+    transition: color 0.24s $ease;
+
+    &:hover {
+      color: rgba($color-grey-dark, 1);
+    }
+
+    &:hover .about-next-prev__arrow {
+      stroke: rgba($color-grey-dark, 1);
+    }
+  }
+
+  &__title {
+    &__span {
+      line-height: 1;
+      font-weight: 400;
+      font-size: 3rem;
+      text-decoration: underline;
+
+      &--next {
+        margin-right: 1.24rem;
+      }
+
+      &--prev {
+        margin-left: 1.24rem;
+      }
+    }
+  }
+
+  &__arrow {
+    // display: block;
+    fill: none;
+    stroke: rgba($color-grey-dark, 0.72);
+    stroke-width: 0.7rem;
+    height: 2rem;
+    transform: rotate(0deg) translateY(0.4rem);
+
+    &--prev {
+      transform: rotate(180deg) translateY(-0.3rem);
+    }
+  }
+}

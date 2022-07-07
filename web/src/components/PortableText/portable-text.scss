@@ -10,28 +10,41 @@
   &__p {
     color: $color-grey-text;
     font-size: 1.8rem;
-    // letter-spacing: 0.04rem;
-    line-height: 3.42rem;
+    line-height: 1.5;
     text-indent: 2rem;
     font-weight: 400;
 
     &--document {
       text-indent: 0;
     }
+
+    &--emphasis {
+      padding: 1.42rem 2.72rem;
+      font-size: 2rem;
+      background-color: rgba($color-white-dark, 0.92);
+
+      @include respond(desktop-small) {
+        padding: 2.42rem 4.72rem;
+      }
+    }
   }
 
   &__h2 {
     margin-top: 5.72rem;
     margin-bottom: 2.42rem;
-    font-size: 2.72rem;
-    font-weight: 500;
     letter-spacing: 0.04rem;
+
+    font-size: 2.72rem;
+    font-weight: 400;
+    @include respond(desktop-small) {
+      font-size: 3.42rem;
+    }
   }
 
   &__h3 {
     margin-top: 4.24rem;
     margin-bottom: 1.72rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.07rem;
@@ -50,13 +63,17 @@
     list-style: none;
     color: $color-grey-text;
     font-weight: 400;
-    line-height: 3.42rem;
+
+    &--guarantee {
+      margin-bottom: 4.72rem;
+    }
   }
 
   &__li {
     margin-left: 5rem;
     position: relative;
-    margin-bottom: 2.72rem;
+    margin-bottom: 0.72rem;
+    line-height: 1.5;
     &:nth-last-child(1) {
       margin-bottom: 0;
     }

@@ -37,3 +37,15 @@
     opacity: 1;
   }
 }
+
+@keyframes growRight {
+  0% {
+    transform-origin: 0%;
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform-origin: 0%;
+    transform: scaleX(1);
+  }
+}

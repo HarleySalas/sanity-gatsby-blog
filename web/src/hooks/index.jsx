@@ -12,3 +12,4 @@ export { default as useHasMounted } from "./useHasMounted";
 export { default as useAccordion } from "./useAccordion";
 export { default as useDeepMemo } from "./useDeepMemo";
 export { default as useWindowResize } from "./useWindowResize";
+export { default as useScrollToContact } from "./useScrollToContact";

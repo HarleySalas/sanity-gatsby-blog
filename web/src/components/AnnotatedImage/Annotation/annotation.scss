@@ -1,0 +1,68 @@
+@import "../../../styles/variables.scss";
+
+.annotation {
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: -0.8rem;
+  margin-top: -0.8rem;
+  background: rgba($color-primary, 0.72);
+  border-radius: 100%;
+  cursor: pointer;
+
+  @include respond(tab-land) {
+    width: 2rem;
+    height: 2rem;
+    margin-left: -1rem;
+    margin-top: -1rem;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    border: 2px solid rgba($color-primary, 0.72);
+    -webkit-border-radius: 3rem;
+    height: 3.2rem;
+    width: 3.2rem;
+    position: absolute;
+    left: -0.8rem;
+    top: -0.8rem;
+    animation: pulsate 3s $ease;
+    animation-iteration-count: infinite;
+    opacity: 0;
+
+    @include respond(tab-land) {
+      height: 4rem;
+      width: 4rem;
+      left: -1rem;
+      top: -1rem;
+    }
+  }
+
+  &__popover {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+    background-color: rgba($color-white, 0.9);
+    padding: 0.72rem 1.72rem;
+    box-shadow: 0 0 7px 4px rgba($color-grey-dark, 0.18);
+    border-radius: 0.2rem;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+}

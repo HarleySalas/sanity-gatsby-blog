@@ -6,9 +6,9 @@
   transition: all 0.42s $ease;
 
   color: $color-grey-text;
-  &:nth-last-of-type(1) {
-    margin-bottom: 0;
-  }
+  // &:nth-last-of-type(1) {
+  //   margin-bottom: 0;
+  // }
   &__wrapper {
     display: flex;
   }

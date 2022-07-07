@@ -4,7 +4,7 @@
   background-color: $color-white;
   &__scrollbar-placeholder {
     position: fixed;
-    right: -var(--scrollbar-compensation);
+    right: calc(var(--scrollbar-compensation) * -1);
     top: 0;
     height: 100%;
     width: var(--scrollbar-compensation);

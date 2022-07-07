@@ -4,6 +4,7 @@ import GraphQLErrorList from "../components/GraphQLErrorList/GraphQLErrorList";
 
 import Layout from "../components/Layout/Layout";
 import ProjectTemplate from "../components/sections/templates/Project";
+import projectFinishesDefault from "../components/sections/templates/Project/ProjectOptions/ProjectFinishingOptions/projectFinishesDefault";
 
 const Project = ({ data, errors, location }) => {
   const project = data && data.project;
@@ -25,7 +26,10 @@ const Project = ({ data, errors, location }) => {
           }}
           contactOptions={{
             foundations: project.foundations,
-            finishes: project.finishingOptions,
+            finishes:
+              project.finishingOptions.length > 0
+                ? project.finishingOptions
+                : projectFinishesDefault,
           }}
         >
           <ProjectTemplate project={project} />
@@ -96,6 +100,8 @@ export const query = graphql`
       isActive
       totalArea
       totalSize
+      buildingArea
+      constructionArea
       blueprintsDisplay {
         image {
           asset {

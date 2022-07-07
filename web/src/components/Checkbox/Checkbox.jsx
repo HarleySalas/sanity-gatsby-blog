@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import "./checkbox.scss";
 
 const Checkbox = forwardRef((props, ref) => {
-  const { checked, disabled, onChange, value, projectStyles } = props;
+  const { checked, disabled, onChange, value, projectStyles, dataKey } = props;
 
   return (
     <div className="checkbox">
@@ -12,6 +12,7 @@ const Checkbox = forwardRef((props, ref) => {
           checked={checked}
           className={`checkbox__input`}
           onChange={onChange}
+          data-key={dataKey}
           value={value}
           disabled={disabled}
         />

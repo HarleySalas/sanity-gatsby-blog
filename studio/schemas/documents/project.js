@@ -124,9 +124,9 @@ export default {
     {
       name: "interiorSize",
       type: "number",
-      title: "Площадь дома / Interior Size",
+      title: "Жилая площадь / Living Space",
       description:
-        "Метраж дома в квадратных метрах, только число / Interior size, measured in square meters.",
+        "Метраж дома в квадратных метрах, только число / Living Space, measured in square meters.",
       validation: (Rule) =>
         Rule.required().error(
           "You must provide the interior size of the home."
@@ -140,6 +140,20 @@ export default {
         "Размер дома в квадратных метрах, включая террасы, крыльцо, балконы и тд / Total size of the home, including porches, terraces and balconies, measured in square meters.",
       validation: (Rule) =>
         Rule.required().error("You must provide the total size of the home."),
+    },
+    {
+      name: "buildingArea",
+      type: "number",
+      title: "Площадь застройки / Building Area",
+      description: "Length * Width",
+      validation: (Rule) =>
+        Rule.required().error("You must provide the building area."),
+    },
+    {
+      name: "constructionArea",
+      type: "number",
+      title: "Строительная площадь / Construction Area",
+      description: "Length * Width for each floor",
     },
     {
       name: "totalArea",

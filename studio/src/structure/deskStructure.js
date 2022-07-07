@@ -99,6 +99,16 @@ export default () =>
                     .title("Как мы работаем / How We Work")
                 ),
               S.listItem()
+                .id("technologyAndMaterials")
+                .title("Технологии и материалы / Technology and Materials")
+                .child(
+                  S.editor()
+                    .id("technologyAndMaterials")
+                    .schemaType("technologyAndMaterials")
+                    .documentId("technologyAndMaterials")
+                    .title("Технологии и материалы / Technology and Materials")
+                ),
+              S.listItem()
                 .id("licenses")
                 .title("Лицензии / Licenses")
                 .schemaType("license")
@@ -287,6 +297,7 @@ export default () =>
             "aboutUs",
             "featuredProject",
             "contactForm",
+            "technologyAndMaterials",
           ].includes(listItem.getId())
       ),
     ]);

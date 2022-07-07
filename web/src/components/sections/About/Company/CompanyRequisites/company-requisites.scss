@@ -1,0 +1,58 @@
+@import "../../../../../styles/variables.scss";
+
+.company-requisites {
+  margin-bottom: 5.24rem;
+
+  &__title {
+    font-size: 2.72rem;
+    font-weight: 400;
+    margin: 5.24rem 0 3.42rem 0;
+
+    @include respond(desktop-small) {
+      font-size: 3.42rem;
+      margin: 7.24rem 0 4.42rem 0;
+    }
+  }
+
+  &__ul {
+    list-style: none;
+
+    &--sub {
+      margin-left: 2.72rem;
+      margin-top: 0.72rem;
+    }
+
+    &--flex {
+      @include respond(tab-land) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      & > .company-requisites__li {
+        @include respond(tab-land) {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__li {
+    line-height: 1.2;
+    margin-bottom: 2.42rem;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    letter-spacing: 0.11rem;
+    line-height: 1.5;
+    color: $color-grey-dark;
+    &--sub {
+    }
+  }
+
+  &__text {
+    color: $color-grey-text;
+  }
+}

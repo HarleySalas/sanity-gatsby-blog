@@ -22,6 +22,8 @@ const ProjectDetails = ({ details }) => {
     interiorSize,
     totalSize,
     totalArea,
+    buildingArea,
+    constructionArea,
   } = details;
 
   const bedroomsText = correctGrammarFromValue(
@@ -107,6 +109,30 @@ const ProjectDetails = ({ details }) => {
           <div className="project-details__detail__bottom">
             <div className="project-details__detail__description">
               {totalSize} м&sup2;
+            </div>
+          </div>
+        </div>
+        <div className="project-details__detail project-details__detail--2">
+          <div className="project-details__detail__top">
+            <div className="project-details__detail__value">
+              Площадь застройки
+            </div>
+          </div>
+          <div className="project-details__detail__bottom">
+            <div className="project-details__detail__description">
+              {buildingArea} м&sup2;
+            </div>
+          </div>
+        </div>
+        <div className="project-details__detail project-details__detail--2">
+          <div className="project-details__detail__top">
+            <div className="project-details__detail__value">
+              Строительная площадь
+            </div>
+          </div>
+          <div className="project-details__detail__bottom">
+            <div className="project-details__detail__description">
+              {constructionArea} м&sup2;
             </div>
           </div>
         </div>

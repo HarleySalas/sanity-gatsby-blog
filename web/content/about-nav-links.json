@@ -1,0 +1,28 @@
+{
+  "aboutNavLinks": [
+    {
+      "title": "О нас",
+      "link": "/about/company"
+    },
+    {
+      "title": "Как мы работаем",
+      "link": "/about/how-we-work"
+    },
+    {
+      "title": "Технологии и материалы",
+      "link": "/about/technologies-and-materials"
+    },
+    {
+      "title": "Кредит и материнский капитал",
+      "link": "/about/credit-maternity-capital"
+    },
+    {
+      "title": "Лицензии",
+      "link": "/about/licenses"
+    },
+    {
+      "title": "FAQ",
+      "link": "/about/faq"
+    }
+  ]
+}
