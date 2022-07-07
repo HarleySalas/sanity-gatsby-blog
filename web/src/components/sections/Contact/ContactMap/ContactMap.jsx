@@ -43,7 +43,7 @@ const ContactMap = () => {
             // }}
             options={{
               iconLayout: "default#image",
-              iconImageHref: "mrs-map-pin.svg",
+              iconImageHref: "/mrs-map-pin.svg",
               iconImageSize: [42.67, 64],
               iconImageOffset: [-21.3, -64],
               hideIconOnBalloonOpen: false,
