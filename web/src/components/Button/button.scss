@@ -6,7 +6,7 @@
   display: inline-block;
   cursor: pointer;
   transition: all 0.42s $ease;
-  font-weight: 500;
+  // font-weight: 400;
   text-transform: uppercase;
 
   &__wrapper {
@@ -37,16 +37,22 @@
 
   &--xs {
     font-size: 1.5rem;
-    letter-spacing: 0.11rem;
+    letter-spacing: 0.04rem;
     padding: 0.24rem 1.42rem;
-    font-weight: 500;
+    font-weight: 400;
+
+    & .button__icon__arrow-right {
+      height: 1.4rem;
+      margin-left: 1.24rem;
+      stroke-width: 0.5rem;
+    }
   }
 
   &--sm {
     font-size: 1.6rem;
-    letter-spacing: 0.18rem;
-    padding: 0.72rem 2.42rem;
-    font-weight: 500;
+    letter-spacing: 0.07rem;
+    padding: 0.72rem 2.24rem;
+    font-weight: 400;
 
     & .button__icon__arrow-right {
       height: 1.7rem;
@@ -56,7 +62,7 @@
   }
 
   &--md {
-    padding: 1rem 3.24rem;
+    padding: 0.72rem 2.72rem;
     font-size: 1.8rem;
     letter-spacing: 0.11rem;
     font-weight: 500;
@@ -111,6 +117,11 @@
 
     &:active {
       background-color: $color-primary;
+    }
+
+    &,
+    .button--sm {
+      font-weight: 500;
     }
   }
 

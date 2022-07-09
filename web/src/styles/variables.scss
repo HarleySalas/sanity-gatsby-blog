@@ -21,6 +21,9 @@ $color-black-light: #201f26;
 // $color-black: #29282e;
 // $color-black: #1c1816;
 
+$color-green: #1aac46;
+$color-red: #ac1a1a;
+
 $ease: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 //Media Queries
@@ -78,5 +81,29 @@ $ease: cubic-bezier(0.165, 0.84, 0.44, 1);
     @media only screen and (min-width: 150em) {
       @content;
     }
+  }
+}
+
+@mixin sectionMargin {
+  margin: 7.42rem 0;
+
+  @include respond(tab-port) {
+    margin: 9.72rem 0;
+  }
+
+  @include respond(desktop-small) {
+    margin: 11rem 0;
+  }
+}
+
+@mixin sectionMarginSm {
+  margin: 3.72rem;
+
+  @include respond(tab-port) {
+    margin: 5.42rem 0;
+  }
+
+  @include respond(desktop-small) {
+    margin: 7.72rem 0;
   }
 }

@@ -28,6 +28,7 @@ module.exports = {
       options: {
         yandexMetrika: {
           trackingId: process.env.YANDEX_METRIKA_TRACKING_ID,
+          webvisor: true,
         },
       },
     },
@@ -50,7 +51,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `https://m-r-s.ru/`,
-        sitemap: `https://m-r-s.ru/sitemap/sitemap.xml`,
+        sitemap: `https://m-r-s.ru/sitemap.xml`,
         policy: [{ userAgent: `*`, allow: `/` }],
       },
     },

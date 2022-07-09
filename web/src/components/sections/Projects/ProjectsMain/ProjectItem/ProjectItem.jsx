@@ -55,7 +55,6 @@ const ProjectItem = ({ project }) => {
           />
         </div>
       </Link>
-
       <div className="project-item__container">
         <div className="project-item__title-container">
           <h2 className="project-item__name">{project.name}</h2>

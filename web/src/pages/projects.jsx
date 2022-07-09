@@ -2,10 +2,12 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import BasicPageHero from "../components/BasicPageHero/BasicPageHero";
 import ProjectsMain from "../components/sections/Projects/ProjectsMain/ProjectsMain";
+import Sale from "../components/Sale/Sale";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes } from "../lib/helpers";
 
 const projects = ({ location, data }) => {
+  const saleData = mapEdgesToNodes(data.allSanitySale)[0];
   return (
     <Layout
       title="Проекты"
@@ -21,6 +23,7 @@ const projects = ({ location, data }) => {
       <ProjectsMain
         projects={data && data.projects ? mapEdgesToNodes(data.projects) : []}
       />
+      <Sale data={saleData} />
     </Layout>
   );
 };
@@ -54,6 +57,15 @@ export const query = graphql`
           slug {
             current
           }
+        }
+      }
+    }
+    allSanitySale(limit: 1, sort: { fields: enddate, order: ASC }) {
+      edges {
+        node {
+          id
+          text
+          enddate
         }
       }
     }

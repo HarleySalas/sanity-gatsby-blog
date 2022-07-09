@@ -17,6 +17,7 @@ import {
 import { setSharedStateCurrentPageContactSection } from "../../context/sharedState/sharedState.actions";
 import { dynamicSort } from "../../lib/helpers";
 import InlineLink from "../InlineLink/InlineLink";
+import { useLocation } from "@reach/router";
 
 const defaultValues = {
   name: "",
@@ -26,7 +27,7 @@ const defaultValues = {
   message: "",
 };
 
-const ContactForm = ({ location, title, options }) => {
+const ContactForm = ({ title, options }) => {
   const {
     register,
     handleSubmit,
@@ -34,6 +35,7 @@ const ContactForm = ({ location, title, options }) => {
     control,
     formState: { errors },
   } = useForm({ defaultValues });
+  const location = useLocation();
 
   const contactSectionRef = useRef(null);
 
@@ -257,7 +259,7 @@ const ContactForm = ({ location, title, options }) => {
               />
               <p className="contact-form__notice">
                 Нажимая на кнопку «Отправить», вы соглашаетесь с обработкой
-                ваших персональных данных,{" "}
+                персональных данных,{" "}
                 <InlineLink linkTo="/privacy-policy" sameWeight>
                   политикой конфиденциальности
                 </InlineLink>{" "}

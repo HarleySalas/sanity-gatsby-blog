@@ -5,9 +5,13 @@ import GraphQLErrorList from "../components/GraphQLErrorList/GraphQLErrorList";
 import Layout from "../components/Layout/Layout";
 import ProjectTemplate from "../components/sections/templates/Project";
 import projectFinishesDefault from "../components/sections/templates/Project/ProjectOptions/ProjectFinishingOptions/projectFinishesDefault";
+import Sale from "../components/Sale/Sale";
+import { mapEdgesToNodes } from "../lib/helpers";
 
 const Project = ({ data, errors, location }) => {
   const project = data && data.project;
+  const saleData = mapEdgesToNodes(data.allSanitySale)[0];
+
   return (
     <>
       {errors && (
@@ -33,6 +37,7 @@ const Project = ({ data, errors, location }) => {
           }}
         >
           <ProjectTemplate project={project} />
+          <Sale data={saleData} />
         </Layout>
       )}
     </>
@@ -120,6 +125,15 @@ export const query = graphql`
         }
       }
       _rawDescription
+    }
+    allSanitySale(limit: 1, sort: { fields: enddate, order: ASC }) {
+      edges {
+        node {
+          id
+          text
+          enddate
+        }
+      }
     }
   }
 `;

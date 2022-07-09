@@ -89,6 +89,10 @@
       color: rgba($color-white, 0.72);
     }
 
+    &:focus {
+      outline: none;
+    }
+
     &--active {
       color: rgba($color-primary, 1);
 

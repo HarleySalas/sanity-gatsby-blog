@@ -1,7 +1,7 @@
 @import "../../../../styles/variables.scss";
 
 .home-featured-project {
-  margin: 11rem 0;
+  @include sectionMargin;
 
   &__container {
   }
@@ -63,6 +63,11 @@
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 2.42rem;
+      justify-content: center;
+
+      @include respond(desktop-small) {
+        justify-content: flex-start;
+      }
 
       &:nth-last-of-type(1) {
         margin-bottom: 0;
@@ -89,11 +94,29 @@
         color: $color-grey-text;
         font-weight: 400;
         font-size: 1.6rem;
+        text-align: center;
+
+        @include respond(desktop-small) {
+          text-align: left;
+        }
       }
     }
 
+    &__link-wrapper {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+
+      // @include respond(desktop-small) {
+      //   align-items: flex-start;
+      // }
+    }
+
+    &__link-block {
+    }
+
     &__link {
-      margin-top: 3.72rem;
+      margin-top: 2.72rem;
       text-decoration: none;
       color: rgba($color-grey-dark, 0.72);
       font-size: 2rem;

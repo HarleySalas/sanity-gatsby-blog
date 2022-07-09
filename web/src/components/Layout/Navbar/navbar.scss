@@ -72,7 +72,7 @@
   }
 
   &__logo {
-    height: 2.72rem;
+    height: 2.42rem;
     z-index: 11000;
 
     @include respond(tab-port) {
@@ -80,7 +80,7 @@
     }
 
     @include respond(desktop-small) {
-      height: 3.72rem;
+      height: 3.42rem;
     }
   }
 

@@ -81,7 +81,14 @@ const ProjectFinishingOptions = ({ options }) => {
           <div className="project-finishing-options__wrapper">
             <ul className="project-finishing-options__ul">
               <li className="project-finishing-item">
-                <div className="project-finishing-item__accordion">
+                <div
+                  className={`project-finishing-item__accordion ${
+                    state.selectedProject.finish.key ===
+                    projectFinishesDefault[0]._key
+                      ? "project-finishing-item__accordion--active"
+                      : null
+                  }`}
+                >
                   <div className="project-finishing-item__wrapper">
                     <Checkbox
                       onChange={handleSelectOption}

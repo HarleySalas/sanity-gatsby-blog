@@ -145,6 +145,13 @@ export default () =>
                     .title("Перечень проектов / Project Listings")
                 ),
               S.listItem()
+                .id("sale")
+                .title("Акции / Sales")
+                .schemaType("sale")
+                .child(
+                  S.documentTypeList("sale").id("sale").title("Акции / Sales")
+                ),
+              S.listItem()
                 .id("categories")
                 .title("Категории домов / Categories")
                 .schemaType("projectCategory")
@@ -298,6 +305,7 @@ export default () =>
             "featuredProject",
             "contactForm",
             "technologyAndMaterials",
+            "sale",
           ].includes(listItem.getId())
       ),
     ]);

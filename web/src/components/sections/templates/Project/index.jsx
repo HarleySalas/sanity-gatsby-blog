@@ -74,6 +74,10 @@ const ProjectTemplate = ({ project }) => {
 
   useEffect(() => {
     setDefaults();
+
+    return () => {
+      setDefaults();
+    };
   });
 
   return (

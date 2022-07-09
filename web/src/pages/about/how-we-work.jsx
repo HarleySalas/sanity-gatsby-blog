@@ -7,9 +7,12 @@ import HowWeWorkSteps from "../../components/sections/About/HowWeWork/HowWeWorkS
 import HowWeWorkCustom from "../../components/sections/About/HowWeWork/HowWeWorkCustom/HowWeWorkCustom";
 import AboutLinks from "../../components/sections/About/Index/AboutLinks/AboutLinks";
 import AboutNextPrev from "../../components/sections/About/Index/AboutNextPrev/AboutNextPrev";
+import Sale from "../../components/Sale/Sale";
+import { mapEdgesToNodes } from "../../lib/helpers";
 
 const HowWeWork = ({ data, location }) => {
   const { guarantees, steps, _rawMessage } = data.howWeWork;
+  const saleData = mapEdgesToNodes(data.allSanitySale)[0];
 
   return (
     <Layout title="Как мы работаем" contactForm location={location}>
@@ -24,6 +27,7 @@ const HowWeWork = ({ data, location }) => {
         prev="О нас"
         prevLink="/about/company"
       />
+      <Sale data={saleData} />
     </Layout>
   );
 };
@@ -41,6 +45,15 @@ export const query = graphql`
         _key
         _rawText
         title
+      }
+    }
+    allSanitySale(limit: 1, sort: { fields: enddate, order: ASC }) {
+      edges {
+        node {
+          id
+          text
+          enddate
+        }
       }
     }
   }

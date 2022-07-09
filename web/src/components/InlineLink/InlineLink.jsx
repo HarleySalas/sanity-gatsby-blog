@@ -11,13 +11,11 @@ const InlineLink = ({
   sameWeight,
 }) => {
   const linkRef = useRef(null);
-  const [linkColor, setLinkColor] = useState(null);
   const [fontWeight, setFontWeight] = useState(null);
 
   useEffect(() => {
     const modifyStyles = setTimeout(() => {
       const styles = linkRef.current ? getComputedStyle(linkRef.current) : null;
-      setLinkColor(styles && styles.color ? styles.color : null);
       setFontWeight(
         sameWeight
           ? styles && styles.fontWeight
@@ -35,10 +33,6 @@ const InlineLink = ({
       <span className={`inline-link__span ${spanClassName || null}`}>
         {children}
       </span>
-      <span
-        className="inline-link__underline"
-        style={{ backgroundColor: linkColor }}
-      ></span>
     </>
   );
 

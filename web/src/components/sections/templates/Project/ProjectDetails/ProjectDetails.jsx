@@ -102,8 +102,9 @@ const ProjectDetails = ({ details }) => {
             </div>
           </div>
         </div>
+        <div className="project-details__detail project-details__detail--1 project-details__detail--1--spacer"></div>
         <div className="project-details__detail project-details__detail--2">
-          <div className="project-details__detail__top">
+          <div className="project-details__detail__top project-details__detail__top--word">
             <div className="project-details__detail__value">Общая площадь</div>
           </div>
           <div className="project-details__detail__bottom">
@@ -113,7 +114,7 @@ const ProjectDetails = ({ details }) => {
           </div>
         </div>
         <div className="project-details__detail project-details__detail--2">
-          <div className="project-details__detail__top">
+          <div className="project-details__detail__top project-details__detail__top--word">
             <div className="project-details__detail__value">
               Площадь застройки
             </div>
@@ -125,7 +126,7 @@ const ProjectDetails = ({ details }) => {
           </div>
         </div>
         <div className="project-details__detail project-details__detail--2">
-          <div className="project-details__detail__top">
+          <div className="project-details__detail__top project-details__detail__top--word">
             <div className="project-details__detail__value">
               Строительная площадь
             </div>
@@ -137,7 +138,7 @@ const ProjectDetails = ({ details }) => {
           </div>
         </div>
         <div className="project-details__detail project-details__detail--2">
-          <div className="project-details__detail__top">
+          <div className="project-details__detail__top project-details__detail__top--word">
             <div className="project-details__detail__value">Размер</div>
           </div>
           <div className="project-details__detail__bottom">

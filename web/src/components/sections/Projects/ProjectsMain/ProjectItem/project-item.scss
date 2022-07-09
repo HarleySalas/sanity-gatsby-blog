@@ -82,9 +82,13 @@
   &__title-container {
     display: flex;
     position: relative;
-    padding: 2.24rem 3.72rem;
+    padding: 1.72rem 2.42rem;
     align-items: center;
     justify-content: space-between;
+
+    @include respond(tab-port) {
+      padding: 2.24rem 3.24rem;
+    }
 
     &::after {
       content: "";
@@ -101,6 +105,7 @@
     font-weight: 600;
     font-size: 2rem;
     line-height: 1.24;
+    white-space: nowrap;
   }
 
   &__price {
@@ -112,54 +117,20 @@
 
   &__row {
     display: flex;
-    margin-top: 2.72rem;
+    margin-top: 2.24rem;
 
-    &:nth-of-type(2) {
+    @include respond(tab-port) {
       margin-top: 2.72rem;
     }
+
+    // &:nth-of-type(2) {
+    //   margin-top: 2.72rem;
+    // }
   }
 
   &__detail {
     width: 50%;
   }
-
-  // &__detail-top {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   width: 100%;
-  //   margin-bottom: 0.24rem;
-  // }
-
-  // &__detail-icon {
-  //   display: block;
-  //   fill: $color-grey-dark;
-  //   margin-right: 1rem;
-
-  //   height: 2.72rem;
-  // }
-
-  // &__detail-value {
-  //   line-height: 1;
-  //   color: $color-grey-dark;
-  //   font-weight: 500;
-  //   font-size: 2rem;
-  // }
-
-  // &__detail-bottom {
-  //   width: 100%;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
-
-  // &__detail-description {
-  //   color: $color-grey-light-text;
-  //   line-height: 1;
-  //   font-weight: 400;
-  //   text-align: left;
-  //   font-size: 1.6rem;
-  // }
 
   &__detail-top {
     display: flex;
@@ -202,6 +173,10 @@
   &__btn-row {
     display: flex;
     justify-content: center;
-    margin: 3.72rem 0 2.72rem 0;
+    margin: 2.72rem 0 2.42rem 0;
+
+    @include respond(tab-port) {
+      margin: 3.72rem 0 2.72rem 0;
+    }
   }
 }

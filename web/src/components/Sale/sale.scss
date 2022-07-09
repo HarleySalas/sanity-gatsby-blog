@@ -1,0 +1,90 @@
+@import "../../styles/variables.scss";
+
+.sale {
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+    padding: 5.24rem 0;
+    z-index: 10;
+
+    @include respond(tab-port) {
+      padding: 7.42rem;
+    }
+
+    @include respond(tab-land) {
+      padding: 9.42rem 0;
+    }
+
+    &__subtitle {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.11rem;
+      text-transform: uppercase;
+      background-color: $color-primary;
+      line-height: 1;
+      padding: 0.42rem 0.72rem;
+      border-radius: 0.24rem;
+      margin-bottom: 1.72rem;
+      color: rgba($color-grey-dark, 0.72);
+    }
+    &__text {
+      font-size: 2.4rem;
+      letter-spacing: 0.07rem;
+      margin-bottom: 3.42rem;
+      width: 100%;
+
+      @include respond(tab-port) {
+        font-size: 2.6rem;
+      }
+
+      @include respond(tab-land) {
+        font-size: 2.8rem;
+      }
+
+      @include respond(desktop-small) {
+        width: 50%;
+      }
+
+      @include respond(desktop) {
+        width: 72%;
+      }
+    }
+    &__date {
+      color: rgba($color-grey-dark, 0.65);
+      font-size: 1.6rem;
+      letter-spacing: 0.04rem;
+      font-weight: 500;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.32;
+
+    @include respond(desktop-small) {
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    & img {
+      user-drag: none;
+      -webkit-user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+  }
+}

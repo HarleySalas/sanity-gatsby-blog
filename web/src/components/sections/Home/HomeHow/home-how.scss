@@ -1,0 +1,143 @@
+@import "../../../../styles/variables.scss";
+
+.home-how {
+  @include sectionMarginSm;
+
+  &__title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.11rem;
+    text-transform: uppercase;
+    margin-bottom: 3.72rem;
+    // text-align: center;
+  }
+
+  &__ul {
+    list-style: none;
+    width: 100%;
+    position: relative;
+    margin-bottom: 3.72rem;
+
+    @include respond(tab-port) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @include respond(desktop-mid) {
+      justify-content: space-between;
+    }
+  }
+
+  &__li {
+    display: flex;
+    margin-bottom: 2.72rem;
+
+    &:nth-last-of-type(1) {
+      margin-bottom: 0;
+    }
+
+    @include respond(tab-port) {
+      flex: 50%;
+
+      &:nth-of-type(1) {
+        padding-right: 1.24rem;
+      }
+
+      &:nth-of-type(3) {
+        padding-right: 1.24rem;
+      }
+
+      &:nth-of-type(2) {
+        padding-left: 1.24rem;
+      }
+
+      &:nth-of-type(4) {
+        padding-left: 1.24rem;
+      }
+    }
+
+    @include respond(tab-land) {
+      &:nth-of-type(1) {
+        padding-right: 2.24rem;
+      }
+
+      &:nth-of-type(3) {
+        padding-right: 2.24rem;
+      }
+
+      &:nth-of-type(2) {
+        padding-left: 2.24rem;
+      }
+
+      &:nth-of-type(4) {
+        padding-left: 2.24rem;
+      }
+    }
+
+    @include respond(desktop-mid) {
+      flex: initial;
+      width: 23%;
+      padding: 0;
+
+      &:nth-of-type(1) {
+        padding-right: 0;
+      }
+
+      &:nth-of-type(3) {
+        padding-right: 0;
+      }
+
+      &:nth-of-type(2) {
+        padding-left: 0;
+      }
+
+      &:nth-of-type(4) {
+        padding-left: 0;
+      }
+    }
+
+    @include respond(desktop) {
+      width: 21%;
+    }
+  }
+
+  &__icon-wrapper {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &__content-wrapper {
+    // display: flex;
+    flex: 1;
+    padding-left: 1.24rem;
+  }
+
+  &__label {
+    &__icon {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: $color-primary;
+
+      &--stroke {
+        stroke: $color-primary;
+      }
+    }
+
+    &__title {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.07rem;
+      margin-bottom: 0.42rem;
+      line-height: 1;
+    }
+  }
+
+  &__content {
+    // text-align: center;
+    line-height: 1.42;
+    color: rgba($color-grey-dark, 0.65);
+    font-size: 1.8rem;
+  }
+}

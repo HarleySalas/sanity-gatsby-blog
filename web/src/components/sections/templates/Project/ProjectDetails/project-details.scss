@@ -21,6 +21,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
   }
 
   &__price {
@@ -76,6 +77,20 @@
   &__detail {
     &--1 {
       width: 100%;
+
+      &--spacer {
+        @include respond(desktop-mid) {
+          min-height: 2rem;
+        }
+
+        @include respond(desktop) {
+          min-height: 3rem;
+        }
+
+        @include respond(desktop-large) {
+          min-height: 4.72rem;
+        }
+      }
     }
 
     &--2 {
@@ -141,6 +156,10 @@
       justify-content: center;
       width: 100%;
       margin-bottom: 0.24rem;
+
+      &--word {
+        margin-bottom: 0.72rem;
+      }
     }
 
     &__bottom {

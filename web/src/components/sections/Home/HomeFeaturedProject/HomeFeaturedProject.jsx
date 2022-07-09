@@ -102,21 +102,25 @@ const HomeFeaturedProject = ({ featuredProject }) => {
                 </div>
               </div>
             </div>
-            <Button
-              linkTo={`/projects/${featuredProject.slug.current}`}
-              btnSize="sm"
-              btnColor="grey"
-              arrowRight
-            >
-              ПЕРЕЙТИ В ПРОЕКТ
-            </Button>
-            <Link
-              to="/projects"
-              className="home-featured-project__content__link"
-            >
-              Все проекты{" "}
-              <ArrowStroke className="home-featured-project__content__link__arrow" />
-            </Link>
+            <div className="home-featured-project__content__link-wrapper">
+              <Button
+                linkTo={`/projects/${featuredProject.slug.current}`}
+                btnSize="sm"
+                btnColor="grey"
+                arrowRight
+              >
+                ПЕРЕЙТИ В ПРОЕКТ
+              </Button>
+              <div className="home-featured-project__content__link-block">
+                <Link
+                  to="/projects"
+                  className="home-featured-project__content__link"
+                >
+                  Все проекты{" "}
+                  <ArrowStroke className="home-featured-project__content__link__arrow" />
+                </Link>
+              </div>
+            </div>
           </div>
           {isDesktop && (
             <div className="home-featured-project__img-wrapper">
