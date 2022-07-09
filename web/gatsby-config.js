@@ -51,7 +51,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: `https://m-r-s.ru/`,
-        sitemap: `https://m-r-s.ru/sitemap.xml`,
+        sitemap: `https://m-r-s.ru/sitemap/sitemap-index.xml`,
         policy: [{ userAgent: `*`, allow: `/` }],
       },
     },
