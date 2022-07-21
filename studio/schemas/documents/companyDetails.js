@@ -21,6 +21,24 @@ export default {
       type: "string",
     },
     {
+      name: "vk",
+      title: "Ссылка на ВК / VK Link",
+      description: "ex; https://vk.com/username",
+      type: "string",
+    },
+    {
+      name: "telegram",
+      title: "Ссылка на Телеграмм / Telegram Contact Link",
+      description: "ex; https://t.me/username",
+      type: "string",
+    },
+    {
+      name: "whatsapp",
+      title: "Ссылка на Whatsapp / Whatsapp Contact Link",
+      description: "ex; https://wa.me/7123456789",
+      type: "string",
+    },
+    {
       name: "businessAddress",
       title: "Адрес компании / Business Address",
       type: "address",

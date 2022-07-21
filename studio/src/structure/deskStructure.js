@@ -109,6 +109,20 @@ export default () =>
                     .title("Технологии и материалы / Technology and Materials")
                 ),
               S.listItem()
+                .id("creditMaternityCapital")
+                .title(
+                  "Кредит и материнский капитал / Credit and Maternity Capital"
+                )
+                .child(
+                  S.editor()
+                    .id("creditMaternityCapital")
+                    .schemaType("creditMaternityCapital")
+                    .documentId("creditMaternityCapital")
+                    .title(
+                      "Кредит и материнский капитал / Credit and Maternity Capital"
+                    )
+                ),
+              S.listItem()
                 .id("licenses")
                 .title("Лицензии / Licenses")
                 .schemaType("license")
@@ -180,14 +194,14 @@ export default () =>
                     ])
                 ),
               S.listItem()
-                .id("featuredProject")
-                .title("Популярный проект / Featured Project")
+                .id("featuredProjects")
+                .title("Популярный проекты / Featured Projects")
                 .child(
                   S.editor()
-                    .id("featuredProject")
-                    .schemaType("featuredProject")
-                    .documentId("featuredProject")
-                    .title("Популярный проект / Featured Project")
+                    .id("featuredProjects")
+                    .schemaType("featuredProjects")
+                    .documentId("featuredProjects")
+                    .title("Популярный проекты / Featured Projects")
                 ),
             ])
         ),
@@ -306,6 +320,8 @@ export default () =>
             "contactForm",
             "technologyAndMaterials",
             "sale",
+            "featuredProjects",
+            "creditMaternityCapital",
           ].includes(listItem.getId())
       ),
     ]);

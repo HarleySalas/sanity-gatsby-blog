@@ -45,7 +45,8 @@
       left: 0;
 
       &--empty {
-        background: rgba($color-grey-dark, 1);
+        // background: rgba($color-grey-dark, 1);
+        background: rgba($color-black, 1);
       }
     }
   }

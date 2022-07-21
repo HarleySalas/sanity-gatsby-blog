@@ -22,6 +22,8 @@ import featuredProject from "./documents/featuredProject";
 import contactForm from "./documents/contactForm";
 import technologyAndMaterials from "./documents/about/technology-and-materials";
 import sale from "./documents/sale";
+import featuredProjects from "./documents/featuredProjects";
+import creditMaternityCapital from "./documents/about/creditMaternityCapital";
 
 // Object types
 import bodyPortableText from "./objects/bodyPortableText";
@@ -78,6 +80,8 @@ export default createSchema({
     contactForm,
     technologyAndMaterials,
     sale,
+    featuredProjects,
+    creditMaternityCapital,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
