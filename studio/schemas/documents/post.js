@@ -36,6 +36,13 @@ export default {
       title: "Главная картинка / Main image",
     },
     {
+      name: "metaDescription",
+      type: "text",
+      title: "--- / Meta Description",
+      description:
+        "Описание будет видно в поисковиках Яндекс, Google, когда люди делятся в соцсетях / This ends up on summary pages, on Google, when people share your post in social media.",
+    },
+    {
       name: "excerpt",
       type: "excerptPortableText",
       title: "О статье / Excerpt",
