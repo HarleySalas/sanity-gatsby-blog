@@ -44,7 +44,7 @@ export default {
     },
     {
       name: "excerpt",
-      type: "excerptPortableText",
+      type: "text",
       title: "О статье / Excerpt",
       description:
         "Описание будет видно в поисковиках Яндекс, Google, когда люди делятся в соцсетях / This ends up on summary pages, on Google, when people share your post in social media.",
