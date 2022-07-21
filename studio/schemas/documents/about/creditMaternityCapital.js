@@ -7,7 +7,7 @@ export default {
   fields: [
     {
       name: "body",
-      type: "bodyPortableText",
+      type: "portableText",
       title: "Кредит и материнский капитал",
     },
   ],
