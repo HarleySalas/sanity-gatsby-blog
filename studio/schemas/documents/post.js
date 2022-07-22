@@ -74,7 +74,7 @@ export default {
     },
     {
       name: "body",
-      type: "bodyPortableText",
+      type: "portableText",
       title: "Текст статьи / Body",
     },
   ],
