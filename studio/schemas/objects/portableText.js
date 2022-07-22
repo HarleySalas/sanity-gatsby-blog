@@ -10,6 +10,10 @@ const BlockEmphasis = (props) => (
   </p>
 );
 
+const DisplayText = (props) => (
+  <p style={{ color: "#8B8B8F", fontSize: "20px" }}>{props.children}</p>
+);
+
 export default {
   name: "portableText",
   type: "array",
@@ -36,6 +40,13 @@ export default {
           value: "blockEmphasis",
           blockEditor: {
             render: BlockEmphasis,
+          },
+        },
+        {
+          title: "Display-Text",
+          value: "displayText",
+          blockEditor: {
+            render: DisplayText,
           },
         },
       ],
