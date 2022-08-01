@@ -36,6 +36,19 @@ export default {
       },
     },
     {
+      name: "type",
+      type: "string",
+      title: "Тип / Type",
+      initialValue: "house",
+      options: {
+        list: [
+          { title: "Дом", value: "house" },
+          { title: "Баня", value: "bathhouse" },
+        ],
+      },
+      validation: (Rule) => Rule.required().error("Type is required."),
+    },
+    {
       name: "images",
       type: "array",
       title: "Картинки / Images",
@@ -94,12 +107,12 @@ export default {
       title: "Спальни / Bedrooms",
       description:
         "Количество спален. Можно в варьирующемся формате '3-4' без пробелов или просто одно число / Number of bedrooms. Can be provided in a range format, eg: '3-4', without spaces, or simply as a number.",
-      validation: (Rule) => [
-        Rule.required().error(
-          "You must indiciate the number of bedrooms available."
-        ),
-        Rule.max(5).error("Too many characters."),
-      ],
+      // validation: (Rule) => [
+      //   Rule.required().error(
+      //     "You must indiciate the number of bedrooms available."
+      //   ),
+      //   Rule.max(5).error("Too many characters."),
+      // ],
     },
     {
       name: "bathrooms",
@@ -107,19 +120,19 @@ export default {
       title: "Санузлы / Bathrooms",
       description:
         "Количество санузлов. Можно в варьирующемся формате '3-4' без пробелов или просто одно число / Number of bathrooms. Can be provided in a range format, eg: '3-4', without spaces, or simply as a number.",
-      validation: (Rule) => [
-        Rule.required().error(
-          "You must indiciate the number of bathrooms available."
-        ),
-        Rule.max(5).error("Too many characters."),
-      ],
+      // validation: (Rule) => [
+      //   Rule.required().error(
+      //     "You must indiciate the number of bathrooms available."
+      //   ),
+      //   Rule.max(5).error("Too many characters."),
+      // ],
     },
     {
       name: "floors",
       type: "number",
       title: "Этажи / Floors",
-      description: "Количнство этажей / Number of floors.",
-      validation: (Rule) => Rule.required().error(""),
+      description: "Количество этажей / Number of floors.",
+      // validation: (Rule) => Rule.required().error(""),
     },
     {
       name: "interiorSize",
@@ -127,10 +140,10 @@ export default {
       title: "Жилая площадь / Living Space",
       description:
         "Метраж дома в квадратных метрах, только число / Living Space, measured in square meters.",
-      validation: (Rule) =>
-        Rule.required().error(
-          "You must provide the interior size of the home."
-        ),
+      // validation: (Rule) =>
+      //   Rule.required().error(
+      //     "You must provide the interior size of the home."
+      //   ),
     },
     {
       name: "totalSize",
@@ -138,16 +151,16 @@ export default {
       title: "Общая площадь дома / Total Size",
       description:
         "Размер дома в квадратных метрах, включая террасы, крыльцо, балконы и тд / Total size of the home, including porches, terraces and balconies, measured in square meters.",
-      validation: (Rule) =>
-        Rule.required().error("You must provide the total size of the home."),
+      // validation: (Rule) =>
+      //   Rule.required().error("You must provide the total size of the home."),
     },
     {
       name: "buildingArea",
       type: "number",
       title: "Площадь застройки / Building Area",
       description: "Length * Width",
-      validation: (Rule) =>
-        Rule.required().error("You must provide the building area."),
+      // validation: (Rule) =>
+      //   Rule.required().error("You must provide the building area."),
     },
     {
       name: "constructionArea",
@@ -162,10 +175,21 @@ export default {
       description:
         "Размер дома в метрах, например, 10x12, каждый параметр как отдельное число, на отдельных строчках / Total area footprint of the home, measured in meters, eg: 10x12). Please provide each dimension as a number, separately.",
       of: [{ type: "number" }],
-      validation: (Rule) => [
-        Rule.required().error("Total area is required."),
-        Rule.length(2).error("You must provide exactly two numbers."),
-      ],
+      // validation: (Rule) => [
+      //   Rule.required().error("Total area is required."),
+      //   Rule.length(2).error("You must provide exactly two numbers."),
+      // ],
+    },
+    {
+      name: "roomSpace",
+      type: "number",
+      title: "Площадь помещений / Room Space",
+      description:
+        "Метраж бани в квадратных метрах, только число. Только для бань. / Living Space, measured in square meters. Only used for bathhouses.",
+      // validation: (Rule) =>
+      //   Rule.required().error(
+      //     "You must provide the interior size of the bathhouse."
+      //   ),
     },
     {
       name: "description",

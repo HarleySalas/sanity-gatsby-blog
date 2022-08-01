@@ -9,6 +9,11 @@ export default {
       title: "SVG",
     },
     {
+      type: "text",
+      name: "rawSvg",
+      title: "Raw SVG",
+    },
+    {
       name: "image",
       type: "image",
       title: "Image",
