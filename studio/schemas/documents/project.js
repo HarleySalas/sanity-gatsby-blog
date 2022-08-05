@@ -58,12 +58,17 @@ export default {
     },
     {
       name: "blueprintsDisplay",
-      type: "array",
-      title: "Планы этажей / Blueprints",
-      description:
-        "План каждого этажа в SVG формате для отображения на странице проекта / Blueprints of each floor, in SVG format, to be displayed on the page.",
-      of: [{ type: "svgWithPreview" }],
+      title: "Blueprints Display",
+      type: "blueprintsDisplay",
     },
+    // {
+    //   name: "blueprintsDisplay",
+    //   type: "array",
+    //   title: "Планы этажей / Blueprints",
+    //   description:
+    //     "План каждого этажа в SVG формате для отображения на странице проекта / Blueprints of each floor, in SVG format, to be displayed on the page.",
+    //   of: [{ type: "svgWithPreview" }],
+    // },
     {
       name: "originalBlueprint",
       type: "file",
