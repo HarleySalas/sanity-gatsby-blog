@@ -151,7 +151,6 @@ const ContactForm = ({ title, options }) => {
         },
       }
     );
-    console.log(results);
     reset();
     setFoundationSelect();
     setFinishSelect();

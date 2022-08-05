@@ -1,16 +1,16 @@
 export default {
-  name: "project",
+  name: "plan",
   type: "document",
-  title: "Project",
+  title: "Plan",
   liveEdit: false,
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "string",
-      title: "Project Name",
-      description: "Название проекта / Name of the Project",
+      title: "Project Title",
+      description: "Название проекта / Title of the Project",
       validation: (Rule) =>
-        Rule.required().error("You must provide a project name."),
+        Rule.required().error("You must provide a project title."),
     },
     {
       name: "isActive",
@@ -29,9 +29,9 @@ export default {
       name: "slug",
       type: "slug",
       title: "Имя ссылки / Slug",
-      description: "Название ссылки на проект / Slug/name of page link",
+      description: "Название ссылки на проект / Slug/title of page link",
       options: {
-        source: "name",
+        source: "title",
         maxLength: 96,
       },
     },
@@ -48,22 +48,13 @@ export default {
       },
       validation: (Rule) => Rule.required().error("Type is required."),
     },
-    {
-      name: "images",
-      type: "array",
-      title: "Картинки / Images",
-      description:
-        "Загрузите картинки проекта. Первая картинка будет использоваться как главная / Images of the project. The first image will be used as the primary image.",
-      of: [{ type: "mainImage" }],
-    },
+    //make it accept image
     {
       name: "blueprintsDisplay",
-      type: "array",
+      type: "blueprintsDisplay",
       title: "Планы этажей / Blueprints",
-      description:
-        "План каждого этажа в SVG формате для отображения на странице проекта / Blueprints of each floor, in SVG format, to be displayed on the page.",
-      of: [{ type: "svgWithPreview" }],
     },
+    //make sure it accepts images
     {
       name: "originalBlueprint",
       type: "file",
@@ -94,7 +85,7 @@ export default {
     },
     {
       name: "price",
-      type: "number",
+      type: "string",
       title: "Цена / Price",
       description:
         "Базовая цена проекта в рублях, без какого-либо обозначения рубля / Base price of the project in rubles, without symbols of any form",
@@ -193,54 +184,10 @@ export default {
     },
     {
       name: "description",
-      type: "simplePortableText",
+      type: "portableText",
       title: "Описание проекта / Project Description",
       validation: (Rule) =>
         Rule.required().error("There must be a project description."),
-    },
-    {
-      name: "finishingOptions",
-      title: "Виды отделки / Finishing Options",
-      description:
-        "Доступные виды отделки для проекта / Finishing options available for this project.",
-      type: "array",
-      of: [{ type: "finishingOption" }],
-      validation: (Rule) =>
-        Rule.custom((finishingOptions) => {
-          if (typeof finishingOptions === "undefined") {
-            return true;
-          }
-
-          const finishingOptionsContainsABase = (arr) => {
-            return arr.some((value) => value["cost"] === 0);
-          };
-
-          return finishingOptionsContainsABase(finishingOptions)
-            ? true
-            : "There must be at least one option with a base price of 0.";
-        }),
-    },
-    {
-      name: "foundations",
-      title: "Фундаменты / Foundations",
-      description:
-        "Доступные виды фундаментов для проекта / Foundations available for this project.",
-      type: "array",
-      of: [{ type: "foundationOption" }],
-      validation: (Rule) =>
-        Rule.custom((foundations) => {
-          if (typeof foundations === "undefined") {
-            return true; //allow undefined values
-          }
-
-          const foundationsContainsABase = (arr) => {
-            return arr.some((value) => value["cost"] === 0);
-          };
-
-          return foundationsContainsABase(foundations)
-            ? true
-            : "There must be at least one foundation with a base value of 0.";
-        }),
     },
     {
       name: "completedProjects",
@@ -258,7 +205,7 @@ export default {
           direction: "asc",
         },
         {
-          field: "name",
+          field: "title",
           direction: "asc",
         },
       ],
@@ -272,46 +219,25 @@ export default {
           direction: "desc",
         },
         {
-          field: "name",
+          field: "title",
           direction: "asc",
         },
       ],
     },
     {
-      name: "nameAsc",
-      title: "Names, alphabetical, ascending",
-      by: [{ field: "name", direction: "asc" }],
+      name: "titleAsc",
+      title: "Titles, alphabetical, ascending",
+      by: [{ field: "title", direction: "asc" }],
     },
     {
-      name: "nameDesc",
-      title: "Names, alphabetical, descending",
+      name: "titleDesc",
+      title: "Titles, alphabetical, descending",
       by: [
         {
-          field: "name",
+          field: "title",
           direction: "desc",
         },
       ],
     },
   ],
-  preview: {
-    select: {
-      name: "name",
-      images: "images",
-    },
-    prepare(selection) {
-      const { name, images } = selection;
-
-      if (images) {
-        const image = images[0].asset;
-        return {
-          title: name,
-          media: image,
-        };
-      } else {
-        return {
-          title: name,
-        };
-      }
-    },
-  },
 };

@@ -47,6 +47,15 @@ import featureOption from "./objects/featureOption";
 import annotation from "./objects/annotation";
 import annotatedImage from "./objects/annotatedImage";
 import portableText from "./objects/portableText";
+import seasonYearPicker from "./objects/seasonYearPicker";
+import imageWithOrientation from "./objects/imageWithOrientation";
+import completedProject from "./documents/completedProject";
+import svgUploadv2 from "./objects/svgUploadv2";
+import blueprintsDisplay from "./objects/blueprintsDisplay";
+import imageWithOrientationArray from "./objects/imageWithOrientationArray";
+import svgUploadArray from "./objects/svgUploadArray";
+import plan from "./documents/plan";
+import svgArray from "./objects/svgArray";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -82,6 +91,8 @@ export default createSchema({
     sale,
     featuredProjects,
     creditMaternityCapital,
+    completedProject,
+    plan,
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
@@ -100,5 +111,12 @@ export default createSchema({
     annotation,
     annotatedImage,
     portableText,
+    seasonYearPicker,
+    imageWithOrientation,
+    imageWithOrientationArray,
+    svgUploadv2,
+    svgUploadArray,
+    blueprintsDisplay,
+    svgArray,
   ]),
 });

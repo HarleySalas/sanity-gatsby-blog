@@ -159,6 +159,24 @@ export default () =>
                     .title("Перечень проектов / Project Listings")
                 ),
               S.listItem()
+                .id("plan")
+                .title("Каталог планов / Plans")
+                .schemaType("plan")
+                .child(
+                  S.documentTypeList("plan")
+                    .id("plan")
+                    .title("Каталог планов / Plans")
+                ),
+              S.listItem()
+                .id("completed")
+                .title("Мы построили / Completed Projects")
+                .schemaType("completedProject")
+                .child(
+                  S.documentTypeList("completedProject")
+                    .id("completedProject")
+                    .title("Мы построили / Completed Projects")
+                ),
+              S.listItem()
                 .id("sale")
                 .title("Акции / Sales")
                 .schemaType("sale")
@@ -322,6 +340,8 @@ export default () =>
             "sale",
             "featuredProjects",
             "creditMaternityCapital",
+            "completedProject",
+            "plan",
           ].includes(listItem.getId())
       ),
     ]);

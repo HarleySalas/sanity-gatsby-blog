@@ -12,10 +12,23 @@ export default {
         "Для внутреннего использования, не отображается на сайте / For internal reference, not displayed on website.",
     },
     {
+      name: "slug",
+      type: "slug",
+      options: {
+        source: "name",
+        maxLength: 96,
+      },
+    },
+    {
       name: "text",
       type: "text",
       title: "Текст / Text",
       description: "Пояснение к акции / Explanation of the Sale",
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "portableText",
     },
     {
       name: "enddate",
