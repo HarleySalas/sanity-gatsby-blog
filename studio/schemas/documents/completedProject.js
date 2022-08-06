@@ -137,14 +137,14 @@ export default {
   ],
   preview: {
     select: {
-      name: "title",
+      title: "title",
       images: "images",
     },
     prepare(selection) {
       const { title, images } = selection;
 
       if (images) {
-        const image = images[0].asset;
+        const image = images[0].image.asset;
         return {
           title: title,
           media: image,
