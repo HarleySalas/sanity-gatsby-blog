@@ -17,7 +17,17 @@ export default {
     },
     {
       name: "companyPhone",
-      title: "Контактный телефон / Company Phone",
+      title: "Контактный телефон / Primary Phone",
+      type: "string",
+    },
+    {
+      name: "directorPhone",
+      title: "Телефон директора / Director Phone",
+      type: "string",
+    },
+    {
+      name: "accountingPhone",
+      title: "Телефон бухгалтерии / Accounting Phone",
       type: "string",
     },
     {
